@@ -27,6 +27,7 @@ $arUser = $ararResult["User"];
 echo "<pre>";
 print_r($arResult);
 echo "</pre>";
+echo "Mir";
 if ($arUser["ACTIVITY_STATUS"] == "fired")
 	$userActive = "Y";
 elseif($arUser["ACTIVITY_STATUS"] == "invited")
