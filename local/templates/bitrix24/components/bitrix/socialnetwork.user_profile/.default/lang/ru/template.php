@@ -30,6 +30,11 @@ $MESS["SOCNET_CONFIRM_RECOVER"] = "Сотрудник сможет зайти н
 $MESS["SOCNET_CONFIRM_DELETE"] = "Приглашение сотрудника будет удалено безвозвратно.
 
 Вы уверены, что хотите удалить сотрудника?";
+$MESS["COMPETENCE"] = "Компетенции";
+$MESS["ROLE"] = "Роль";
+$MESS["GRADE"] = "Грейд";
+$MESS["PRODUCT"] = "Продукт";
+$MESS["EXP"] = "Опыт";
 $MESS["SONET_USER_ABSENCE"] = "Отсутствия";
 $MESS["SONET_SEND_MESSAGE"] = "Написать сообщение";
 $MESS["SONET_VIDEO_CALL"] = "Видеозвонок";

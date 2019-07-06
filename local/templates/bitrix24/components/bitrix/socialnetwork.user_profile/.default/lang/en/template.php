@@ -29,6 +29,11 @@ Are you sure you want to open access for this employee?";
 $MESS["SOCNET_CONFIRM_DELETE"] = "Invite will be deleted irrevocably.
 
 Are you sure you want to delete the employee?";
+$MESS["COMPETENCE"] = "Competences";
+$MESS["ROLE"] = "Role";
+$MESS["GRADE"] = "Grade";
+$MESS["PRODUCT"] = "Product";
+$MESS["EXP"] = "Experience";
 $MESS["SONET_USER_ABSENCE"] = "Absence";
 $MESS["SONET_SEND_MESSAGE"] = "Send message";
 $MESS["SONET_VIDEO_CALL"] = "Video call";

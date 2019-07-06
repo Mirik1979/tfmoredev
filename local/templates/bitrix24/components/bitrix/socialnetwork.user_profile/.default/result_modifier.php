@@ -104,6 +104,28 @@ if (!$arResult["FatalError"])
 	{
 		$arResult["SHOW_SONET_ADMIN"] = true;
 	}
+	// competences
+    $roleid = $arResult["User"]["UF_ROLE"];
+    $rolename = CIBlockElement::GetByID($roleid);
+    if($ar_res = $rolename->GetNext())
+        $arResult["role"] = $ar_res['NAME'];
+    $gradeid = $arResult["User"]["UF_GRADE"];
+    $gradename = CIBlockElement::GetByID($gradeid);
+    if($ar_res = $gradename->GetNext())
+        $arResult["grade"] = $ar_res['NAME'];
+    $expid = $arResult["User"]["UF_EXPERIENCE"];
+    $expname = CIBlockElement::GetByID($expid);
+    if($ar_res = $expname->GetNext())
+        $arResult["exp"] = $ar_res['NAME'];
+    $prodid = $arResult["User"]["UF_PROD"];
+    foreach ($prodid as $value) {
+        $prodname = CIBlockElement::GetByID($value);
+        if($ar_res = $prodname->GetNext())
+            if ($arResult["prod"])
+                $arResult["prod"] = $arResult["prod"] . "," . $ar_res['NAME'];
+            else
+                $arResult["prod"] = $ar_res['NAME'];
+    }
 }
 
 if (\Bitrix\Main\Loader::includeModule("security"))

@@ -23,11 +23,11 @@ if (empty($arResult["User"]))
 	return;
 
 global $USERar;
-$arUser = $ararResult["User"];
-echo "<pre>";
+$arUser = $arResult["User"];
+/*echo "<pre>";
 print_r($arResult);
-echo "</pre>";
-echo "Mir";
+echo "</pre>";*/
+//echo "Mir";
 if ($arUser["ACTIVITY_STATUS"] == "fired")
 	$userActive = "Y";
 elseif($arUser["ACTIVITY_STATUS"] == "invited")
@@ -74,8 +74,8 @@ else
 	</div>
 	<div class="user-profile-block-wrap-r">
 		<?
-		if (
-			($arResult['CAN_EDIT_USER'] || $USER->GetID() == $arUser["ID"])
+		 if (
+            ($arResult['CAN_EDIT_USER'] || $USER->GetID() == $arUser["ID"])
 			&& !in_array($arUser["EXTERNAL_AUTH_ID"], Array('imconnector', 'bot'))
 		)
 		{
@@ -411,6 +411,26 @@ else
 				}
 			}
 			?>
+            <!-- // otp -->
+            <tr>
+                <td class="user-profile-block-title" colspan="2"><?=GetMessage("COMPETENCE")?></td>
+            </tr>
+            <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("ROLE").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["role"]; ?></td>>
+            </tr>
+            <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("GRADE").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["grade"]; ?></td>>
+            </tr>
+            <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("PRODUCT").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["prod"]; ?></td>>
+            </tr>
+            <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("EXP").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["exp"]; ?></td>>
+            </tr>
 <!-- // otp -->
 			<tr>
 				<td class="user-profile-block-title" colspan="2"><?=GetMessage("SONET_COMMON_TITLE")?></td>
