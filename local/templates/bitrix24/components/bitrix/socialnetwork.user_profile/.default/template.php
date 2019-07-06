@@ -417,19 +417,19 @@ else
             </tr>
             <tr>
                 <td class="user-profile-nowrap""><?=GetMessage("ROLE").":"?></td>
-                <td class="user-profile-nowrap-second"><? echo $arResult["role"]; ?></td>>
+                <td class="user-profile-nowrap-second"><? echo $arResult["role"]; ?></td>
             </tr>
             <tr>
                 <td class="user-profile-nowrap""><?=GetMessage("GRADE").":"?></td>
-                <td class="user-profile-nowrap-second"><? echo $arResult["grade"]; ?></td>>
+                <td class="user-profile-nowrap-second"><? echo $arResult["grade"]; ?></td>
             </tr>
             <tr>
                 <td class="user-profile-nowrap""><?=GetMessage("PRODUCT").":"?></td>
-                <td class="user-profile-nowrap-second"><? echo $arResult["prod"]; ?></td>>
+                <td class="user-profile-nowrap-second"><? echo $arResult["prod"]; ?></td>
             </tr>
             <tr>
                 <td class="user-profile-nowrap""><?=GetMessage("EXP").":"?></td>
-                <td class="user-profile-nowrap-second"><? echo $arResult["exp"]; ?></td>>
+                <td class="user-profile-nowrap-second"><? echo $arResult["exp"]; ?></td>
             </tr>
 <!-- // otp -->
 			<tr>
