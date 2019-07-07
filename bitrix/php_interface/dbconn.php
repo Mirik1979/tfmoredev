@@ -30,6 +30,7 @@ define("VM_INSTALL", true);
 define("BX_UTF", true);
 define("BX_CRONTAB_SUPPORT", true);
 define("BX_COMPRESSION_DISABLED", true);
+define("LOG_FILENAME", $_SERVER["DOCUMENT_ROOT"]."logs/log.txt");
 
 define("BX_DISABLE_INDEX_PAGE", true);
 

@@ -1,4 +1,7 @@
 <?
+
+use Bitrix\Main\Diag\Debug;
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 /**
@@ -14,6 +17,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
  */
 
 global $USER_FIELD_MANAGER, $CACHE_MANAGER;
+
+AddMessage2Log("12334", "postdebug1");
+AddMessage2Log($_POST, "postdebug2");
+AddMessage2Log($_SERVER, "postdebug3");
 
 if (!CModule::IncludeModule("socialnetwork"))
 {
@@ -235,7 +242,9 @@ else
 
 	if($arResult['bEdit'] == 'Y' && $_SERVER["REQUEST_METHOD"]=="POST" && strlen($_POST["submit"])>0 && check_bitrix_sessid())
 	{
-		if(CModule::IncludeModule("socialservices"))
+        AddMessage2Log('inside', "postdebug4");
+
+	    if(CModule::IncludeModule("socialservices"))
 		{
 			$arPerm = array();
 			if(is_array($_POST["SPERM"]) && isset($_POST["USER_ID_TWITTER"]) && !empty($_POST["USER_ID_TWITTER"]))
@@ -414,6 +423,16 @@ else
 		$arNewFieldsValue = array();
 		foreach ($arKeys as $key)
 			$arNewFieldsValue[$key] = $arFieldsValue[$key];
+        // ТФ - вставляем новые элементы в массив
+
+        $arNewFieldsValue['UF_ROLE'] = $_POST['UF_ROLE'];
+        $arNewFieldsValue['UF_GRADE'] = $_POST['UF_GRADE'];
+        $arNewFieldsValue['UF_PROD'] = $_POST['UF_PROD'];
+        $arNewFieldsValue['UF_EXPERIENCE'] = $_POST['UF_EXPERIENCE'];
+
+
+        AddMessage2Log($arNewFieldsValue, "postdebug5");
+
 
 		$res = $USER->Update($SONET_USER_ID, $arNewFieldsValue);
 
@@ -537,10 +556,10 @@ else
 			$bVarsFromForm = true;
 		}
 	}
-	
+
 	if($arResult['bEdit'] == 'Y' && $_SERVER["REQUEST_METHOD"]=="POST" && (strlen($_POST["submit_fire"])>0 || strlen($_POST["submit_recover"])>0) && check_bitrix_sessid())
 	{
-		if ($CurrentUserPerms["Operations"]["modifyuser_main"] && $SONET_USER_ID != $USER->GetID())		
+	    if ($CurrentUserPerms["Operations"]["modifyuser_main"] && $SONET_USER_ID != $USER->GetID())
 		{
 			$arFields = array("ACTIVE" => strlen($_POST["submit_fire"])>0 ? "N" : "Y");		
 			$res = $USER->Update($SONET_USER_ID, $arFields);	

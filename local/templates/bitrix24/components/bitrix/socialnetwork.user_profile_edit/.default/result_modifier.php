@@ -3,6 +3,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
 
 global $USER_FIELD_MANAGER;
 
+array_push($arParams['EDITABLE_FIELDS'], 'UF_ROLE',
+    'UF_GRADE', 'UF_PROD', 'UF_EXPERIENCE');
+
 $arResult["IS_BITRIX24"] = CModule::IncludeModule("bitrix24");
 if (
 	!$arResult["IS_BITRIX24"] && in_array("GROUP_ID", $arParams['EDITABLE_FIELDS'])

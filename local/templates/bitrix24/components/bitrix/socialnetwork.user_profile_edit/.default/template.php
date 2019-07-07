@@ -1,14 +1,16 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 CJSCore::Init(array('fx'));
+use Bitrix\Main\Diag\Debug;
 
 $APPLICATION->SetPageProperty("BodyClass", "page-one-column");
 
 $bNetwork = $arResult["IS_BITRIX24"] && COption::GetOptionString('bitrix24', 'network', 'N') == 'Y';
 
+
 if ($arResult["User"]['EXTERNAL_AUTH_ID'] == 'email')
 {
-	$arFields = array(
+    $arFields = array(
 		'MAIN' => array(
 			'NAME', 'LAST_NAME', 'SECOND_NAME', 'PERSONAL_PHOTO',
 		),
@@ -18,14 +20,16 @@ if ($arResult["User"]['EXTERNAL_AUTH_ID'] == 'email')
 }
 elseif ($arResult["IS_BITRIX24"])
 {
-	$arFields = array(
+
+    $arFields = array(
 		'MAIN' => array(
 			'NAME', 'LAST_NAME', 'SECOND_NAME', 'PERSONAL_PHOTO',  'PERSONAL_PHONE', 'PERSONAL_MOBILE', 'WORK_PHONE', 'UF_PHONE_INNER', 'WORK_POSITION', 'GROUP_ID', "UF_DEPARTMENT"
 		),
 
 		'PERSONAL' => array(
 			'AUTO_TIME_ZONE', 'TIME_ZONE',  'PERSONAL_WWW', 'PERSONAL_CITY', 'WORK_COMPANY', 'PERSONAL_GENDER', 'PERSONAL_BIRTHDAY',
-			'UF_SKYPE', "UF_TWITTER", "UF_FACEBOOK", "UF_LINKEDIN", "UF_XING", 'UF_WEB_SITES', 'UF_SKILLS', 'US_INTERESTS'
+			'UF_SKYPE', "UF_TWITTER", "UF_FACEBOOK", "UF_LINKEDIN", "UF_XING", 'UF_WEB_SITES', 'UF_SKILLS', 'US_INTERESTS', 'UF_ROLE',
+            'UF_GRADE', 'UF_PROD', 'UF_EXPERIENCE'
 		),
 	);
 	if(CModule::IncludeModule("socialservices"))
@@ -42,14 +46,15 @@ elseif ($arResult["IS_BITRIX24"])
 }
 else
 {
-	$arFields = array(
+    $arFields = array(
 		'MAIN' => array(
 			'NAME', 'LAST_NAME', 'SECOND_NAME', 'PERSONAL_PHOTO',  'PERSONAL_PHONE', 'PERSONAL_MOBILE', 'WORK_PHONE', 'UF_PHONE_INNER', 'WORK_POSITION'
 		),
 
 		'PERSONAL' => array(
 			'AUTO_TIME_ZONE', 'TIME_ZONE',  'PERSONAL_WWW', 'PERSONAL_CITY', 'PERSONAL_GENDER', 'PERSONAL_BIRTHDAY', 'PERSONAL_BIRTHDATE',
-			'UF_SKYPE', "UF_TWITTER", "UF_FACEBOOK", "UF_LINKEDIN", "UF_XING", 'UF_WEB_SITES', 'UF_SKILLS', 'US_INTERESTS',
+			'UF_SKYPE', "UF_TWITTER", "UF_FACEBOOK", "UF_LINKEDIN", "UF_XING", 'UF_WEB_SITES', 'UF_SKILLS', 'US_INTERESTS', 'UF_ROLE',
+            'UF_GRADE', 'UF_PROD', 'UF_EXPERIENCE',
 			'PERSONAL_ICQ', 'PERSONAL_FAX', 'PERSONAL_PAGER', 'PERSONAL_COUNTRY', 'PERSONAL_STREET', 'PERSONAL_MAILBOX', 'PERSONAL_CITY', 'PERSONAL_STATE', 'PERSONAL_ZIP', 'WORK_COUNTRY',
 			'WORK_CITY', 'WORK_COMPANY', 'WORK_DEPARTMENT', 'WORK_PROFILE', 'WORK_WWW', 'WORK_FAX', 'WORK_PAGER', 'WORK_LOGO', 'PERSONAL_PROFESSION', 'PERSONAL_NOTES'
 		),
@@ -159,6 +164,7 @@ if ($arResult['ERROR_MESSAGE'])
 <?
 }
 ?>
+
 
 <form id="bx_user_profile_form" name="user_profile_edit" method="POST" action="<?echo POST_FORM_ACTION_URI;?>" enctype="multipart/form-data" autocomplete="off">
 	<? if (array_search("PERSONAL_GENDER", $arFields["PERSONAL"]) === false):?><input type="hidden" name="PERSONAL_GENDER" value="<?=$arResult["User"]["PERSONAL_GENDER"]?>" /><?endif?>
@@ -597,7 +603,8 @@ if (substr($_REQUEST['backurl'],0,1) != "/")
 				$_REQUEST['backurl']
 					? $_REQUEST['backurl']
 					: CComponentEngine::MakePathFromTemplate($arParams["PATH_TO_USER"], array("user_id" => $arParams["ID"]))
-			))?>'"><span class="webform-button-left"></span><span class="webform-button-text"><?=GetMessage("SOCNET_BUTTON_CANCEL")?></span><span class="webform-button-right"></span></span>
+			))?>'">
+                <span class="webform-button-left"></span><span class="webform-button-text"><?=GetMessage("SOCNET_BUTTON_CANCEL")?></span><span class="webform-button-right"></span></span>
 	</td>
 </tr>
 </table>

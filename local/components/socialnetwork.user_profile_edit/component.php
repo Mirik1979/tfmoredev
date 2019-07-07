@@ -14,6 +14,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
  */
 
 global $USER_FIELD_MANAGER, $CACHE_MANAGER;
+use Bitrix\Main\Diag\Debug;
 
 if (!CModule::IncludeModule("socialnetwork"))
 {
@@ -235,7 +236,8 @@ else
 
 	if($arResult['bEdit'] == 'Y' && $_SERVER["REQUEST_METHOD"]=="POST" && strlen($_POST["submit"])>0 && check_bitrix_sessid())
 	{
-		if(CModule::IncludeModule("socialservices"))
+
+        if(CModule::IncludeModule("socialservices"))
 		{
 			$arPerm = array();
 			if(is_array($_POST["SPERM"]) && isset($_POST["USER_ID_TWITTER"]) && !empty($_POST["USER_ID_TWITTER"]))
