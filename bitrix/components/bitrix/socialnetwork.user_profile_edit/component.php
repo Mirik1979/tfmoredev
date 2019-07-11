@@ -18,9 +18,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 global $USER_FIELD_MANAGER, $CACHE_MANAGER;
 
-AddMessage2Log("12334", "postdebug1");
+/*AddMessage2Log("12334", "postdebug1");
 AddMessage2Log($_POST, "postdebug2");
-AddMessage2Log($_SERVER, "postdebug3");
+AddMessage2Log($_SERVER, "postdebug3");*/
 
 if (!CModule::IncludeModule("socialnetwork"))
 {
@@ -242,7 +242,7 @@ else
 
 	if($arResult['bEdit'] == 'Y' && $_SERVER["REQUEST_METHOD"]=="POST" && strlen($_POST["submit"])>0 && check_bitrix_sessid())
 	{
-        AddMessage2Log('inside', "postdebug4");
+        //AddMessage2Log('inside', "postdebug4");
 
 	    if(CModule::IncludeModule("socialservices"))
 		{
@@ -431,7 +431,7 @@ else
         $arNewFieldsValue['UF_EXPERIENCE'] = $_POST['UF_EXPERIENCE'];
 
 
-        AddMessage2Log($arNewFieldsValue, "postdebug5");
+        //AddMessage2Log($arNewFieldsValue, "postdebug5");
 
 
 		$res = $USER->Update($SONET_USER_ID, $arNewFieldsValue);
