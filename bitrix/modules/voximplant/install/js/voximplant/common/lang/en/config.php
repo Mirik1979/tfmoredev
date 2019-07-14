@@ -1,5 +1,0 @@
-<?
-$MESS["VOX_JS_COMMON_CANCEL"] = "Cancel";
-$MESS["VOX_JS_COMMON_CLOSE"] = "Close";
-$MESS["VOX_JS_COMMON_OK"] = "OK";
-?>

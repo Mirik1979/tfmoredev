@@ -1,1 +1,0 @@
-<?php $filesInfo = array("/bitrix/components/bitrix/intranet.structure.visual/templates/.default/structure.js" => "156220557119716",); ?>
