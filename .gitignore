@@ -25,3 +25,9 @@ stream
 tasks
 telephony
 .idea
+/bitrix/
+/upload/
+/local/vendor/
+/*.txt
+/.htaccess
+/web.config
