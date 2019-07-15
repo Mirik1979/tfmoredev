@@ -1,5 +1,35 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+
+<?
+$TimforsCompany=false;
+$TimforsCompanyUser=[];
+
+if($arResult["VARIABLES"]["group_id"]>0 && CModule::IncludeModule('crm')){
+
+    $arGroup = CSocNetGroup::GetByID($arResult["VARIABLES"]["group_id"]);
+    $TimforsCompany=$arGroup["UF_TIMFORS_COMPANY"];
+    $dbRequests = CSocNetUserToGroup::GetList(
+        array("USER_LAST_NAME" => "ASC", "USER_NAME" => "ASC"),
+        array(
+            "GROUP_ID" => $arResult["VARIABLES"]["group_id"],
+            //"<=ROLE" => SONET_ROLES_MODERATOR,
+            "USER_ACTIVE" => "Y"
+        ),
+        false,
+        $arNavParams,
+        array("ID", "USER_ID", "DATE_CREATE", "DATE_UPDATE", "USER_NAME", "USER_LAST_NAME", "USER_PERSONAL_PHOTO")
+    );
+
+    while ($arRequests = $dbRequests->GetNext())
+        if(!in_array($arRequests["USER_ID"],$TimforsCompanyUser))
+            $TimforsCompanyUser[]=$arRequests["USER_ID"];
+
+}
+?>
+
+
+
 <? $APPLICATION->IncludeComponent(
     "bitrix:socialnetwork.group_menu",
     "",
@@ -25,37 +55,39 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
     ),
     $component
 ); ?>
-    <br/>
-<?$APPLICATION->IncludeComponent(
-    "bitrix:crm.deal",
-    "",
-    Array(
-        "SEF_MODE" => "Y",
-        "PATH_TO_CONTACT_SHOW" => "/crm/contact/show/#contact_id#/",
-        "PATH_TO_CONTACT_EDIT" => "/crm/contact/edit/#contact_id#/",
-        "PATH_TO_COMPANY_SHOW" => "/crm/company/show/#company_id#/",
-        "PATH_TO_COMPANY_EDIT" => "/crm/company/edit/#company_id#/",
-        "PATH_TO_INVOICE_SHOW" => "/crm/invoice/show/#invoice_id#/",
-        "PATH_TO_INVOICE_EDIT" => "/crm/invoice/edit/#invoice_id#/",
-        "PATH_TO_LEAD_SHOW" => "/crm/lead/show/#lead_id#/",
-        "PATH_TO_LEAD_EDIT" => "/crm/lead/edit/#lead_id#/",
-        "PATH_TO_LEAD_CONVERT" => "/crm/lead/convert/#lead_id#/",
-        "PATH_TO_USER_PROFILE" => "/company/personal/user/#user_id#/",
-        "PATH_TO_PRODUCT_EDIT" => "/crm/product/edit/#product_id#/",
-        "PATH_TO_PRODUCT_SHOW" => "/crm/product/show/#product_id#/",
-        "ELEMENT_ID" => $_REQUEST["deal_id"],
-        "SEF_FOLDER" => "/crm/deal/",
-        "SEF_URL_TEMPLATES" => Array(
-            "index" => "index.php",
-            "list" => "list/",
-            "edit" => "edit/#deal_id#/",
-            "show" => "show/#deal_id#/"
-        ),
-        "VARIABLE_ALIASES" => Array(
-            "index" => Array(),
-            "list" => Array(),
-            "edit" => Array(),
-            "show" => Array(),
-        )
-    )
+
+<?$APPLICATION->IncludeComponent("bitrix:crm.deal", "resrequests", Array(
+
+    "TIMFORS_COMPANY"=>$TimforsCompany,
+    "TIMFORS_COMPANY_USER"=>$TimforsCompanyUser,
+
+	"SEF_MODE" => "Y",	// Включить поддержку ЧПУ
+		"PATH_TO_CONTACT_SHOW" => "/crm/contact/show/#contact_id#/",
+		"PATH_TO_CONTACT_EDIT" => "/crm/contact/edit/#contact_id#/",
+		"PATH_TO_COMPANY_SHOW" => "/crm/company/show/#company_id#/",
+		"PATH_TO_COMPANY_EDIT" => "/crm/company/edit/#company_id#/",
+		"PATH_TO_INVOICE_SHOW" => "/crm/invoice/show/#invoice_id#/",
+		"PATH_TO_INVOICE_EDIT" => "/crm/invoice/edit/#invoice_id#/",
+		"PATH_TO_LEAD_SHOW" => "/crm/lead/show/#lead_id#/",
+		"PATH_TO_LEAD_EDIT" => "/crm/lead/edit/#lead_id#/",
+		"PATH_TO_LEAD_CONVERT" => "/crm/lead/convert/#lead_id#/",
+		"PATH_TO_USER_PROFILE" => "/company/personal/user/#user_id#/",
+		"PATH_TO_PRODUCT_EDIT" => "/crm/product/edit/#product_id#/",
+		"PATH_TO_PRODUCT_SHOW" => "/crm/product/show/#product_id#/",
+		"ELEMENT_ID" => $_REQUEST["deal_id"],	// ID сделки
+		"SEF_FOLDER" => "/crm/deal/",	// Каталог ЧПУ (относительно корня сайта)
+		"SEF_URL_TEMPLATES" => array(
+			"index" => "index.php",
+			"list" => "list/",
+			"edit" => "edit/#deal_id#/",
+			"show" => "show/#deal_id#/",
+		),
+		"VARIABLE_ALIASES" => array(
+			"index" => "",
+			"list" => "",
+			"edit" => "",
+			"show" => "",
+		)
+	),
+	false
 );?>

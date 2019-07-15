@@ -1,12 +1,15 @@
 <?php
+
+//Подключаем autoload
+require_once($_SERVER['DOCUMENT_ROOT'].'/local/vendor/autoload.php');
+
+//Выносим вызов событий в одно меесто
+local\Helpers\SetEvents::init();
+
 // Событие происходит при формировании списка дополнительного
 // функционала соц.сети
 // В обработчике можно изменить или дополнить список
 AddEventHandler("socialnetwork", "OnFillSocNetFeaturesList", "__AddSocNetFeature");
-
-// Событие происходит при формировании списка закладок
-// В обработчике можно изменить список закладок
-AddEventHandler("socialnetwork", "OnFillSocNetMenu", "__AddSocNetMenu");
 
 // Событие происходит в комплексном компоненте при работе в ЧПУ
 // режиме при формировании списка шаблонов адресов страниц
@@ -31,18 +34,6 @@ function __AddSocNetFeature(&$arSocNetFeaturesSettings)
         "minoperation" => "view",
         "title" => "Ресурсная потребность"
     );
-}
-
-// При формировании списка закладок добавим дополнительную
-// закладку для функционала resrequests
-function __AddSocNetMenu(&$arResult)
-{
-    // Достуна для показа - надо связать с настройкой в меню
-    $arResult["CanView"]["resrequests"] = true;
-    // Ссылка закладки
-    $arResult["Urls"]["resrequests"] = CComponentEngine::MakePathFromTemplate("/workgroups/group/#group_id#/resrequests/", array("group_id" => $arResult["Group"]["ID"]));
-    // Название закладки
-    $arResult["Title"]["resrequests"] = "Ресурсные потребности";
 }
 
 // При формировании списка шаблонов адресов страниц
