@@ -29,6 +29,8 @@ telephony
 /upload/
 /local/vendor/
 /*.txt
+*.log
+/logs
 /.htaccess
 /web.config
 /urlrewrite.php
