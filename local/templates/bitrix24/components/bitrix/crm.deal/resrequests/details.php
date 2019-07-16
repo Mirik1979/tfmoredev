@@ -6,7 +6,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 
 $APPLICATION->IncludeComponent(
 	'bitrix:crm.entity.details.frame',
-	'',
+	'resrequests',
 	array(
 		'ENTITY_TYPE_ID' => CCrmOwnerType::Deal,
 		'ENTITY_ID' => $arResult['VARIABLES']['deal_id'],

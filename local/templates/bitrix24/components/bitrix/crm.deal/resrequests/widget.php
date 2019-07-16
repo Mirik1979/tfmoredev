@@ -42,7 +42,7 @@ if($isBitrix24Template)
 
 $APPLICATION->IncludeComponent(
 	'bitrix:crm.entity.counter.panel',
-	'',
+	'resrequests',
 	array('SHOW_STUB' => 'Y')
 );
 

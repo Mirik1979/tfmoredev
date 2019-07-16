@@ -997,9 +997,10 @@ $APPLICATION->IncludeComponent(
 		'MESSAGES' => $messages,
 		'NAVIGATION_BAR' => array(
 			'ITEMS' => array_merge(
-				\Bitrix\Crm\Automation\Helper::getNavigationBarItems(\CCrmOwnerType::Deal, $arResult['CATEGORY_ID']),
+			        [],
+				//\Bitrix\Crm\Automation\Helper::getNavigationBarItems(\CCrmOwnerType::Deal, $arResult['CATEGORY_ID']),
 				array(
-					array(
+					/*array(
 						//'icon' => 'kanban',
 						'id' => 'kanban',
 						'name' => GetMessage('CRM_DEAL_LIST_FILTER_NAV_BUTTON_KANBAN'),
@@ -1016,31 +1017,31 @@ $APPLICATION->IncludeComponent(
 						'url' => isset($arResult['PATH_TO_DEAL_CATEGORY'])
 							? $arResult['PATH_TO_DEAL_CATEGORY']
 							: $arResult['PATH_TO_DEAL_LIST']
-					)
+					)*/
 				),
 				(\Bitrix\Crm\Integration\Calendar::isResourceBookingEnabled()
 					?
 					array(
-						array(
+						/*array(
 							'id' => 'calendar',
 							'name' => GetMessage('CRM_DEAL_LIST_FILTER_NAV_BUTTON_CALENDAR'),
 							'active' => false,
 							'url' => isset($arResult['PATH_TO_DEAL_CALENDARCATEGORY'])
 								? $arResult['PATH_TO_DEAL_CALENDARCATEGORY']
 								: $arResult['PATH_TO_DEAL_CALENDAR']
-						)
+						)*/
 					)
 					: array()
 				),
 				array(
-					array(
+					/*array(
 						//'icon' => 'chart',
 						'id' => 'widget',
 						'name' => GetMessage('CRM_DEAL_LIST_FILTER_NAV_BUTTON_WIDGET'),
 						'active' => false,
 						'url' => isset($arResult['PATH_TO_DEAL_WIDGETCATEGORY'])
 							? $arResult['PATH_TO_DEAL_WIDGETCATEGORY'] : $arResult['PATH_TO_DEAL_WIDGET']
-					)
+					)*/
 				)
 			),
 			'BINDING' => array(

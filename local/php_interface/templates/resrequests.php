@@ -1,6 +1,24 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
+<script>
+
+    (function() {
+
+        BX.SidePanel.Instance.bindAnchors({
+            rules: [
+                {
+                    condition: [ new RegExp("/workgroups/group/<?=$arResult["VARIABLES"]["group_id"]?>/resrequests/details/[0-9]+/", "i") ],
+                    loader: "crm-entity-details-loader",
+                    options: { cacheable: false }
+                }
+            ]
+        });
+
+    })();
+
+</script>
+
 <?
 $TimforsCompany=false;
 $TimforsCompanyUser=[];
@@ -74,8 +92,8 @@ if($arResult["VARIABLES"]["group_id"]>0 && CModule::IncludeModule('crm')){
 		"PATH_TO_USER_PROFILE" => "/company/personal/user/#user_id#/",
 		"PATH_TO_PRODUCT_EDIT" => "/crm/product/edit/#product_id#/",
 		"PATH_TO_PRODUCT_SHOW" => "/crm/product/show/#product_id#/",
-		"ELEMENT_ID" => $_REQUEST["deal_id"],	// ID сделки
-		"SEF_FOLDER" => "/crm/deal/",	// Каталог ЧПУ (относительно корня сайта)
+		"ELEMENT_ID" => $arResult["VARIABLES"]["deal_id"],	// ID сделки
+		"SEF_FOLDER" => SITE_DIR."workgroups/group/{$arResult["VARIABLES"]["group_id"]}/resrequests/",	// Каталог ЧПУ (относительно корня сайта)
 		"SEF_URL_TEMPLATES" => array(
 			"index" => "index.php",
 			"list" => "list/",
@@ -89,5 +107,7 @@ if($arResult["VARIABLES"]["group_id"]>0 && CModule::IncludeModule('crm')){
 			"show" => "",
 		)
 	),
-	false
+    $component
 );?>
+
+

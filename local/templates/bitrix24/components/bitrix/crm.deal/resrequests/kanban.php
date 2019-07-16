@@ -111,7 +111,7 @@ else
 
 	$APPLICATION->IncludeComponent(
 		'bitrix:crm.entity.counter.panel',
-		'',
+		'resrequests',
 		array(
 			'ENTITY_TYPE_NAME' => $entityType,
 			'EXTRAS' => array('DEAL_CATEGORY_ID' => $categoryID),

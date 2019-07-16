@@ -53,7 +53,7 @@ elseif (\Bitrix\Main\Loader::includeModule('calendar'))
 	{
 		$APPLICATION->IncludeComponent(
 			'bitrix:crm.entity.counter.panel',
-			'',
+			'resrequests',
 			array(
 				'ENTITY_TYPE_NAME' => CCrmOwnerType::DealName,
 				'EXTRAS' => array('DEAL_CATEGORY_ID' => $categoryID),
