@@ -112,6 +112,7 @@ else
 				'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],
 				'PATH_TO_DEAL_SHOW' => $arResult['PATH_TO_DEAL_SHOW'],
 				'PATH_TO_DEAL_EDIT' => $arResult['PATH_TO_DEAL_EDIT'],
+                'PATH_TO_DEAL_DETAILS' => $arResult['PATH_TO_DEAL_DETAILS'],
 				'PATH_TO_DEAL_FUNNEL' => $arResult['PATH_TO_DEAL_FUNNEL'],
 				'PATH_TO_DEAL_IMPORT' => $arResult['PATH_TO_DEAL_IMPORT'],
 				'PATH_TO_DEAL_RECUR' => $arResult['PATH_TO_DEAL_RECUR'],

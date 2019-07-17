@@ -168,7 +168,7 @@ elseif($arResult['ENTITY_TYPE_ID'] === CCrmOwnerType::Company)
 elseif($arResult['ENTITY_TYPE_ID'] === CCrmOwnerType::Deal)
 {
 	$APPLICATION->IncludeComponent(
-		'bitrix:crm.deal.details',
+		'tf:crm.deal.details',
 		'',
 		array(
 			'ENTITY_ID' => $arResult['ENTITY_ID'],

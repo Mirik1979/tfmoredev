@@ -1,4 +1,7 @@
 <?
+$PERM["local"]["14"]="R";
+$PERM["bitrix"]["12"]="R";
+$PERM["bitrix"]["14"]="R";
 $PERM["private_cloud"]["2"]="D";
 $PERM["private_cloud"]["3"]="D";
 $PERM["private_cloud"]["12"]="D";
@@ -30,7 +33,6 @@ $PERM["/"]["13"]="T_10";
 $PERM["/"]["12"]="R";
 $PERM["/"]["*"]="D";
 $PERM["/"]["2"]="D";
-$PERM["bitrix"]["12"]="R";
 $PERM["about"]["9"]="T_9";
 $PERM["company"]["9"]="T_9";
 $PERM["pub"]["*"]="R";

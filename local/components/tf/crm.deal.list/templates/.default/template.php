@@ -1106,7 +1106,7 @@ $APPLICATION->IncludeComponent(
 
 			BX.Crm.PartialEditorDialog.registerEntityEditorUrl(
 				"<?=CCrmOwnerType::DealName?>",
-				"<?='/bitrix/components/bitrix/crm.deal.details/ajax.php?'.bitrix_sessid_get()?>"
+				"<?='/local/components/tf/crm.deal.details/ajax.php?'.bitrix_sessid_get()?>"
 			);
 
 			var gridId = "<?= CUtil::JSEscape($arResult['GRID_ID'])?>";
