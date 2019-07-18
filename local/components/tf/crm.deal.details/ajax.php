@@ -1028,7 +1028,7 @@ elseif($action === 'SAVE')
 
         $HTTP_REFERER=$_SERVER["HTTP_REFERER"];
         if(strpos ($HTTP_REFERER, '/details/0/?category_id=0')!==false){
-            $result['REDIRECT_URL']=str_replace('/details/0/?category_id=0',"/details/$ID/",$HTTP_REFERER);
+            $result['REDIRECT_URL']=str_replace('/details/0/?category_id=0',"/details/$ID/?",$HTTP_REFERER);
         }else{
             $result['REDIRECT_URL'] = \CCrmOwnerType::GetDetailsUrl(
                 \CCrmOwnerType::Deal,
