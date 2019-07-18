@@ -3,7 +3,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <script>
 
-    (function() {
+    $( document ).ready(function() {
 
         BX.SidePanel.Instance.bindAnchors({
             rules: [
@@ -15,7 +15,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
             ]
         });
 
-    })();
+    });
 
 </script>
 
