@@ -212,7 +212,7 @@ elseif (\Bitrix\Main\Loader::includeModule('calendar'))
 		), $modeList);
 
 	$APPLICATION->IncludeComponent(
-		'bitrix:crm.deal.menu',
+		'tf:crm.deal.menu',
 		'',
 		array(
 			'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],

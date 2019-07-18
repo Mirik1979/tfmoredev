@@ -14,7 +14,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)die();
  * @var string $templateFolder
  * @var string $componentPath
  */
-
 use \Bitrix\Main;
 use \Bitrix\Crm;
 CJSCore::Init(array('ajax', 'uf', 'uploader', 'avatar_editor', 'core_money_editor', 'tooltip', 'phone_number', 'spotlight', 'userfield_resourcebooking', 'helper'));

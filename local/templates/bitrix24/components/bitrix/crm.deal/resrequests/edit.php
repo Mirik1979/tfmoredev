@@ -38,7 +38,7 @@ if(!Bitrix\Crm\Integration\Bitrix24Manager::isAccessEnabled(CCrmOwnerType::Deal)
 else
 {
 	$APPLICATION->IncludeComponent(
-		'bitrix:crm.deal.menu',
+		'tf:crm.deal.menu',
 		'',
 		array(
 			'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],

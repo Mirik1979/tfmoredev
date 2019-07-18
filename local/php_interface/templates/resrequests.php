@@ -1,23 +1,6 @@
 <?php
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
-<script>
-
-    $( document ).ready(function() {
-
-        BX.SidePanel.Instance.bindAnchors({
-            rules: [
-                {
-                    condition: [ new RegExp("<?=SITE_DIR?>workgroups/group/<?=$arResult["VARIABLES"]["group_id"]?>/resrequests/details/[0-9]+/", "i") ],
-                    loader: "crm-entity-details-loader",
-                    options: { cacheable: false }
-                }
-            ]
-        });
-
-    });
-
-</script>
 
 <?
 $TimforsCompany=false;
@@ -74,6 +57,7 @@ if($arResult["VARIABLES"]["group_id"]>0 && CModule::IncludeModule('crm')){
     $component
 ); ?>
 
+
 <?$APPLICATION->IncludeComponent("bitrix:crm.deal", "resrequests", Array(
 
     "TIMFORS_COMPANY"=>$TimforsCompany,
@@ -110,4 +94,21 @@ if($arResult["VARIABLES"]["group_id"]>0 && CModule::IncludeModule('crm')){
     $component
 );?>
 
+<script>
+
+
+
+    BX.SidePanel.Instance.bindAnchors({
+        rules: [
+            {
+                condition: [ new RegExp("<?=SITE_DIR?>workgroups/group/<?=$arResult["VARIABLES"]["group_id"]?>/resrequests/details/[0-9]+/", "i") ],
+                loader: "crm-entity-details-loader",
+                options: { cacheable: false }
+            }
+        ]
+    });
+
+
+
+</script>
 

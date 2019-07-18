@@ -93,6 +93,7 @@ else
 			'PATH_TO_DEAL_CATEGORY' => $catalogPath,
 			'PATH_TO_DEAL_CATEGORY_LIST' => $arResult['PATH_TO_DEAL_CATEGORY_LIST'],
 			'PATH_TO_DEAL_CATEGORY_EDIT' => $arResult['PATH_TO_DEAL_CATEGORY_EDIT'],
+            //'CATEGORY_ID' => $categoryID,
 			'CATEGORY_ID' => $categoryID
 		),
 		$component
@@ -106,9 +107,10 @@ else
 
 	$this->SetViewTarget('pagetitle');
 		$APPLICATION->IncludeComponent(
-			'bitrix:crm.deal.menu',
+			'tf:crm.deal.menu',
 			'',
 			array(
+                "TIMFORS_COMPANY"=>$arParams['TIMFORS_COMPANY'],
 				'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],
 				'PATH_TO_DEAL_SHOW' => $arResult['PATH_TO_DEAL_SHOW'],
 				'PATH_TO_DEAL_EDIT' => $arResult['PATH_TO_DEAL_EDIT'],

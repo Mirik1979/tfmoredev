@@ -41,7 +41,7 @@ else
 {
 	?><div class="bx-crm-view"><?
 	$APPLICATION->IncludeComponent(
-		'bitrix:crm.deal.menu',
+		'tf:crm.deal.menu',
 		'',
 		array(
 			'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],

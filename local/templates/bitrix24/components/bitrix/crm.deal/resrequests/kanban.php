@@ -10,7 +10,7 @@ $asset->addJs('/bitrix/js/crm/common.js');
 // some common langs
 use Bitrix\Crm\Category\DealCategory;
 use Bitrix\Main\Localization\Loc;
-Loc::loadMessages($_SERVER['DOCUMENT_ROOT'].'/bitrix/components/bitrix/crm.deal.menu/component.php');
+Loc::loadMessages($_SERVER['DOCUMENT_ROOT'].'/bitrix/components/tf/crm.deal.menu/component.php');
 Loc::loadMessages($_SERVER['DOCUMENT_ROOT'].'/local/components/tf/crm.deal.list/templates/.default/template.php');
 
 // if not isset
@@ -174,7 +174,7 @@ else
 
 	// menu
 	$APPLICATION->IncludeComponent(
-		'bitrix:crm.deal.menu',
+		'tf:crm.deal.menu',
 		'',
 		array(
 			'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],
