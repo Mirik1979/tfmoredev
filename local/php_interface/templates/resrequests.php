@@ -8,7 +8,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
         BX.SidePanel.Instance.bindAnchors({
             rules: [
                 {
-                    condition: [ new RegExp("/workgroups/group/<?=$arResult["VARIABLES"]["group_id"]?>/resrequests/details/[0-9]+/", "i") ],
+                    condition: [ new RegExp("<?=SITE_DIR?>workgroups/group/<?=$arResult["VARIABLES"]["group_id"]?>/resrequests/details/[0-9]+/", "i") ],
                     loader: "crm-entity-details-loader",
                     options: { cacheable: false }
                 }
