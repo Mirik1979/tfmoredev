@@ -126,6 +126,15 @@ if (!$arResult["FatalError"])
             else
                 $arResult["prod"] = $ar_res['NAME'];
     }
+    $moduleid = $arResult["User"]["UF_MODULE"];
+    foreach ($moduleid as $value2) {
+        $modname = CIBlockElement::GetByID($value2);
+        if($ar_res = $modname->GetNext())
+            if ($arResult["mod"])
+                $arResult["mod"] = $arResult["mod"] . "," . $ar_res['NAME'];
+            else
+                $arResult["mod"] = $ar_res['NAME'];
+    }
 }
 
 if (\Bitrix\Main\Loader::includeModule("security"))
