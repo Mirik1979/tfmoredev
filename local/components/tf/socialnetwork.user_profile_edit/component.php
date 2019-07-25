@@ -243,6 +243,8 @@ else
 	if($arResult['bEdit'] == 'Y' && $_SERVER["REQUEST_METHOD"]=="POST" && strlen($_POST["submit"])>0 && check_bitrix_sessid())
 	{
         //AddMessage2Log('inside', "postdebug4");
+        AddMessage2Log($_POST, "postdebug5");
+        AddMessage2Log($_FILES, "postdebug6");
 
 	    if(CModule::IncludeModule("socialservices"))
 		{
@@ -429,6 +431,9 @@ else
         $arNewFieldsValue['UF_GRADE'] = $_POST['UF_GRADE'];
         $arNewFieldsValue['UF_PROD'] = $_POST['UF_PROD'];
         $arNewFieldsValue['UF_EXPERIENCE'] = $_POST['UF_EXPERIENCE'];
+        $arNewFieldsValue['UF_MODULE'] = $_POST['UF_MODULE'];
+        $arNewFieldsValue['UF_CV'] = $_FILES['UF_CV'];
+        $arNewFieldsValue['UF_CONTACT'] = $_POST['UF_CONTACT'];
 
 
         //AddMessage2Log($arNewFieldsValue, "postdebug5");
