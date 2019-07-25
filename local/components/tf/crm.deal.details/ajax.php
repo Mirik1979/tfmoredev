@@ -19,6 +19,7 @@ if (!CModule::IncludeModule('crm'))
 {
 	return;
 }
+
 /*
  * ONLY 'POST' METHOD SUPPORTED
  * SUPPORTED ACTIONS:

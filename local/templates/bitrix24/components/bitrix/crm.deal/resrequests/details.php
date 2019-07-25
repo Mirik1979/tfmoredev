@@ -10,6 +10,7 @@ $APPLICATION->IncludeComponent(
 	array(
 		'ENTITY_TYPE_ID' => CCrmOwnerType::Deal,
 		'ENTITY_ID' => $arResult['VARIABLES']['deal_id'],
+        'GroupId' => $arParams['GroupId'],
 		'ENABLE_TITLE_EDIT' => true,
 		'EXTRAS' => array(
 			'DEAL_CATEGORY_ID' => isset($arResult['VARIABLES']['category_id'])

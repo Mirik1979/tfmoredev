@@ -77,6 +77,7 @@ if($arResult["VARIABLES"]["group_id"]>0 && CModule::IncludeModule('crm')){
 		"PATH_TO_PRODUCT_EDIT" => "/crm/product/edit/#product_id#/",
 		"PATH_TO_PRODUCT_SHOW" => "/crm/product/show/#product_id#/",
 		"ELEMENT_ID" => $arResult["VARIABLES"]["deal_id"],	// ID сделки
+    "GroupId" => $arResult["VARIABLES"]["group_id"],
 		"SEF_FOLDER" => SITE_DIR."workgroups/group/{$arResult["VARIABLES"]["group_id"]}/resrequests/",	// Каталог ЧПУ (относительно корня сайта)
 		"SEF_URL_TEMPLATES" => array(
 			"index" => "index.php",

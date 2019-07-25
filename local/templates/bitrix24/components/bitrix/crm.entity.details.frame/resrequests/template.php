@@ -172,6 +172,7 @@ elseif($arResult['ENTITY_TYPE_ID'] === CCrmOwnerType::Deal)
 		'',
 		array(
 			'ENTITY_ID' => $arResult['ENTITY_ID'],
+            'GroupId' => $arParams['GroupId'],
 			'EXTRAS' => $arResult['EXTRAS']
 		)
 	);

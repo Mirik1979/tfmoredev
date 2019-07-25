@@ -56,6 +56,21 @@ class SetEvents
             )
         );
 
+
+
+
+
+
+
+        EventManager::getInstance()->addEventHandler(
+            'crm',
+            'OnAfterCrmDealProductRowsSave',
+            array(
+                "local\\Services\\ResourcePlan\\ResrequestsProductIdServices",
+                "OnAfterCrmDealProductRowsSave"
+            )
+        );
+
     }
 
 }

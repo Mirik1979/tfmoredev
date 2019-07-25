@@ -477,6 +477,27 @@ if(typeof BX.Crm.EntityEditor === "undefined")
 				return;
 			}
 
+			/*console.log({
+                elementNode: this._formElement,
+                config:
+                    {
+                        url: this._serviceUrl,
+                        method: "POST",
+                        dataType: "json",
+                        processData : true,
+                        onsuccess: BX.delegate(this.onSaveSuccess, this),
+                        data:
+                            {
+                                "ACTION": "SAVE",
+                                "ACTION_ENTITY_ID": this._entityId,
+                                "ACTION_ENTITY_TYPE": BX.CrmEntityType.resolveAbbreviation(
+                                    BX.CrmEntityType.resolveName(this._entityTypeId)
+                                ),
+                                "ENABLE_REQUIRED_USER_FIELD_CHECK": this._enableRequiredUserFieldCheck ? 'Y' : 'N'
+                            }
+                    }
+            });*/
+
 			this._ajaxForm = BX.Crm.AjaxForm.create(
 				this._id,
 				{
@@ -500,6 +521,7 @@ if(typeof BX.Crm.EntityEditor === "undefined")
 					}
 				}
 			);
+			/*****************/
 			BX.addCustomEvent(this._ajaxForm, "onAfterSubmit", this._formSubmitHandler);
 		},
 		releaseAjaxForm: function()

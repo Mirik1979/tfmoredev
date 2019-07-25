@@ -599,12 +599,13 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 		}
 
 		ob_start();
-		$APPLICATION->IncludeComponent('bitrix:crm.product_row.list',
+		$APPLICATION->IncludeComponent('tf:crm.product_row.list',
 			'',
 			array(
 				'ID' => $this->arResult['PRODUCT_EDITOR_ID'],
 				'PREFIX' => $this->arResult['PRODUCT_EDITOR_ID'],
 				'FORM_ID' => '',
+                'GroupId'=>$this->arParams["GroupId"],
 				'OWNER_ID' => $this->entityID,
 				'OWNER_TYPE' => 'D',
 				'PERMISSION_TYPE' => $this->arResult['READ_ONLY'] ? 'READ' : 'WRITE',
