@@ -428,8 +428,20 @@ else
                 <td class="user-profile-nowrap-second"><? echo $arResult["prod"]; ?></td>
             </tr>
             <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("MODULE").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["mod"]; ?></td>
+            </tr>
+            <tr>
                 <td class="user-profile-nowrap""><?=GetMessage("EXP").":"?></td>
                 <td class="user-profile-nowrap-second"><? echo $arResult["exp"]; ?></td>
+            </tr>
+            <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("CONTACT").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["User"]["UF_CONTACT"]; ?></td>
+            </tr>
+            <tr>
+                <td class="user-profile-nowrap""><?=GetMessage("CV").":"?></td>
+                <td class="user-profile-nowrap-second"><? echo $arResult["User"]["UF_CV"]; ?></td>
             </tr>
 <!-- // otp -->
 			<tr>
