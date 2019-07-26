@@ -584,7 +584,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 
 
 
-                <td class="crm-item-cell crm-item-amount-overhead"><span class="crm-item-cell-text">Сумма оплачиваемых накладных расходов</span></td>
+                <td class="crm-item-cell crm-item-amount-overhead"><span class="crm-item-cell-text">Накладные</span></td>
                 <td class="crm-item-cell crm-item-start-work"><span class="crm-item-cell-text">Начало</span></td>
                 <td class="crm-item-cell crm-item-end-work"><span class="crm-item-cell-text">Окончание</span></td>
 
