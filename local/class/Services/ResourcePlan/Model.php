@@ -14,7 +14,7 @@ use CIBlockElement;
 class Model
 {
 
-    private $iblockId=IBLOCK_MODEL;
+    private $iblockId=IBLOCK_MODULES;
 
     /**
      * SeoLinkGenerate constructor.

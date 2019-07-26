@@ -622,7 +622,7 @@ if (typeof(BX.CrmProductEditor) === "undefined")
 			{
 				id: data['id'],
 				name: data['title'],
-				quantity: 1.0,
+				quantity: 0,
 				price: typeof(customData['price']) != 'undefined' ? parseFloat(customData['price']) : 0.0,
 				customized: false,
 				measureCode: typeof(measure['code']) !== 'undefined' ? parseInt(measure['code']) : 0,
@@ -700,7 +700,7 @@ if (typeof(BX.CrmProductEditor) === "undefined")
 			{
 				id: 0,
 				name: "",
-				quantity: 1.0,
+				quantity: 0,
 				price: 0.0,
 				customized: true
 			};
@@ -1271,7 +1271,7 @@ if (typeof(BX.CrmProductEditor) === "undefined")
 				var item =
 				{
 					'PRODUCT_ID': productId,
-                    //'ROLE_PROJECT': productId,
+                    'AMOUNT_OVERHEAD': parseFloat(product.getAmountOverhead()),
 					'PRODUCT_NAME': product.getProductName(),
 					'QUANTITY': product.getQuantity(),
 					'DISCOUNT_TYPE_ID': product.getDiscountTypeId(),
@@ -1284,6 +1284,7 @@ if (typeof(BX.CrmProductEditor) === "undefined")
 					'CUSTOMIZED': 'Y'
 				};
 
+				//console.log(item);
 
 				productData.push(item);
 			}
@@ -3160,6 +3161,9 @@ if (typeof(BX.CrmProduct) === "undefined")
             if(typeof (this._fieldValue['PREFERRED_LOCATION'])!=='undefined')
             	this._settings['PREFERRED_LOCATION'] = this._parseInt(this._fieldValue['PREFERRED_LOCATION'], 0);
 
+            if(typeof (this._fieldValue['RATE_PER_HOUR'])!=='undefined')
+                this._settings['RATE_PER_HOUR'] = this._parseFloat(this._fieldValue['RATE_PER_HOUR'], 4, 0.0);
+
             if(typeof (this._fieldValue['AMOUNT_OVERHEAD'])!=='undefined')
             	this._settings['AMOUNT_OVERHEAD'] = this._parseFloat(this._fieldValue['AMOUNT_OVERHEAD'], 4, 0.0);
 
@@ -3277,9 +3281,13 @@ if (typeof(BX.CrmProduct) === "undefined")
 		{
 			return this.getSetting('PRODUCT_ID', 0);
 		},
-		getProductName: function()
+        getProductName: function()
+        {
+            return this.getSetting('PRODUCT_NAME', '');
+        },
+		getAmountOverhead: function()
 		{
-			return this.getSetting('PRODUCT_NAME', '');
+			return this.getSetting('AMOUNT_OVERHEAD', 0.0);
 		},
 		getQuantity: function()
 		{
@@ -3390,11 +3398,17 @@ if (typeof(BX.CrmProduct) === "undefined")
             	jsonData['GRADE'] =  this.getSetting("GRADE", 0);
             if(this.getSetting("YEARS_EXPERIENCE", false)!==false)
             	jsonData['YEARS_EXPERIENCE'] =  this.getSetting("YEARS_EXPERIENCE", 0);
+
             if(this.getSetting("PREFERRED_LOCATION", false)!==false)
             	jsonData['PREFERRED_LOCATION'] =  this.getSetting("PREFERRED_LOCATION", 0);
 
+            if(this.getSetting("RATE_PER_HOUR", false)!==false)
+                jsonData['RATE_PER_HOUR'] = this.getSetting("RATE_PER_HOUR", 0.0).toFixed(2);
+
+            //console.log(this.getSetting("AMOUNT_OVERHEAD", 0.0));
+
             if(this.getSetting("AMOUNT_OVERHEAD", false)!==false)
-            	jsonData['AMOUNT_OVERHEAD'] = this.getSetting("AMOUNT_OVERHEAD", 0.0).toFixed(2);
+            	jsonData['AMOUNT_OVERHEAD'] = this.getSetting("AMOUNT_OVERHEAD", 0.0)/*.toFixed(2)*/;
 
             if(this.getSetting("START_WORK", false)!==false)
             	jsonData['START_WORK'] = this.getSetting("START_WORK", "");
@@ -3433,7 +3447,7 @@ if (typeof(BX.CrmProduct) === "undefined")
 			if(fieldId !== 'DISCOUNT_SUM' && fieldId !== 'DISCOUNT_RATE' && fieldId !== 'DISCOUNT_SUBTOTAL'
 				&& fieldId !== 'DISCOUNT_TYPE_ID' && fieldId !== 'TAX_RATE' && fieldId !== 'TAX_INCLUDED'
 				&& fieldId !== 'PRICE_BRUTTO' && fieldId !== 'PRICE_NETTO' && fieldId !== 'QUANTITY'
-				&& fieldId !== 'MEASURE_CODE' && fieldId !== 'SUM' && fieldId !== 'ROLE_PROJECT')
+				&& fieldId !== 'MEASURE_CODE' && fieldId !== 'SUM' && fieldId !== 'ROLE_PROJECT' && fieldId !== 'ROLE_PROJECT' && fieldId !== 'AMOUNT_OVERHEAD')
 			{
 				return;
 			}
@@ -3896,6 +3910,7 @@ if (typeof(BX.CrmProduct) === "undefined")
                             });
                             break;
 
+                        case "RATE_PER_HOUR":
                         case "AMOUNT_OVERHEAD":
 						case 'PRICE':
 						case 'DISCOUNT_SUBTOTAL':
@@ -4171,19 +4186,33 @@ if (typeof(BX.CrmProduct) === "undefined")
 		},
 		_calculateSumTotal: function()
 		{
-			var sum = this._settings['TAX_INCLUDED']
+            var rowIdPrefix = this._container.id,
+                AMOUNT_OVERHEAD=BX(rowIdPrefix + "_" + "AMOUNT_OVERHEAD").value
+			;
+            if(typeof (AMOUNT_OVERHEAD)=="undefined")
+                AMOUNT_OVERHEAD=0;
+            else
+                AMOUNT_OVERHEAD=parseFloat(AMOUNT_OVERHEAD);
+			/*var sum = this._settings['TAX_INCLUDED']
 				? this._settings['PRICE'] * this._settings['QUANTITY']
 				: BX.CrmProduct.calculateInclusivePrice(
 					(this._settings['PRICE_EXCLUSIVE'] * this._settings['QUANTITY']),
 					this._settings['TAX_RATE']
-				);
+				);*/
+			//var this._settings['AMOUNT_OVERHEAD']
+            var sum = this._settings['TAX_INCLUDED']
+                ? ((this._settings['PRICE'] * this._settings['QUANTITY'])+AMOUNT_OVERHEAD)
+                : BX.CrmProduct.calculateInclusivePrice(
+					((this._settings['PRICE_EXCLUSIVE'] * this._settings['QUANTITY'])+AMOUNT_OVERHEAD),
+                    this._settings['TAX_RATE']
+                );
 			return this._round(sum, 2);
 		},
 		getTaxSum: function()
 		{
 			var sum = this._settings['TAX_INCLUDED']
 				? (this._settings['PRICE'] * this._settings['QUANTITY']) * (1 - 1 / (1 + this._settings['TAX_RATE'] / 100))
-				: (this._settings['PRICE_EXCLUSIVE'] * this._settings['QUANTITY']) * this._settings['TAX_RATE'] / 100;
+				: (this._settings['PRICE_EXCLUSIVE'] * this._settings['QUANTITY'])* this._settings['TAX_RATE'] / 100;
 
 			return this._round(sum, 2);
 		},
@@ -4318,6 +4347,8 @@ if (typeof(BX.CrmProduct) === "undefined")
 
 				if(fieldName === "PRODUCT_NAME")
 					this._handleProductNameChange(value);
+
+				//console.log(fieldId);
 
 				this.processFieldValueChange(fieldId);
 

@@ -32,6 +32,7 @@ class ResrequestsProductId implements JsonSerializable
             'AmountOverhead' => $this->AmountOverhead,
             'ExecutorName' => $this->ExecutorName,
             'ExecutorId' => $this->ExecutorId,
+            'rate_per_hour' => $this->rate_per_hour,
         );
         if($this->StartWork)
             $result['StartWork']=$this->StartWork;
@@ -105,6 +106,11 @@ class ResrequestsProductId implements JsonSerializable
      * @var int $ExecutorId
      */
     private $ExecutorId;
+
+    /**
+     * @var float $rate_per_hour
+     */
+    private $rate_per_hour;
 
     /**
      * @return int
@@ -312,6 +318,22 @@ class ResrequestsProductId implements JsonSerializable
     public function setExecutorId($ExecutorId)
     {
         $this->ExecutorId = $ExecutorId;
+    }
+
+    /**
+     * @return float
+     */
+    public function getRatePerHour()
+    {
+        return $this->rate_per_hour;
+    }
+
+    /**
+     * @param float $rate_per_hour
+     */
+    public function setRatePerHour($rate_per_hour)
+    {
+        $this->rate_per_hour = $rate_per_hour;
     }
 
 }

@@ -61,6 +61,9 @@ class ResrequestsProductIdFactory
         if($params['EndWork'])
             $el->setEndWork($params['EndWork']);
 
+        if($params['RatePerHour'])
+            $el->setRatePerHour($params['RatePerHour']);
+
         return $el;
     }
 

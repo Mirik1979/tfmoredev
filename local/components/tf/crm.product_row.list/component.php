@@ -8,6 +8,7 @@ if (!CModule::IncludeModule('crm'))
 }
 
 use local\Services\ResourcePlan;
+use local\Domain\Repository\ResrequestsProductIdRepository;
 
 global $APPLICATION, $USER, $DB;
 
@@ -276,9 +277,40 @@ if(count($arResult['PRODUCT_ROWS']) > 0)
 	{
 		$taxList = $result['TAX_LIST'];
 	}
+
 	$totalSum = isset($result['PRICE']) ? round((double)$result['PRICE'], 2) : 0.0;
 	$totalTax = isset($result['TAX_VALUE']) ? round((double)$result['TAX_VALUE'], 2) : 0.0;
 }
+
+
+$ResrequestsProductIdRepository=new ResrequestsProductIdRepository();
+
+
+$AmountOverhead=0;
+foreach($arResult['PRODUCT_ROWS'] as $val){
+    $search = $ResrequestsProductIdRepository->GetList([
+        'limit' => 1,
+        'filter' => [
+            "UF_PRODUCT_ID" => $val['ID'],
+        ]
+    ]);
+    /**
+     * @var ResrequestsProductId $ResrequestsProductArray
+     */
+    if (count($search) == 1){
+        $ResrequestsProductArray = $search[0];
+        $AmountOverhead+=$ResrequestsProductArray->getAmountOverhead();
+    }
+}
+
+
+//$totalDiscount+=$AmountOverhead;
+//$totalSum+=$AmountOverhead;
+//$taxList+=$AmountOverhead;
+//$totalTax+=$AmountOverhead;
+
+$arResult['AmountOverhead'] = $AmountOverhead;
+
 $arResult['TAX_LIST'] = $taxList;
 $arResult['TOTAL_DISCOUNT'] = $totalDiscount;
 $arResult['TOTAL_SUM'] = $totalSum;

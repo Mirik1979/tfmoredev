@@ -1,6 +1,7 @@
 <?php
 define('STOP_STATISTICS', true);
 define('BX_SECURITY_SHOW_MESSAGE', true);
+define("EXTRANET_NO_REDIRECT", true);
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 define('NO_KEEP_STATISTIC', 'Y');
@@ -10,7 +11,9 @@ define('DisableEventsCheck', true);
 
 use local\Services\ResourcePlan;
 use local\Services\XLSXReader;
+use local\Domain\Repository\ResrequestsProductIdRepository;
 
+$ResrequestsProductIdRepository=new ResrequestsProductIdRepository();
 $RoleProject=new ResourcePlan\RoleProject();
 $YearsExperience=new ResourcePlan\YearsExperience();
 $Product=new ResourcePlan\Product();
@@ -136,7 +139,6 @@ if ( 0 < $_FILES['file']['error'] ) {
                     "CUSTOMIZED" => "Y",
                     "SORT" => $count*10,
 
-
                     //"PRICE_NETTO" => 10.00,
                     //"PRICE_BRUTTO" => 10.00,
                     //"DISCOUNT_TYPE_ID" => 2,
@@ -164,8 +166,25 @@ if ( 0 < $_FILES['file']['error'] ) {
 
     $res=\CCrmDeal::LoadProductRows($ownerid);
     $summ=0;
-    foreach($res as $val)
-        $summ+=$val["PRICE"]*$val["QUANTITY"];
+    foreach($res as $val){
+        $AmountOverhead=0;
+        $search = $ResrequestsProductIdRepository->GetList([
+            'limit' => 1,
+            'filter' => [
+                "UF_PRODUCT_ID" => $val['ID'],
+            ]
+        ]);
+        /**
+         * @var ResrequestsProductId $ResrequestsProductArray
+         */
+        if (count($search) == 1){
+            $ResrequestsProductArray = $search[0];
+            $AmountOverhead=$ResrequestsProductArray->getAmountOverhead();
+        }
+
+        $summ+=($val["PRICE"]*$val["QUANTITY"])+$AmountOverhead;
+    }
+
 
     $entity = new \CCrmDeal(false);
 

@@ -655,75 +655,81 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 					$quoteFields = is_object($quoteDbResult) ? $quoteDbResult->Fetch() : null;
 					if (is_array($quoteFields))
 					{
-						$this->arResult['TABS'][] = array(
-							'id' => 'tab_quote',
-							'name' => GetMessage('CRM_DEAL_TAB_QUOTE'),
-							'html' => '<div class="crm-conv-info">'
-								.Loc::getMessage(
-									'CRM_DEAL_QUOTE_LINK',
-									array(
-										'#TITLE#' => htmlspecialcharsbx($quoteFields['TITLE']),
-										'#URL#' => CCrmOwnerType::GetEntityShowPath(CCrmOwnerType::Quote, $quoteID, false)
-									)
-								)
-								.'</div>'
-						);
+                        if(!CExtranet::IsExtranetSite()) {
+                            $this->arResult['TABS'][] = array(
+                                'id' => 'tab_quote',
+                                'name' => GetMessage('CRM_DEAL_TAB_QUOTE'),
+                                'html' => '<div class="crm-conv-info">'
+                                    . Loc::getMessage(
+                                        'CRM_DEAL_QUOTE_LINK',
+                                        array(
+                                            '#TITLE#' => htmlspecialcharsbx($quoteFields['TITLE']),
+                                            '#URL#' => CCrmOwnerType::GetEntityShowPath(CCrmOwnerType::Quote, $quoteID, false)
+                                        )
+                                    )
+                                    . '</div>'
+                            );
+                        }
 					}
 				}
 				else
 				{
-					$this->arResult['TABS'][] = array(
-						'id' => 'tab_quote',
-						'name' => Loc::getMessage('CRM_DEAL_TAB_QUOTE'),
-						'loader' => array(
-							'serviceUrl' => '/bitrix/components/bitrix/crm.quote.list/lazyload.ajax.php?&site'.SITE_ID.'&'.bitrix_sessid_get(),
-							'componentData' => array(
-								'template' => '',
-								'params' => array(
-									'QUOTE_COUNT' => '20',
-									'PATH_TO_QUOTE_SHOW' => $this->arResult['PATH_TO_QUOTE_SHOW'],
-									'PATH_TO_QUOTE_EDIT' => $this->arResult['PATH_TO_QUOTE_EDIT'],
-									'INTERNAL_FILTER' => array('DEAL_ID' => $this->entityID),
-									'INTERNAL_CONTEXT' => array('DEAL_ID' => $this->entityID),
-									'GRID_ID_SUFFIX' => 'DEAL_DETAILS',
-									'TAB_ID' => 'tab_quote',
-									'NAME_TEMPLATE' => $this->arResult['NAME_TEMPLATE'],
-									'ENABLE_TOOLBAR' => true,
-									'PRESERVE_HISTORY' => true,
-									'ADD_EVENT_NAME' => 'CrmCreateQuoteFromDeal'
-								)
-							)
-						)
-					);
+                    if(!CExtranet::IsExtranetSite()) {
+                        $this->arResult['TABS'][] = array(
+                            'id' => 'tab_quote',
+                            'name' => Loc::getMessage('CRM_DEAL_TAB_QUOTE'),
+                            'loader' => array(
+                                'serviceUrl' => '/bitrix/components/bitrix/crm.quote.list/lazyload.ajax.php?&site' . SITE_ID . '&' . bitrix_sessid_get(),
+                                'componentData' => array(
+                                    'template' => '',
+                                    'params' => array(
+                                        'QUOTE_COUNT' => '20',
+                                        'PATH_TO_QUOTE_SHOW' => $this->arResult['PATH_TO_QUOTE_SHOW'],
+                                        'PATH_TO_QUOTE_EDIT' => $this->arResult['PATH_TO_QUOTE_EDIT'],
+                                        'INTERNAL_FILTER' => array('DEAL_ID' => $this->entityID),
+                                        'INTERNAL_CONTEXT' => array('DEAL_ID' => $this->entityID),
+                                        'GRID_ID_SUFFIX' => 'DEAL_DETAILS',
+                                        'TAB_ID' => 'tab_quote',
+                                        'NAME_TEMPLATE' => $this->arResult['NAME_TEMPLATE'],
+                                        'ENABLE_TOOLBAR' => true,
+                                        'PRESERVE_HISTORY' => true,
+                                        'ADD_EVENT_NAME' => 'CrmCreateQuoteFromDeal'
+                                    )
+                                )
+                            )
+                        );
+                    }
 				}
-				$this->arResult['TABS'][] = array(
-					'id' => 'tab_invoice',
-					'name' => Loc::getMessage('CRM_DEAL_TAB_INVOICES'),
-					'loader' => array(
-						'serviceUrl' => '/bitrix/components/bitrix/crm.invoice.list/lazyload.ajax.php?&site'.SITE_ID.'&'.bitrix_sessid_get(),
-						'componentData' => array(
-							'template' => '',
-							'params' => array(
-								'INVOICE_COUNT' => '20',
-								'PATH_TO_COMPANY_SHOW' => $this->arResult['PATH_TO_COMPANY_SHOW'],
-								'PATH_TO_COMPANY_EDIT' => $this->arResult['PATH_TO_COMPANY_EDIT'],
-								'PATH_TO_CONTACT_EDIT' => $this->arResult['PATH_TO_CONTACT_EDIT'],
-								'PATH_TO_DEAL_EDIT' => $this->arResult['PATH_TO_DEAL_EDIT'],
-								'PATH_TO_INVOICE_EDIT' => $this->arResult['PATH_TO_INVOICE_EDIT'],
-								'PATH_TO_INVOICE_PAYMENT' => $this->arResult['PATH_TO_INVOICE_PAYMENT'],
-								'INTERNAL_FILTER' => array('UF_DEAL_ID' => $this->entityID),
-								'SUM_PAID_CURRENCY' => $currencyID,
-								'GRID_ID_SUFFIX' => 'DEAL_DETAILS',
-								'TAB_ID' => 'tab_invoice',
-								'NAME_TEMPLATE' => $this->arResult['NAME_TEMPLATE'],
-								'ENABLE_TOOLBAR' => 'Y',
-								'PRESERVE_HISTORY' => true,
-								'ADD_EVENT_NAME' => 'CrmCreateInvoiceFromDeal'
-							)
-						)
-					)
-				);
-				if (\Bitrix\Crm\Automation\Factory::isAutomationAvailable(CCrmOwnerType::Deal))
+                if(!CExtranet::IsExtranetSite()) {
+                    $this->arResult['TABS'][] = array(
+                        'id' => 'tab_invoice',
+                        'name' => Loc::getMessage('CRM_DEAL_TAB_INVOICES'),
+                        'loader' => array(
+                            'serviceUrl' => '/bitrix/components/bitrix/crm.invoice.list/lazyload.ajax.php?&site' . SITE_ID . '&' . bitrix_sessid_get(),
+                            'componentData' => array(
+                                'template' => '',
+                                'params' => array(
+                                    'INVOICE_COUNT' => '20',
+                                    'PATH_TO_COMPANY_SHOW' => $this->arResult['PATH_TO_COMPANY_SHOW'],
+                                    'PATH_TO_COMPANY_EDIT' => $this->arResult['PATH_TO_COMPANY_EDIT'],
+                                    'PATH_TO_CONTACT_EDIT' => $this->arResult['PATH_TO_CONTACT_EDIT'],
+                                    'PATH_TO_DEAL_EDIT' => $this->arResult['PATH_TO_DEAL_EDIT'],
+                                    'PATH_TO_INVOICE_EDIT' => $this->arResult['PATH_TO_INVOICE_EDIT'],
+                                    'PATH_TO_INVOICE_PAYMENT' => $this->arResult['PATH_TO_INVOICE_PAYMENT'],
+                                    'INTERNAL_FILTER' => array('UF_DEAL_ID' => $this->entityID),
+                                    'SUM_PAID_CURRENCY' => $currencyID,
+                                    'GRID_ID_SUFFIX' => 'DEAL_DETAILS',
+                                    'TAB_ID' => 'tab_invoice',
+                                    'NAME_TEMPLATE' => $this->arResult['NAME_TEMPLATE'],
+                                    'ENABLE_TOOLBAR' => 'Y',
+                                    'PRESERVE_HISTORY' => true,
+                                    'ADD_EVENT_NAME' => 'CrmCreateInvoiceFromDeal'
+                                )
+                            )
+                        )
+                    );
+                }
+				if (\Bitrix\Crm\Automation\Factory::isAutomationAvailable(CCrmOwnerType::Deal) && !CExtranet::IsExtranetSite())
 				{
 					Bitrix\Main\Page\Asset::getInstance()->addCss('/bitrix/components/bitrix/crm.automation/templates/.default/style.css');
 					Bitrix\Main\Page\Asset::getInstance()->addCss('/bitrix/components/bitrix/bizproc.automation/templates/.default/style.css');
@@ -810,7 +816,7 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 						)
 					)
 				);
-				if (CModule::IncludeModule('lists'))
+				if (CModule::IncludeModule('lists') && !CExtranet::IsExtranetSite())
 				{
 					$listIblock = CLists::getIblockAttachedCrm(CCrmOwnerType::DealName);
 					foreach($listIblock as $iblockId => $iblockName)
@@ -836,24 +842,29 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 			}
 			else
 			{
-				$this->arResult['TABS'][] = array(
-					'id' => 'tab_quote',
-					'name' => Loc::getMessage('CRM_DEAL_TAB_QUOTE'),
-					'enabled' => false
-				);
-				$this->arResult['TABS'][] = array(
-					'id' => 'tab_invoice',
-					'name' => Loc::getMessage('CRM_DEAL_TAB_INVOICES'),
-					'enabled' => false
-				);
-				if (\Bitrix\Crm\Automation\Factory::isAutomationAvailable(CCrmOwnerType::Deal))
-				{
-					$this->arResult['TABS'][] = array(
-						'id' => 'tab_automation',
-						'name' => Loc::getMessage('CRM_DEAL_TAB_AUTOMATION'),
-						'enabled' => false
-					);
-				}
+                if(!CExtranet::IsExtranetSite()) {
+                    $this->arResult['TABS'][] = array(
+                        'id' => 'tab_quote',
+                        'name' => Loc::getMessage('CRM_DEAL_TAB_QUOTE'),
+                        'enabled' => false
+                    );
+                }
+                if(!CExtranet::IsExtranetSite()) {
+                    $this->arResult['TABS'][] = array(
+                        'id' => 'tab_invoice',
+                        'name' => Loc::getMessage('CRM_DEAL_TAB_INVOICES'),
+                        'enabled' => false
+                    );
+                }
+                if(!CExtranet::IsExtranetSite()) {
+                    if (\Bitrix\Crm\Automation\Factory::isAutomationAvailable(CCrmOwnerType::Deal)) {
+                        $this->arResult['TABS'][] = array(
+                            'id' => 'tab_automation',
+                            'name' => Loc::getMessage('CRM_DEAL_TAB_AUTOMATION'),
+                            'enabled' => false
+                        );
+                    }
+                }
 				if (CModule::IncludeModule('bizproc') && CBPRuntime::isFeatureEnabled())
 				{
 					$this->arResult['TABS'][] = array(
@@ -867,7 +878,7 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 					'name' => Loc::getMessage('CRM_DEAL_TAB_EVENT'),
 					'enabled' => false
 				);
-				if (CModule::IncludeModule('lists'))
+				if (CModule::IncludeModule('lists') && !CExtranet::IsExtranetSite())
 				{
 					$listIblock = CLists::getIblockAttachedCrm(CCrmOwnerType::DealName);
 					foreach($listIblock as $iblockId => $iblockName)

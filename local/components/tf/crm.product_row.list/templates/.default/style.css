@@ -159,7 +159,7 @@ table.crm-items-table tr td.crm-item-tax-sum,
 .crm-item-cell-text {
 	display: block;
 	overflow: hidden;
-	padding:0 7.5%;
+	padding:0 0%;
 	text-align: right;
 	text-overflow: ellipsis;
 }
@@ -276,14 +276,14 @@ table.crm-items-table tr td.crm-item-tax-sum,
 	border-color: #b9bcbe #bdc1c3 #c1c5c8;
 	border-radius: 2px;
 	display: block;
-	height: 21px;
+	/*height: 21px;*/
 
 	padding: 3px 3px 3px 5px;         /* HIDE PLUS BUTTON */
 
 	position: relative;
 	vertical-align: middle;
 	overflow: hidden;
-	width: 140px;
+	/*width: 140px;*/
 }
 
 .crm-item-txt-wrap {
@@ -648,4 +648,14 @@ div.popup-window-content div.bx-crm-dialog-quick-create-field-custom div.mli-lay
 	right: 0;
 	cursor: nwse-resize;
 	margin-top: -14px;
+}
+
+
+.crm-item-price-alt{
+	display: none!important;
+}
+
+textarea.crm-item-name-inp{
+	resize: none;
+	height: 45px;
 }

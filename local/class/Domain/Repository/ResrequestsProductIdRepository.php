@@ -76,6 +76,10 @@ class ResrequestsProductIdRepository
             $return["UF_START_WORK"]=\Bitrix\Main\Type\DateTime::createFromPhp($el->getStartWork());
         if($el->getEndWork())
             $return["UF_END_WORK"]=\Bitrix\Main\Type\DateTime::createFromPhp($el->getEndWork());
+
+        if($el->getRatePerHour())
+            $return["UF_RATE_PER_HOUR"]=$el->getRatePerHour();
+
         return $return;
     }
 
@@ -124,6 +128,9 @@ class ResrequestsProductIdRepository
 
         if(isset($arr['UF_EXECUTOR_ID']))
             $params['ExecutorId']=$arr['UF_EXECUTOR_ID'];
+
+        if(isset($arr['UF_RATE_PER_HOUR']))
+            $params['RatePerHour']=$arr['UF_RATE_PER_HOUR'];
 
         return $params;
     }

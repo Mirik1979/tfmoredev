@@ -14,7 +14,7 @@ use CIBlockElement;
 class RoleProject
 {
 
-    private $iblockId=IBLOCK_ROLE_PROJECT;
+    private $iblockId=IBLOCK_ROLE;
 
     /**
      * SeoLinkGenerate constructor.

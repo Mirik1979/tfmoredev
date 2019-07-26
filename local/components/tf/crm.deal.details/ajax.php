@@ -438,6 +438,13 @@ elseif($action === 'SAVE')
 			$totals = \CCrmProductRow::CalculateTotalInfo('D', 0, false, $calculationParams, $productRows);
 			$fields['OPPORTUNITY'] = isset($totals['OPPORTUNITY']) ? $totals['OPPORTUNITY'] : 0.0;
 			$fields['TAX_VALUE'] = isset($totals['TAX_VALUE']) ? $totals['TAX_VALUE'] : 0.0;
+
+            $AmountOverhead=0;
+			foreach ($productRows as $val){
+                $AmountOverhead+=(float)$val["AMOUNT_OVERHEAD"];
+            }
+            $fields['OPPORTUNITY']+=$AmountOverhead;
+
 		}
 		else
 		{

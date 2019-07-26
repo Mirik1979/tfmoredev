@@ -578,7 +578,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 
 
 
-
+                <td class="crm-item-cell crm-item-price-alt"><span id="<?=$priceTitleId?>" class="crm-item-cell-text"><?=GetMessage('CRM_PRODUCT_ROW_COL_TTL_PRICE', array('#CURRENCY#' => " ($currencyText)"))?></span></td>
 				<td class="crm-item-cell crm-item-price"><span id="<?=$priceTitleId?>" class="crm-item-cell-text"><?=GetMessage('CRM_PRODUCT_ROW_COL_TTL_PRICE', array('#CURRENCY#' => " ($currencyText)"))?></span></td>
 
 
@@ -667,6 +667,8 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
                 'YEARS_EXPERIENCE',
                 'PREFERRED_LOCATION',
 
+                'RATE_PER_HOUR',
+
                 'AMOUNT_OVERHEAD',
                 'START_WORK',
                 'END_WORK',
@@ -729,13 +731,29 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 					$productName = GetMessage("CRM_PRODUCT_ROW_DISCOUNT");
 			}
 
-			$productEditorCfg['items'][] =
+            $search = $ResrequestsProductIdRepository->GetList([
+                'limit' => 1,
+                'filter' => [
+                    "UF_PRODUCT_ID" => $row['ID'],
+                ]
+            ]);
+
+
+            /**
+             * @var ResrequestsProductId $ResrequestsProductArray
+             */
+            if (count($search) == 1)
+                $ResrequestsProductArray = $search[0];
+
+
+            $productEditorCfg['items'][] =
 				array(
 					'rowID' => $rowID,
 					'settings' => array(
 						'ID' => $row['ID'],
 						'PRODUCT_ID' => strval($productID),
 						'PRODUCT_NAME' => $productName,
+                        'AMOUNT_OVERHEAD' => $ResrequestsProductArray->getAmountOverhead(),
 						'QUANTITY' => $row['QUANTITY'],
 						'DISCOUNT_TYPE_ID' => $row['DISCOUNT_TYPE_ID'],
 						'DISCOUNT_RATE' => $row['DISCOUNT_RATE'],
@@ -834,19 +852,6 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 			$className = (($i + 1) % 2) === 0 ? "crm-items-table-even-row" : "crm-items-table-odd-row";
 
 
-            $search = $ResrequestsProductIdRepository->GetList([
-                'limit' => 1,
-                'filter' => [
-                    "UF_PRODUCT_ID" => $row['ID'],
-                ]
-            ]);
-
-
-            /**
-             * @var ResrequestsProductId $ResrequestsProductArray
-             */
-        if (count($search) == 1)
-            $ResrequestsProductArray = $search[0];
 
 
 
@@ -859,7 +864,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 							<span class="crm-item-move-btn"></span><span id="<?= ($rowID.'_NUM') ?>" class="crm-item-num"><?=($i+1).'.'?></span>
 						</span>
 						<span class="crm-item-inp-wrap">
-							<input id="<?=$rowID.'_PRODUCT_NAME'?>" class="crm-item-name-inp" type="text" value="<?=$htmlValues['PRODUCT_NAME']?>" autocomplete="off"/>
+                            <textarea id="<?=$rowID.'_PRODUCT_NAME'?>" class="crm-item-name-inp" autocomplete="off"><?=$htmlValues['PRODUCT_NAME']?></textarea>
 						</span>
 					</span>
 					<span class="crm-item-cell-view"<?= ($bInitEditable && empty($fixedProductName)) ? ' style="display: none;"' : '' ?>>
@@ -1036,12 +1041,25 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
                 </td>
 
 
+                <td class="crm-item-cell crm-item-price-alt">
+					<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
+						<input id="<?=$rowID.'_RATE_PER_HOUR'?>" type="text" class="crm-item-table-inp" value="<?=$ResrequestsProductArray->getRatePerHour()?>"/>
+					</span>
+                    <span class="crm-item-cell-view"<?= $bInitEditable ? ' style="display: none;"' : '' ?>>
+						<div id="<?=$rowID.'_RATE_PER_HOUR_v'?>" class="crm-item-table-txt"><?=$ResrequestsProductArray->getRatePerHour()?></div>
+					</span>
+                </td>
+
+
+
+
+
 				<td class="crm-item-cell crm-item-price">
 					<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
 						<input id="<?=$rowID.'_PRICE'?>" type="text" class="crm-item-table-inp" value="<?=$htmlValues['PRICE']?>"/>
 					</span>
 					<span class="crm-item-cell-view"<?= $bInitEditable ? ' style="display: none;"' : '' ?>>
-						<div id="<?=$rowID.'_PRICE_v'?>" class="crm-item-table-txt"><?//=$htmlValues['PRICE']?></div>
+						<div id="<?=$rowID.'_PRICE_v'?>" class="crm-item-table-txt"><?=$htmlValues['PRICE']?></div>
 					</span>
 				</td>
 
@@ -1172,7 +1190,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 				<?endif;*/?>
 				<td class="crm-item-cell crm-item-total">
 					<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
-						<input id="<?=$rowID.'_SUM'?>" type="text" value="<?=$htmlValues['SUM']?>" class="crm-item-table-inp"/>
+						<input disabled id="<?=$rowID.'_SUM'?>" type="text" value="<?=$htmlValues['SUM']?>" class="crm-item-table-inp"/>
 					</span>
 					<span class="crm-item-cell-view"<?= $bInitEditable ? ' style="display: none;"' : '' ?>>
 						<div id="<?=$rowID.'_SUM_v'?>" class="crm-item-table-txt"><?=$htmlValues['SUM']?></div>
@@ -1198,7 +1216,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 							<span class="crm-item-move-btn"></span><span id="<?= ($rowIdPrefix.'#N#_NUM') ?>" class="crm-item-num"></span>
 						</span>
 						<span class="crm-item-inp-wrap">
-							<input id="<?= ($rowIdPrefix.'#N#_PRODUCT_NAME') ?>" class="crm-item-name-inp" type="text" value=""  autocomplete="off"/><span class="crm-item-inp-btn"></span>
+                            <textarea id="<?= ($rowIdPrefix.'#N#_PRODUCT_NAME') ?>" class="crm-item-name-inp" autocomplete="off"></textarea><span class="crm-item-inp-btn"></span>
 						</span>
 					</span>
 					<span class="crm-item-cell-view">
@@ -1323,6 +1341,15 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
             </td>
 
 
+
+            <td class="crm-item-cell crm-item-price-alt">
+					<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
+						<input id="<?= ($rowIdPrefix.'#N#_RATE_PER_HOUR') ?>" type="text" class="crm-item-table-inp" value="0.00"/>
+					</span>
+                <span class="crm-item-cell-view"<?= $bInitEditable ? ' style="display: none;"' : '' ?>>
+						<div id="<?= ($rowIdPrefix.'#N#_RATE_PER_HOUR_v') ?>" class="crm-item-table-txt">0.00</div>
+					</span>
+            </td>
 
 			<td class="crm-item-cell crm-item-price">
 					<span class="crm-item-cell-text">
@@ -1472,7 +1499,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 			<?endif;*/?>
 			<td class="crm-item-cell crm-item-total">
 					<span class="crm-item-cell-text">
-						<input id="<?= ($rowIdPrefix.'#N#_SUM') ?>" type="text" value="0.00" class="crm-item-table-inp"/>
+						<input disabled id="<?= ($rowIdPrefix.'#N#_SUM') ?>" type="text" value="0.00" class="crm-item-table-inp"/>
 					</span>
 					<span class="crm-item-cell-view">
 						<div id="<?= ($rowIdPrefix.'#N#_SUM_v') ?>" class="crm-item-table-txt">0.00</div>
@@ -1577,7 +1604,7 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 					<td><nobr><?=htmlspecialcharsbx(GetMessage('CRM_PRODUCT_SUM_TOTAL'))?>:</nobr></td>
 					<td>
 						<?$productEditorCfg['SUM_TOTAL_ID'] = $arResult['PREFIX'].'_sum_total';?>
-						<strong id="<?=htmlspecialcharsbx($productEditorCfg['SUM_TOTAL_ID'])?>" class="crm-view-table-total-value"><?=CCrmCurrency::MoneyToString($arResult['TOTAL_SUM'], $arResult['CURRENCY_ID'])?></strong>
+						<strong id="<?=htmlspecialcharsbx($productEditorCfg['SUM_TOTAL_ID'])?>" class="crm-view-table-total-value"><?=CCrmCurrency::MoneyToString($arResult['TOTAL_SUM']+$arResult['AmountOverhead'], $arResult['CURRENCY_ID'])?></strong>
 					</td>
 				</tr>
 				<?

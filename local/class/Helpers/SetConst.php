@@ -84,6 +84,9 @@ class SetConst{
                 $cIBlock = \CIBlock::GetList();
                 while($items = $cIBlock->Fetch())
                 {
+                    $items['CODE']=trim($items['CODE']);
+                    $items['CODE']=mb_convert_case($items['CODE'], MB_CASE_LOWER);
+                    //echo "<pre>";print_r($items);echo "</pre>";
                     if(strlen($items['CODE'])>0){
                         $code = "iblock_".trim($items['CODE']);
                         $id = (int) $items['ID'];
@@ -93,6 +96,7 @@ class SetConst{
             }
             $cache->endDataCache($arResult);
         }
+
         foreach ($arResult as $id=>$code)
             self::initConst($id,$code);
     }

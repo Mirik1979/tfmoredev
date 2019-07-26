@@ -1,12 +1,16 @@
 <?
 define('STOP_STATISTICS', true);
 define('BX_SECURITY_SHOW_MESSAGE', true);
+define("EXTRANET_NO_REDIRECT", true);
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 define('NO_KEEP_STATISTIC', 'Y');
 define('NO_AGENT_STATISTIC','Y');
 define('NO_AGENT_CHECK', true);
 define('DisableEventsCheck', true);
+
+
+
 if (!CModule::IncludeModule('crm'))
 {
 	return;
@@ -632,7 +636,7 @@ elseif($mode === 'CALCULATE_TOTALS')
 		}
 		$productRow['TAX_INCLUDED'] = isset($productRow['TAX_INCLUDED'])
 			&& strtoupper($productRow['TAX_INCLUDED']) === 'Y' ? 'Y' : 'N';
-		$totalDiscount += round($productRow['DISCOUNT_SUM'] * $productRow['QUANTITY'], 2);
+		$totalDiscount += round(($productRow['DISCOUNT_SUM'] * $productRow['QUANTITY'])+(float)$productRow['AMOUNT_OVERHEAD'], 2);
 	}
 	unset($productRow);
 
@@ -673,6 +677,9 @@ elseif($mode === 'CALCULATE_TOTALS')
 	$totalBeforeTax = round($totalSum - $totalTax, 2);
 	$totalBeforeDiscount = round($totalBeforeTax + $totalDiscount, 2);
 
+    $totalSum=$totalBeforeDiscount;
+    $totalTax=$totalBeforeDiscount;
+    $totalDiscount=0;
 
 	$arResponse = array(
 		'TOTALS' => array(
