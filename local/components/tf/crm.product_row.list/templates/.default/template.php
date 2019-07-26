@@ -570,10 +570,10 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 
 
                 <td class="crm-item-cell crm-item-product"><span class="crm-item-cell-text">Продукт</span></td>
-                <td class="crm-item-cell crm-item-model"><span class="crm-item-cell-text">Модель</span></td>
+                <td class="crm-item-cell crm-item-model"><span class="crm-item-cell-text">Модуль</span></td>
                 <td class="crm-item-cell crm-item-grade"><span class="crm-item-cell-text">Грейд</span></td>
                 <td class="crm-item-cell crm-item-years-experience"><span class="crm-item-cell-text">Лет опыта</span></td>
-                <td class="crm-item-cell crm-item-preferred-location"><span class="crm-item-cell-text">Предпочтительная локация</span></td>
+                <td class="crm-item-cell crm-item-preferred-location"><span class="crm-item-cell-text">Локация</span></td>
 
 
 
@@ -585,8 +585,8 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 
 
                 <td class="crm-item-cell crm-item-amount-overhead"><span class="crm-item-cell-text">Сумма оплачиваемых накладных расходов</span></td>
-                <td class="crm-item-cell crm-item-start-work"><span class="crm-item-cell-text">День и час начала работы</span></td>
-                <td class="crm-item-cell crm-item-end-work"><span class="crm-item-cell-text">День и час окончания работы</span></td>
+                <td class="crm-item-cell crm-item-start-work"><span class="crm-item-cell-text">Начало</span></td>
+                <td class="crm-item-cell crm-item-end-work"><span class="crm-item-cell-text">Окончание</span></td>
 
 
 

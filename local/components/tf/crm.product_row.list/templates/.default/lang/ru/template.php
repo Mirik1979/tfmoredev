@@ -1,8 +1,8 @@
 <?
 $MESS["CRM_PRODUCT_ROW_COL_TTL_NAME"] = "Наименование";
-$MESS["CRM_PRODUCT_ROW_COL_TTL_QUANTITY"] = "Число приобретаемых часов";
+$MESS["CRM_PRODUCT_ROW_COL_TTL_QUANTITY"] = "Итого (ч.)";
 //$MESS["CRM_PRODUCT_ROW_COL_TTL_PRICE"] = "Цена#CURRENCY#";
-$MESS["CRM_PRODUCT_ROW_COL_TTL_PRICE"] = "Ставка в час";
+$MESS["CRM_PRODUCT_ROW_COL_TTL_PRICE"] = "Ставка";
 $MESS["CRM_PRODUCT_SUM_TOTAL"] = "Общая сумма";
 $MESS["CRM_FF_OK"] = "Выбрать";
 $MESS["CRM_FF_CANCEL"] = "Отмена";
@@ -26,7 +26,7 @@ $MESS["CRM_ADD_CUSTOM_PRODUCT_DLG_TTL"] = "Добавление товара";
 $MESS["CRM_CUSTOM_PRODUCT_NAME_NOT_ASSIGNED_ERROR"] = "Не задано название для пользовательского товара";
 $MESS["CRM_PRODUCT_ROW_COL_TTL_DISCOUNT_RATE"] = "Скидка";
 $MESS["CRM_PRODUCT_ROW_COL_TTL_DISCOUNT"] = "Сумма скидки";
-$MESS["CRM_PRODUCT_ROW_COL_TTL_SUM"] = "Итого";
+$MESS["CRM_PRODUCT_ROW_COL_TTL_SUM"] = "Итого (ч.)";
 $MESS["CRM_PRODUCT_ROW_COL_TTL_MEASURE"] = "Ед. измерения";
 $MESS["CRM_PRODUCT_ROW_COL_TTL_TAX"] = "Налог";
 $MESS["CRM_PRODUCT_TOTAL_BEFORE_DISCOUNT"] = "Сумма без скидки и налогов";
