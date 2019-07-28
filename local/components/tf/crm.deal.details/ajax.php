@@ -148,6 +148,9 @@ elseif($action === 'MOVE_TO_CATEGORY')
 }
 elseif($action === 'SAVE')
 {
+
+    $GroupId== isset($_REQUEST['GroupId']) ? (int)$_REQUEST['GroupId'] : 0;
+
 	$ID = isset($_POST['ACTION_ENTITY_ID']) ? max((int)$_POST['ACTION_ENTITY_ID'], 0) : 0;
 
 	$params = isset($_POST['PARAMS']) && is_array($_POST['PARAMS']) ? $_POST['PARAMS'] : array();
@@ -206,6 +209,9 @@ elseif($action === 'SAVE')
 			$fields[$fieldName] = $initialData[$fieldName];
 		}
 	}
+
+	if($GroupId>0)
+        $fields[DEAL_TO_GROUP]=$GroupId;
 
 	if(isset($_POST['OBSERVER_IDS']))
 	{

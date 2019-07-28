@@ -12,8 +12,6 @@ $guid = $arResult['GUID'];
 $prefix = strtolower($guid);
 $activityEditorID = "{$prefix}_editor";
 
-//echo "<pre>";print_r($arParams);echo "</pre>";
-
 //region LEGEND
 if(isset($arResult['LEGEND']))
 {
@@ -44,7 +42,7 @@ $APPLICATION->IncludeComponent(
 );
 
 $APPLICATION->IncludeComponent(
-	'tf:crm.deal.menu',
+	'bitrix:crm.deal.menu',
 	'',
 	array(
 		'PATH_TO_DEAL_LIST' => $arResult['PATH_TO_DEAL_LIST'],
@@ -97,7 +95,7 @@ $APPLICATION->IncludeComponent(
 		'ENTITY_INFO' => $arResult['ENTITY_INFO'],
 		'READ_ONLY' => $arResult['READ_ONLY'],
 		'TABS' => $arResult['TABS'],
-		'SERVICE_URL' => '/local/components/tf/crm.deal.details/ajax.php?GroupId='.$arParams["GroupId"]."&".bitrix_sessid_get(),
+		'SERVICE_URL' => '/local/components/tf/crm.deal.details/ajax.php?'.bitrix_sessid_get(),
 		'EDITOR' => array(
 			'GUID' => "{$guid}_editor",
 			'CONFIG_ID' => $arResult['EDITOR_CONFIG_ID'],
@@ -111,7 +109,7 @@ $APPLICATION->IncludeComponent(
 			'USER_FIELD_ENTITY_ID' => $arResult['USER_FIELD_ENTITY_ID'],
 			'USER_FIELD_CREATE_PAGE_URL' => $arResult['USER_FIELD_CREATE_PAGE_URL'],
 			'USER_FIELD_CREATE_SIGNATURE' => $arResult['USER_FIELD_CREATE_SIGNATURE'],
-			'SERVICE_URL' => '/local/components/tf/crm.deal.details/ajax.php?GroupId='.$arParams["GroupId"]."&".bitrix_sessid_get(),
+			'SERVICE_URL' => '/local/components/tf/crm.deal.details/ajax.php?'.bitrix_sessid_get(),
 			'EXTERNAL_CONTEXT_ID' => $arResult['EXTERNAL_CONTEXT_ID'],
 			'CONTEXT_ID' => $arResult['CONTEXT_ID'],
 			'CONTEXT' => $editorContext,

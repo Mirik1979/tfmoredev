@@ -598,6 +598,18 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 			$personTypeID = $companyID > 0 ? $personTypes['COMPANY'] : $personTypes['CONTACT'];
 		}
 
+        $GroupId=(int)$this->arParams["GroupId"];
+
+		if($GroupId<=0){
+            $res = CCrmDeal::GetList([],[
+                'CHECK_PERMISSIONS'=> 'N',
+                'ID'=>$this->entityID,
+            ],[],1);
+            if($arr=$res->GetNext())
+                $GroupId=(int)$arr[DEAL_TO_GROUP];
+        }
+
+
 		ob_start();
 		$APPLICATION->IncludeComponent('tf:crm.product_row.list',
 			'',
@@ -605,7 +617,7 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 				'ID' => $this->arResult['PRODUCT_EDITOR_ID'],
 				'PREFIX' => $this->arResult['PRODUCT_EDITOR_ID'],
 				'FORM_ID' => '',
-                'GroupId'=>$this->arParams["GroupId"],
+                'GroupId'=>$GroupId,
 				'OWNER_ID' => $this->entityID,
 				'OWNER_TYPE' => 'D',
 				'PERMISSION_TYPE' => $this->arResult['READ_ONLY'] ? 'READ' : 'WRITE',

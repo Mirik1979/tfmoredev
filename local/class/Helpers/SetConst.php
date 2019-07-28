@@ -19,6 +19,11 @@ class SetConst{
         self::IblockPropConst();
         //self::FormConst();
         self::HighloadIblockConst();
+        self::customConst();
+    }
+
+    private static function customConst(){
+        define("DEAL_TO_GROUP", 'UF_CRM_1564325972');
     }
 
     private static function IsPrint(){

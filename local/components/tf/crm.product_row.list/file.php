@@ -86,7 +86,7 @@ if ( 0 < $_FILES['file']['error'] ) {
     $ownerid=(int)$_REQUEST["ownerid"];
     $row=[];
 
-    if($groupid>0){
+    //if($groupid>0){
 
 
         $res=\CCrmDeal::LoadProductRows($ownerid);
@@ -101,11 +101,16 @@ if ( 0 < $_FILES['file']['error'] ) {
         }
 
         $sheetNames = $xlsx->getSheetNames();
+
+        $i=0;
+
         foreach($sheetNames as $sheetName) {
+
+            if($i>0)
+                continue;
+
             $sheet = $xlsx->getSheet($sheetName);
             $data=$sheet->getData();
-
-
 
             for ($i=1;$i<count($data);$i++){
 
@@ -156,10 +161,10 @@ if ( 0 < $_FILES['file']['error'] ) {
 
             }
 
-
+            $i++;
 
         }
-    }
+ //   }
 
     if(count($row)>0)
         \CCrmDeal::SaveProductRows($ownerid, $row, true, true, false);

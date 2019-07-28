@@ -40,26 +40,28 @@ class checkTime
                 "CHANGE"=>"N",
             ],
         ];
-        $CSocNetGroup=CSocNetGroup::getById($GroupId,false);
-        if($CSocNetGroup){
-            $PROJECT_DATE_START=$CSocNetGroup["PROJECT_DATE_START"];
-            $PROJECT_DATE_FINISH=$CSocNetGroup["PROJECT_DATE_FINISH"];
-            if(strlen($StartWork)>0 && strlen($PROJECT_DATE_START)>0)
-            {
-                $dateStartWork=new \DateTime($StartWork);
-                $datePROJECT_DATE_START=new \DateTime($PROJECT_DATE_START);
-                if($dateStartWork<$datePROJECT_DATE_START){
-                    $result["DATE_START"]["CHANGE"]="Y";
-                    $result["DATE_START"]["VALUE"]=$datePROJECT_DATE_START->format('d.m.Y H:i:s');
+        if($GroupId>0){
+            $CSocNetGroup=CSocNetGroup::getById($GroupId,false);
+            if($CSocNetGroup){
+                $PROJECT_DATE_START=$CSocNetGroup["PROJECT_DATE_START"];
+                $PROJECT_DATE_FINISH=$CSocNetGroup["PROJECT_DATE_FINISH"];
+                if(strlen($StartWork)>0 && strlen($PROJECT_DATE_START)>0)
+                {
+                    $dateStartWork=new \DateTime($StartWork);
+                    $datePROJECT_DATE_START=new \DateTime($PROJECT_DATE_START);
+                    if($dateStartWork<$datePROJECT_DATE_START){
+                        $result["DATE_START"]["CHANGE"]="Y";
+                        $result["DATE_START"]["VALUE"]=$datePROJECT_DATE_START->format('d.m.Y H:i:s');
+                    }
                 }
-            }
-            if(strlen($StopWork)>0 && strlen($PROJECT_DATE_FINISH)>0)
-            {
-                $dateStopWork=new \DateTime($StopWork);
-                $datePROJECT_DATE_FINISH=new \DateTime($PROJECT_DATE_FINISH);
-                if($dateStopWork>$datePROJECT_DATE_FINISH){
-                    $result["DATE_FINISH"]["CHANGE"]="Y";
-                    $result["DATE_FINISH"]["VALUE"]=$datePROJECT_DATE_FINISH->format('d.m.Y H:i:s');
+                if(strlen($StopWork)>0 && strlen($PROJECT_DATE_FINISH)>0)
+                {
+                    $dateStopWork=new \DateTime($StopWork);
+                    $datePROJECT_DATE_FINISH=new \DateTime($PROJECT_DATE_FINISH);
+                    if($dateStopWork>$datePROJECT_DATE_FINISH){
+                        $result["DATE_FINISH"]["CHANGE"]="Y";
+                        $result["DATE_FINISH"]["VALUE"]=$datePROJECT_DATE_FINISH->format('d.m.Y H:i:s');
+                    }
                 }
             }
         }
