@@ -229,6 +229,25 @@ if (CModule::IncludeModule("crm") && \Bitrix\Crm\Tracking\Manager::isAccessible(
 
 if (CModule::IncludeModule("crm") && CCrmSaleHelper::isShopAccess())
 {
+	if(\Bitrix\Main\ModuleManager::isModuleInstalled('salescenter'))
+	{
+		$arMenuB24[] = array(
+			GetMessage("MENU_SALESCENTER_SECTION"),
+			"/saleshub/",
+			array(),
+			array(
+				"real_link" => getLeftMenuItemLink(
+					"top_menu_id_saleshub",
+					"/saleshub/"
+				),
+				"menu_item_id" => "menu-sale-center",
+				"top_menu_id" => "top_menu_id_saleshub",
+				"is_beta" => true,
+			),
+			""
+		);
+	}
+
 	$arMenuB24[] = array(
 		GetMessage("TOP_MENU_SHOP"),
 		SITE_DIR."shop/menu/",
@@ -254,13 +273,25 @@ if (CModule::IncludeModule("sender") && \Bitrix\Sender\Security\Access::current(
 		SITE_DIR."marketing/",
 		array(),
 		array(
+			"real_link" => getLeftMenuItemLink(
+				"top_menu_id_marketing",
+				SITE_DIR."marketing/"
+			),
 			"menu_item_id" => "menu_marketing",
 		),
 		""
 	);
 }
 
-if (\Bitrix\Main\ModuleManager::isModuleInstalled("landing") && $APPLICATION->getGroupRight('landing') >= 'W')
+if (
+	\Bitrix\Main\Loader::includeModule("landing") &&
+	(
+		!is_callable(["\Bitrix\Landing\Rights", "hasAdditionalRight"]) ||
+		\Bitrix\Landing\Rights::hasAdditionalRight(
+			\Bitrix\Landing\Rights::ADDITIONAL_RIGHTS["menu24"]
+		)
+	)
+)
 {
 	$arMenuB24[] = array(
 		GetMessage("TOP_MENU_SITES"),
@@ -301,7 +332,8 @@ if (\Bitrix\Main\Loader::includeModule('report') && \Bitrix\Report\VisualConstru
 				SITE_DIR."report/analytics/"
 			),
 			"menu_item_id"=>"menu_analytics",
-			"top_menu_id" => "top_menu_id_analytics"
+			"top_menu_id" => "top_menu_id_analytics",
+			"is_beta" => true
 		)
 	);
 }
@@ -513,7 +545,7 @@ $arMenuB24[] = array(
 	""
 );
 
-$arMenuB24[] = array(
+/*$arMenuB24[] = array(
 	GetMessage('TOP_MENU_OPENLINES'),
 	SITE_DIR."services/openlines/",
 	array(SITE_DIR."services/openlines/"),
@@ -526,7 +558,7 @@ $arMenuB24[] = array(
 		"top_menu_id" => "top_menu_id_openlines"
 	),
 	'CModule::IncludeModule("imopenlines") && \Bitrix\ImOpenlines\Security\Helper::isMainMenuEnabled()'
-);
+);*/
 
 $arMenuB24[] = array(
 	GetMessage("TOP_MENU_TELEPHONY"),
