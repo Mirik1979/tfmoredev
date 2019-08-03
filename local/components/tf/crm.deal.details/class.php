@@ -1944,20 +1944,51 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 
 		if($this->enableSearchHistory)
 		{
-			$this->entityData['LAST_COMPANY_INFOS'] = Crm\Controller\Action\Entity\SearchAction::prepareSearchResultsJson(
-				Crm\Controller\Entity::getRecentlyUsedItems(
-					'crm.deal.details',
-					'company',
-					array('EXPAND_ENTITY_TYPE_ID' => CCrmOwnerType::Company)
-				)
-			);
-			$this->entityData['LAST_CONTACT_INFOS'] = Crm\Controller\Action\Entity\SearchAction::prepareSearchResultsJson(
-				Crm\Controller\Entity::getRecentlyUsedItems(
-					'crm.deal.details',
-					'contact',
-					array('EXPAND_ENTITY_TYPE_ID' => CCrmOwnerType::Contact)
-				)
-			);
+
+            $val=Crm\Controller\Entity::getRecentlyUsedItems(
+                'crm.deal.details',
+                'company',
+                array('EXPAND_ENTITY_TYPE_ID' => CCrmOwnerType::Company)
+            );
+
+            $oldId=[];
+
+            foreach ($val as $v)
+                $oldId[]=$v["ENTITY_ID"];
+            $res=CCrmCompany::GetList(['DATE_CREATE' => 'DESC'],[
+                '!=ID'=>$oldId,
+                'CHECK_PERMISSIONS'=> 'N',
+            ],[],1000);
+            while($arr=$res->GetNext())
+                $val[]=[
+                    "ENTITY_TYPE_ID" =>  CCrmOwnerType::Company,
+                    "ENTITY_ID" => $arr["ID"]
+                ];
+
+            $this->entityData['LAST_COMPANY_INFOS'] = Crm\Controller\Action\Entity\SearchAction::prepareSearchResultsJson($val);
+
+
+            $val=Crm\Controller\Entity::getRecentlyUsedItems(
+                'crm.deal.details',
+                'contact',
+                array('EXPAND_ENTITY_TYPE_ID' => CCrmOwnerType::Contact)
+            );
+
+            $oldId=[];
+
+            foreach ($val as $v)
+                $oldId[]=$v["ENTITY_ID"];
+            $res=CCrmContact::GetList(['DATE_CREATE' => 'DESC'],[
+                '!=ID'=>$oldId,
+                'CHECK_PERMISSIONS'=> 'N',
+            ],[],1000);
+            while($arr=$res->GetNext())
+                $val[]=[
+                    "ENTITY_TYPE_ID" =>  CCrmOwnerType::Contact,
+                    "ENTITY_ID" => $arr["ID"]
+                ];
+
+            $this->entityData['LAST_CONTACT_INFOS'] = Crm\Controller\Action\Entity\SearchAction::prepareSearchResultsJson($val);
 		}
 
 		//region Requisites
