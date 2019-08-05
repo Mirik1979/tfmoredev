@@ -1014,12 +1014,17 @@ elseif($action === 'SAVE')
 			)
 		);
 
-		$result['REDIRECT_URL'] = \CCrmOwnerType::GetDetailsUrl(
-			\CCrmOwnerType::Deal,
-			$ID,
-			false,
-			array('ENABLE_SLIDER' => true)
-		);
+        $HTTP_REFERER=$_SERVER["HTTP_REFERER"];
+		if((int)$_REQUEST["GroupId"]>0 && strpos ($HTTP_REFERER, 'resrequests')!==false){
+            $result['REDIRECT_URL']=(CExtranet::IsExtranetSite()?"":"")."/workgroups/group/".(int)$_REQUEST["GroupId"]."/resrequests/details/$ID/?";
+        }else{
+            $result['REDIRECT_URL'] = \CCrmOwnerType::GetDetailsUrl(
+                \CCrmOwnerType::Deal,
+                $ID,
+                false,
+                array('ENABLE_SLIDER' => true)
+            );
+        }
 	}
 
 	__CrmDealDetailsEndJsonResonse($result);
