@@ -227,7 +227,7 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 				$this->isCopyMode = true;
 				$this->arResult['CONTEXT_PARAMS']['DEAL_ID'] = $this->entityID;
 			}
-			elseif ($this->request->get('expose') !== null && $this->isEnableRecurring)
+			elseif ($this->request->get('expose') !== null)
 			{
 				$this->isExposeMode = true;
 				$this->arResult['CONTEXT_PARAMS']['DEAL_ID'] = $this->entityID;
@@ -600,7 +600,7 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 
         $GroupId=(int)$this->arParams["GroupId"];
 
-        if($GroupId<=0){
+		if($GroupId<=0){
             $res = CCrmDeal::GetList([],[
                 'CHECK_PERMISSIONS'=> 'N',
                 'ID'=>$this->entityID,
@@ -609,14 +609,15 @@ class CCrmDealDetailsComponent extends CBitrixComponent
                 $GroupId=(int)$arr[DEAL_TO_GROUP];
         }
 
+
 		ob_start();
 		$APPLICATION->IncludeComponent('tf:crm.product_row.list',
 			'',
 			array(
-                'GroupId'=>$GroupId,
 				'ID' => $this->arResult['PRODUCT_EDITOR_ID'],
 				'PREFIX' => $this->arResult['PRODUCT_EDITOR_ID'],
 				'FORM_ID' => '',
+                'GroupId'=>$GroupId,
 				'OWNER_ID' => $this->entityID,
 				'OWNER_TYPE' => 'D',
 				'PERMISSION_TYPE' => $this->arResult['READ_ONLY'] ? 'READ' : 'WRITE',
@@ -1083,7 +1084,26 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 		}
 		if (!$this->isEnableRecurring)
 		{
-			$dealRecurringRestriction = \Bitrix\Crm\Restriction\RestrictionManager::getDealRecurringRestriction();
+			switch (LANGUAGE_ID)
+			{
+				case "ru":
+				case "kz":
+				case "by":
+					$promoLink = 'https://www.bitrix24.ru/pro/crm.php ';
+					break;
+				case "de":
+					$promoLink = 'https://www.bitrix24.de/pro/crm.php';
+					break;
+				case "ua":
+					$promoLink = 'https://www.bitrix24.ua/pro/crm.php';
+					break;
+				default:
+					$promoLink = 'https://www.bitrix24.com/pro/crm.php';
+			}
+		}
+		else
+		{
+			$promoLink = "";
 		}
 		//endregion
 
@@ -1303,7 +1323,10 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 						'SINGLE_EXECUTION' => Recurring\Manager::SINGLE_EXECUTION,
 						'NON_ACTIVE' => Recurring\Calculator::SALE_TYPE_NON_ACTIVE_DATE,
 					],
-					"restrictScript" => (!$this->isEnableRecurring && !empty($dealRecurringRestriction)) ? $dealRecurringRestriction->preparePopupScript() : ""
+					"restrictMessage" => array(
+						"title" => !$this->isEnableRecurring ? Loc::getMessage("CRM_RECURRING_DEAL_B24_BLOCK_TITLE") : "",
+						"text" => !$this->isEnableRecurring ? Loc::getMessage("CRM_RECURRING_DEAL_B24_BLOCK_TEXT", array("#LINK#" => $promoLink)) : "",
+					)
 				)
 			),
 		);
@@ -1869,15 +1892,13 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 				array(
 					'ENTITY_EDITOR_FORMAT' => true,
 					'IS_HIDDEN' => !$isEntityReadPermitted,
-					'USER_PERMISSIONS' => $this->userPermissions,
 					'REQUIRE_REQUISITE_DATA' => true,
 					'REQUIRE_MULTIFIELDS' => true,
-					'NORMALIZE_MULTIFIELDS' => true,
-					'NAME_TEMPLATE' => \Bitrix\Crm\Format\PersonNameFormatter::getFormat(),
+					'NAME_TEMPLATE' => \Bitrix\Crm\Format\PersonNameFormatter::getFormat()
 				)
 			);
 
-			$clientInfo['COMPANY_DATA'] = array($companyInfo);
+			$clientInfo['COMPANY_DATA'] = $companyInfo;
 		}
 
 		$contactBindings = array();
@@ -1912,19 +1933,17 @@ class CCrmDealDetailsComponent extends CBitrixComponent
 				array(
 					'ENTITY_EDITOR_FORMAT' => true,
 					'IS_HIDDEN' => !$isEntityReadPermitted,
-					'USER_PERMISSIONS' => $this->userPermissions,
 					'REQUIRE_REQUISITE_DATA' => true,
 					'REQUIRE_MULTIFIELDS' => true,
-					'NORMALIZE_MULTIFIELDS' => true,
 					'REQUIRE_BINDINGS' => true,
-					'NAME_TEMPLATE' => \Bitrix\Crm\Format\PersonNameFormatter::getFormat(),
+					'NAME_TEMPLATE' => \Bitrix\Crm\Format\PersonNameFormatter::getFormat()
 				)
 			);
 		}
 		$this->entityData['CLIENT_INFO'] = $clientInfo;
 
-        if($this->enableSearchHistory)
-        {
+		if($this->enableSearchHistory)
+		{
 
             $val=Crm\Controller\Entity::getRecentlyUsedItems(
                 'crm.deal.details',
@@ -1970,7 +1989,7 @@ class CCrmDealDetailsComponent extends CBitrixComponent
                 ];
 
             $this->entityData['LAST_CONTACT_INFOS'] = Crm\Controller\Action\Entity\SearchAction::prepareSearchResultsJson($val);
-        }
+		}
 
 		//region Requisites
 		$this->entityData['REQUISITE_BINDING'] = array();

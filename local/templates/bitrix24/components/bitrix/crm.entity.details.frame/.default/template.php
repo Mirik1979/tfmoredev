@@ -169,7 +169,7 @@ elseif($arResult['ENTITY_TYPE_ID'] === CCrmOwnerType::Deal)
 {
 	$APPLICATION->IncludeComponent(
 		'tf:crm.deal.details',
-		'old',
+		'',
 		array(
 			'ENTITY_ID' => $arResult['ENTITY_ID'],
 			'EXTRAS' => $arResult['EXTRAS']

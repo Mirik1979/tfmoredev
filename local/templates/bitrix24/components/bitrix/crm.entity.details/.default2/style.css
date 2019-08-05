@@ -287,7 +287,9 @@ input.pagetitle-item {
 	background-color: #fff;
 }
 
-.pagetitle-inner-container .ui-btn-double.ui-btn-primary { margin-right: 17px; }
+.pagetitle-inner-container .ui-btn-double.ui-btn-primary {
+	margin: 0 17px 0 0;
+}
 
 .pagetitle-inner-container .ui-btn-double.ui-btn-primary .ui-btn-extra {
 	width: 32px;

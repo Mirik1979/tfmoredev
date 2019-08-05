@@ -3,6 +3,7 @@ define('NO_KEEP_STATISTIC', 'Y');
 define('NO_AGENT_STATISTIC','Y');
 define('NO_AGENT_CHECK', true);
 define('DisableEventsCheck', true);
+define("EXTRANET_NO_REDIRECT", true);
 
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 
@@ -18,6 +19,7 @@ if (!CModule::IncludeModule('crm'))
 {
 	return;
 }
+
 /*
  * ONLY 'POST' METHOD SUPPORTED
  * SUPPORTED ACTIONS:
@@ -146,6 +148,9 @@ elseif($action === 'MOVE_TO_CATEGORY')
 }
 elseif($action === 'SAVE')
 {
+
+    $GroupId== isset($_REQUEST['GroupId']) ? (int)$_REQUEST['GroupId'] : 0;
+
 	$ID = isset($_POST['ACTION_ENTITY_ID']) ? max((int)$_POST['ACTION_ENTITY_ID'], 0) : 0;
 
 	$params = isset($_POST['PARAMS']) && is_array($_POST['PARAMS']) ? $_POST['PARAMS'] : array();
@@ -205,6 +210,9 @@ elseif($action === 'SAVE')
 		}
 	}
 
+	if($GroupId>0)
+        $fields[DEAL_TO_GROUP]=$GroupId;
+
 	if(isset($_POST['OBSERVER_IDS']))
 	{
 		$fields['OBSERVER_IDS'] = is_array($_POST['OBSERVER_IDS']) ? $_POST['OBSERVER_IDS'] : array();
@@ -240,44 +248,45 @@ elseif($action === 'SAVE')
 	}
 
 	$createdEntities = array();
-	$updateEntityInfos = array();
 
 	$companyID = 0;
 	$companyEntity = new \CCrmCompany(false);
+	$enableCompanyCreation = \CCrmCompany::CheckCreatePermission($currentUserPermissions);
 	if(isset($clientData['COMPANY_DATA']) && is_array($clientData['COMPANY_DATA']))
 	{
 		$companyData = $clientData['COMPANY_DATA'];
-		if(!empty($companyData))
+		$companyID = isset($companyData['id']) ? (int)$companyData['id'] : 0;
+		$companyTitle = isset($companyData['title']) ? trim($companyData['title']) : '';
+		if($companyID <= 0 && $companyTitle !== '' && $enableCompanyCreation)
 		{
-			$companyItem = $companyData[0];
-			$companyID = isset($companyItem['id']) ? (int)$companyItem['id'] : 0;
-			if($companyID <= 0)
+			$companyFields = array('TITLE' => $companyTitle);
+			$multifieldData =  isset($companyData['multifields']) && is_array($companyData['multifields'])
+				? $companyData['multifields']  : array();
+
+			if(!empty($multifieldData))
 			{
-				$companyID = \Bitrix\Crm\Component\EntityDetails\BaseComponent::createEntity(
+				\Bitrix\Crm\Component\EntityDetails\BaseComponent::prepareMultifieldsForSave(
+					$multifieldData,
+					$companyFields
+				);
+			}
+			$companyID = $companyEntity->Add($companyFields, true, array('DISABLE_USER_FIELD_CHECK' => true));
+			if($companyID > 0)
+			{
+				$arErrors = array();
+				\CCrmBizProcHelper::AutoStartWorkflows(
 					\CCrmOwnerType::Company,
-					$companyItem,
-					array(
-						'userPermissions' => $currentUserPermissions,
-						'startWorkFlows' => true
-					)
+					$companyID,
+					\CCrmBizProcEventType::Create,
+					$arErrors
 				);
 
-				if($companyID > 0)
-				{
-					$createdEntities[\CCrmOwnerType::Company] = array($companyID);
-				}
-			}
-			elseif($companyItem['title'] || (isset($companyItem['multifields']) && is_array($companyItem['multifields'])))
-			{
-				if(!isset($updateEntityInfos[CCrmOwnerType::Company]))
-				{
-					$updateEntityInfos[CCrmOwnerType::Company] = array();
-				}
-				$updateEntityInfos[CCrmOwnerType::Company][$companyID] = $companyItem;
+				$createdEntities[CCrmOwnerType::Company] = array($companyID);
 			}
 		}
+
 		$fields['COMPANY_ID'] = $companyID;
-		if($fields['COMPANY_ID'] > 0)
+		if($companyID > 0)
 		{
 			Crm\Controller\Entity::addLastRecentlyUsedItems(
 				'crm.deal.details',
@@ -295,6 +304,7 @@ elseif($action === 'SAVE')
 	$contactIDs = null;
 	$bindContactIDs = null;
 	$contactEntity = new \CCrmContact(false);
+	$enableContactCreation = \CCrmContact::CheckCreatePermission($currentUserPermissions);
 	if(isset($clientData['CONTACT_DATA']) && is_array($clientData['CONTACT_DATA']))
 	{
 		$contactIDs = array();
@@ -303,17 +313,34 @@ elseif($action === 'SAVE')
 		foreach($contactData as $contactItem)
 		{
 			$contactID = isset($contactItem['id']) ? (int)$contactItem['id'] : 0;
-			if($contactID <= 0)
+			$contactTitle = isset($contactItem['title']) ? trim($contactItem['title']) : '';
+			if($contactID <= 0 && $contactTitle !== '' && $enableContactCreation)
 			{
-				$contactID = \Bitrix\Crm\Component\EntityDetails\BaseComponent::createEntity(
-					\CCrmOwnerType::Contact,
-					$contactItem,
-					array(
-						'userPermissions' => $currentUserPermissions,
-						'startWorkFlows' => true
-					)
-				);
+				$contactFields = array();
+				if($contactTitle === $defaultContactName)
+				{
+					$contactFields['NAME'] = $contactTitle;
+				}
+				else
+				{
+					\Bitrix\Crm\Format\PersonNameFormatter::tryParseName(
+						$contactTitle,
+						\Bitrix\Crm\Format\PersonNameFormatter::getFormatID(),
+						$contactFields
+					);
+				}
 
+				$multifieldData =  isset($contactItem['multifields']) && is_array($contactItem['multifields'])
+					? $contactItem['multifields']  : array();
+
+				if(!empty($multifieldData))
+				{
+					\Bitrix\Crm\Component\EntityDetails\BaseComponent::prepareMultifieldsForSave(
+						$multifieldData,
+						$contactFields
+					);
+				}
+				$contactID = $contactEntity->Add($contactFields, true, array('DISABLE_USER_FIELD_CHECK' => true));
 				if($contactID > 0)
 				{
 					if(!is_array($bindContactIDs))
@@ -322,20 +349,20 @@ elseif($action === 'SAVE')
 					}
 					$bindContactIDs[] = $contactID;
 
+					$arErrors = array();
+					\CCrmBizProcHelper::AutoStartWorkflows(
+						\CCrmOwnerType::Contact,
+						$contactID,
+						\CCrmBizProcEventType::Create,
+						$arErrors
+					);
+
 					if(!isset($createdEntities[CCrmOwnerType::Contact]))
 					{
 						$createdEntities[CCrmOwnerType::Contact] = array();
 					}
 					$createdEntities[CCrmOwnerType::Contact][] = $contactID;
 				}
-			}
-			elseif($contactItem['title'] || (isset($contactItem['multifields']) && is_array($contactItem['multifields'])))
-			{
-				if(!isset($updateEntityInfos[CCrmOwnerType::Contact]))
-				{
-					$updateEntityInfos[CCrmOwnerType::Contact] = array();
-				}
-				$updateEntityInfos[CCrmOwnerType::Contact][$contactID] = $contactItem;
 			}
 
 			if($contactID > 0)
@@ -417,6 +444,13 @@ elseif($action === 'SAVE')
 			$totals = \CCrmProductRow::CalculateTotalInfo('D', 0, false, $calculationParams, $productRows);
 			$fields['OPPORTUNITY'] = isset($totals['OPPORTUNITY']) ? $totals['OPPORTUNITY'] : 0.0;
 			$fields['TAX_VALUE'] = isset($totals['TAX_VALUE']) ? $totals['TAX_VALUE'] : 0.0;
+
+            $AmountOverhead=0;
+			foreach ($productRows as $val){
+                $AmountOverhead+=(float)$val["AMOUNT_OVERHEAD"];
+            }
+            $fields['OPPORTUNITY']+=$AmountOverhead;
+
 		}
 		else
 		{
@@ -681,7 +715,7 @@ elseif($action === 'SAVE')
 	$checkExceptions = null;
 	$errorMessage = '';
 
-	if(!empty($fields) || $enableProductRows || !empty($updateEntityInfos) || $requisiteID > 0)
+	if(!empty($fields) || $enableProductRows || $requisiteID > 0)
 	{
 		$requisiteInfo = null;
 		if (!empty($fields) && !isset($isRecurringSaving))
@@ -698,7 +732,6 @@ elseif($action === 'SAVE')
 					$fields['ASSIGNED_BY_ID'] = $currentUserID;
 				}
 
-				\Bitrix\Crm\Entity\EntityEditor::prepareForCopy($fields, $userType);
 				$merger = new \Bitrix\Crm\Merger\DealMerger($currentUserID, false);
 				//Merge with disabling of multiple user fields (SKIP_MULTIPLE_USER_FIELDS = TRUE)
 				$merger->mergeFields(
@@ -836,9 +869,22 @@ elseif($action === 'SAVE')
 			//Deletion early created entities
 			foreach($createdEntities as $entityTypeID => $entityIDs)
 			{
+				if($entityTypeID === CCrmOwnerType::Company)
+				{
+					$entity = new CCrmCompany(false);
+				}
+				elseif($entityTypeID === CCrmOwnerType::Contact)
+				{
+					$entity = new CCrmContact(false);
+				}
+				else
+				{
+					continue;
+				}
+
 				foreach($entityIDs as $entityID)
 				{
-					\Bitrix\Crm\Component\EntityDetails\BaseComponent::deleteEntity($entityTypeID, $entityID);
+					$entity->Delete($entityID);
 				}
 			}
 
@@ -890,8 +936,7 @@ elseif($action === 'SAVE')
 		\Bitrix\Crm\Tracking\UI\Details::saveEntityData(
 			\CCrmOwnerType::Deal,
 			$ID,
-			$_POST,
-			$isNew
+			$_POST
 		);
 
 
@@ -906,25 +951,6 @@ elseif($action === 'SAVE')
 		)
 		{
 			\Bitrix\Crm\Binding\ContactCompanyTable::bindContactIDs($companyID, $bindContactIDs);
-		}
-
-		if(!empty($updateEntityInfos))
-		{
-			foreach($updateEntityInfos as $entityTypeID => $entityInfos)
-			{
-				foreach($entityInfos as $entityID => $entityInfo)
-				{
-					\Bitrix\Crm\Component\EntityDetails\BaseComponent::updateEntity(
-						$entityTypeID,
-						$entityID,
-						$entityInfo,
-						array(
-							'userPermissions' => $currentUserPermissions,
-							'startWorkFlows' => true
-						)
-					);
-				}
-			}
 		}
 
 		if(is_array($requisiteInfo))
@@ -1014,12 +1040,19 @@ elseif($action === 'SAVE')
 			)
 		);
 
-		$result['REDIRECT_URL'] = \CCrmOwnerType::GetDetailsUrl(
-			\CCrmOwnerType::Deal,
-			$ID,
-			false,
-			array('ENABLE_SLIDER' => true)
-		);
+        $HTTP_REFERER=$_SERVER["HTTP_REFERER"];
+        if(strpos ($HTTP_REFERER, '/details/0/?category_id=0')!==false){
+            $result['REDIRECT_URL']=str_replace('/details/0/?category_id=0',"/details/$ID/?",$HTTP_REFERER);
+        }else{
+            $result['REDIRECT_URL'] = \CCrmOwnerType::GetDetailsUrl(
+                \CCrmOwnerType::Deal,
+                $ID,
+                false,
+                array('ENABLE_SLIDER' => true)
+            );
+        }
+
+
 	}
 
 	__CrmDealDetailsEndJsonResonse($result);
