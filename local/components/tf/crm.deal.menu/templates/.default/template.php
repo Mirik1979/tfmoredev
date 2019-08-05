@@ -26,7 +26,7 @@ if (!empty($arResult['BUTTONS']))
 	{
 		$template = SITE_TEMPLATE_ID === 'bitrix24' ? 'slider' : 'type2';
 	}
-
+//print_r($template);
 	$APPLICATION->IncludeComponent(
 		'bitrix:crm.interface.toolbar',
 		$template,

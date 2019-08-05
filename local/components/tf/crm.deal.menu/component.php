@@ -272,7 +272,18 @@ if($arParams['TYPE'] === 'details')
 		);
 	}
 
+    if(\Bitrix\Crm\Integration\DocumentGeneratorManager::getInstance()->isDocumentButtonAvailable())
+    {
+        $arResult['BUTTONS'][] = [
+            'TEXT' => GetMessage('DOCUMENT_BUTTON_TEXT'),
+            'TITLE' => GetMessage('DOCUMENT_BUTTON_TITLE'),
+            'TYPE' => 'crm-document-button',
+            'PARAMS' => \Bitrix\Crm\Integration\DocumentGeneratorManager::getInstance()->getDocumentButtonParameters(\Bitrix\Crm\Integration\DocumentGenerator\DataProvider\Deal::class, $arParams['ELEMENT_ID']),
+        ];
+    }
+/*
 	$documentLinks = \Bitrix\Crm\Integration\DocumentGeneratorManager::getInstance()->getPreviewList(\Bitrix\Crm\Integration\DocumentGenerator\DataProvider\Deal::class, $arParams['ELEMENT_ID']);
+
 	if(!empty($documentLinks))
 	{
 		$arResult['BUTTONS'][] = [
@@ -284,7 +295,7 @@ if($arParams['TYPE'] === 'details')
 
 		\Bitrix\Crm\Integration\DocumentGeneratorManager::getInstance()->showSpotlight('.crm-btn-dropdown-document');
 	}
-
+*/
 	$this->IncludeComponentTemplate();
 	return;
 }
