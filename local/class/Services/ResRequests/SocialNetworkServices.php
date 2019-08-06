@@ -40,12 +40,14 @@ class SocialNetworkServices
         $arCustomPagesPath["resrequests"] = "/local/php_interface/templates/";
 
 
-        // Шаблон адреса страницы
         $arUrlTemplates["resrequests_details"] = "group/#group_id#/resrequests/details/#deal_id#/";
-        // Путь относительно корня сайта,
-        // по которому лежит страница
         $arCustomPagesPath["resrequests_details"] = "/local/php_interface/templates/";
 
+        $arUrlTemplates["resrequests_list"] = "group/#group_id#/resrequests/list/";
+        $arCustomPagesPath["resrequests_list"] = "/local/php_interface/templates/";
+
+        $arUrlTemplates["resrequests_category"] = "group/#group_id#/resrequests/category/#category_id#/";
+        $arCustomPagesPath["resrequests_category"] = "/local/php_interface/templates/";
 
     }
 
