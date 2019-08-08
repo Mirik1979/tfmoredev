@@ -3,12 +3,15 @@
 namespace local\Helpers;
 
 use Bitrix\Main\EventManager;
+use local\Services\attachCV;
 
 class SetEvents
 {
 
     public static function init()
     {
+
+        attachCV::init();
 
         // Событие происходит при формировании списка закладок
         // В обработчике можно изменить список закладок
