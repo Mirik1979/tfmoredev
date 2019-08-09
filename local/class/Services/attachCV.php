@@ -93,7 +93,7 @@ class attachCV
                 if ($newFile)
                 {
                     $urlManager = \Bitrix\Disk\Driver::getInstance()->getUrlManager();
-                    $url=$urlManager->getPathFileDetail($newFile);
+                    $url='https://bx.skillscloud.com'.$urlManager->getPathFileDetail($newFile);
                     $CCrmContact=new CCrmContact(false);
                     $arParams=["UF_CRM_1563983113"=>$url];
                     $CCrmContact->Update($id,$arParams);
