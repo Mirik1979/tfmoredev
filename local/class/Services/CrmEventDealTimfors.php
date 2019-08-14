@@ -93,12 +93,12 @@ class CrmEventDealTimfors
             ],[],1);
             if($arr=$res->GetNext()) {
                 $STAGE_ID = $arr["STAGE_ID"];
-                $STAGE_ID = explode(':', $STAGE_ID);
+                /*$STAGE_ID = explode(':', $STAGE_ID);
                 if (count($STAGE_ID) == 2)
                     $STAGE_ID = $STAGE_ID[1];
                 else
-                    $STAGE_ID = $STAGE_ID[0];
-                $STAGE = CCrmStatus::GetList([], ['STATUS_ID' => $STAGE_ID, 'ENTITY_ID' => 'DEAL_STAGE'])->GetNext();
+                    $STAGE_ID = $STAGE_ID[0];*/
+                $STAGE = CCrmStatus::GetList([], ['STATUS_ID' => $STAGE_ID /*, 'ENTITY_ID' => 'DEAL_STAGE'*/])->GetNext();
                 $arrResult = [
                     "Type" => 'ACTIVITY',
                     "TimelineId" => $EVENT_ID,
