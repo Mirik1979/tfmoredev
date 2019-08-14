@@ -11802,7 +11802,8 @@ if(typeof(BX.CrmScheduleItemActivity) === "undefined")
 								text: this.getTypeDescription(direction)
 							}
 						),
-						this._deadlineNode
+						this._deadlineNode,
+                        getStatusBlock(this)
 					]
 			}
 		);

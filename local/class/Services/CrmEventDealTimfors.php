@@ -33,23 +33,83 @@ class CrmEventDealTimfors
 
     /**
      * @param int $id
+     * @param bool $TIMELINE
      * @return string
      * @throws ArgumentException
      * @throws LoaderException
      * @throws ObjectPropertyException
      * @throws SystemException
      */
-    public function getNameAsId($id){
+    public function getNameAsId($id,$TIMELINE=true){
+        $filter=["UF_TIMELINE_ID"=>$id];
+        if($TIMELINE)
+            $filter["UF_TYPE"]='TIMELINE';
+        else
+            $filter["UF_TYPE"]='ACTIVITY';
         $CrmEventDealTimforsRepository=new CrmEventDealTimforsRepository();
         $el=$CrmEventDealTimforsRepository->GetList([
             "select" => ["*"],
             "order" => ["ID" => "ASC"],
             "limit" => 1,
-            "filter" => ["UF_TIMELINE_ID"=>$id],
+            "filter" => $filter,
         ]);
         if(count($el)>0)
             return "Статус: ".$el[0]->getStageName();
+        else{
+            $CrmEventDealTimfors=new self();
+            $param=$CrmEventDealTimfors->getEventInfo($id,false);
+            if($param){
+                if($TIMELINE)
+                    $param["Type"]='TIMELINE';
+                else
+                    $param["Type"]='ACTIVITY';
+                $CrmEventDealTimforsRepository->add(CrmEventDealTimforsFactory::createFromArray($param));
+                $el=$CrmEventDealTimforsRepository->GetList([
+                    "select" => ["*"],
+                    "order" => ["ID" => "ASC"],
+                    "limit" => 1,
+                    "filter" => $filter,
+                ]);
+                if(count($el)>0)
+                    return "Статус: ".$el[0]->getStageName();
+            }
+        }
         return "";
+    }
+
+    /**
+     * @param int $EVENT_ID
+     * @param array $arFields
+     * @throws ArgumentException
+     * @throws LoaderException
+     * @throws ObjectPropertyException
+     * @throws SystemException
+     */
+    public static function OnAfterCrmAddEventActivity($EVENT_ID, $arFields){
+        if($arFields["OWNER_TYPE_ID"]==2 && $arFields["OWNER_ID"]>0 && in_array($arFields['PROVIDER_ID'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
+            $res = CCrmDeal::GetList([],[
+                'CHECK_PERMISSIONS'=> 'N',
+                'ID'=>$arFields["OWNER_ID"],
+            ],[],1);
+            if($arr=$res->GetNext()) {
+                $STAGE_ID = $arr["STAGE_ID"];
+                $STAGE_ID = explode(':', $STAGE_ID);
+                if (count($STAGE_ID) == 2)
+                    $STAGE_ID = $STAGE_ID[1];
+                else
+                    $STAGE_ID = $STAGE_ID[0];
+                $STAGE = CCrmStatus::GetList([], ['STATUS_ID' => $STAGE_ID, 'ENTITY_ID' => 'DEAL_STAGE'])->GetNext();
+                $arrResult = [
+                    "Type" => 'ACTIVITY',
+                    "TimelineId" => $EVENT_ID,
+                    "DealId" => $arFields["OWNER_ID"],
+                    "StageId" => $arr["STAGE_ID"],
+                    "StageName" => $STAGE["NAME"],
+                ];
+                $CrmEventDealTimforsRepository=new CrmEventDealTimforsRepository();
+                $CrmEventDealTimforsRepository->add(CrmEventDealTimforsFactory::createFromArray($arrResult));
+            }
+        }
     }
 
     /**
@@ -61,22 +121,28 @@ class CrmEventDealTimfors
      */
     public static function OnAfterCrmAddEvent(Event $event){
         $id = $event->getParameter("id");
+        $fields = $event->getParameter("fields");
+        \Bitrix\Main\Diag\Debug::writeToFile($id);
+        \Bitrix\Main\Diag\Debug::writeToFile($fields);
         $CrmEventDealTimfors=new self();
         $param=$CrmEventDealTimfors->getEventInfo($id);
-        if($param){
+        \Bitrix\Main\Diag\Debug::writeToFile($param);
+        if($param && in_array($fields['ASSOCIATED_ENTITY_CLASS_NAME'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
+            $param["Type"]='TIMELINE';
             $CrmEventDealTimforsRepository=new CrmEventDealTimforsRepository();
             $CrmEventDealTimforsRepository->add(CrmEventDealTimforsFactory::createFromArray($param));
         }
     }
 
     /**
-     * @param $EVENT_ID
+     * @param int $EVENT_ID
+     * @param bool $isEvent
      * @return array|bool
      * @throws ArgumentException
      * @throws ObjectPropertyException
      * @throws SystemException
      */
-    public function getEventInfo($EVENT_ID){
+    public function getEventInfo($EVENT_ID,$isEvent=true){
         $arrResult=false;
         $dealId=0;
         $rs=TimelineTable::getList(array(
@@ -87,8 +153,10 @@ class CrmEventDealTimfors
             'select'=>array("*", "BINDINGS")
         ));
         $new=[];
+        $Event=[];
         while($ar = $rs->Fetch())
         {
+            $Event=$ar;
             $new[]=$ar;
             if($ar['CRM_TIMELINE_ENTITY_TIMELINE_BINDINGS_ENTITY_TYPE_ID']==2)
                 $dealId=(int)$ar['CRM_TIMELINE_ENTITY_TIMELINE_BINDINGS_ENTITY_ID'];
@@ -107,7 +175,13 @@ class CrmEventDealTimfors
                 'ID'=>$dealId,
             ],[],1);
             if($arr=$res->GetNext()){
-                $STAGE=CCrmStatus::GetList([],['STATUS_ID'=>$arr["STAGE_ID"],'ENTITY_ID'=>'DEAL_STAGE'])->GetNext();
+                $STAGE_ID=$arr["STAGE_ID"];
+                $STAGE_ID=explode(':',$STAGE_ID);
+                if(count($STAGE_ID)==2)
+                    $STAGE_ID=$STAGE_ID[1];
+                else
+                    $STAGE_ID=$STAGE_ID[0];
+                $STAGE=CCrmStatus::GetList([],['STATUS_ID'=>$STAGE_ID,'ENTITY_ID'=>'DEAL_STAGE'])->GetNext();
                 $arrResult=[
                     "TimelineId"=>$EVENT_ID,
                     "DealId"=>$dealId,
@@ -116,6 +190,8 @@ class CrmEventDealTimfors
                 ];
             }
         }
+        if(!in_array($Event['ASSOCIATED_ENTITY_CLASS_NAME'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL']) && !$Event["COMMENT"])
+            return false;
         return $arrResult;
     }
 

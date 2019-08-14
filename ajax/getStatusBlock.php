@@ -22,11 +22,19 @@ $request = Context::getCurrent()->getRequest();
 $name="";
 
 if (check_bitrix_sessid() || $request->isPost()){
-    $id=(int)$request->getPost("id");
+    $id=trim($request->getPost("id"));
+    $TIMELINE=true;
+    $result = strpos ($id, "ACTIVITY_");
+    if ($result !== FALSE)
+    {
+        $TIMELINE=false;
+        $id=str_replace("ACTIVITY_",'',$id);
+    }
+    $id=(int)$id;
     if($id>0)
     {
         $CrmEventDealTimfors=new CrmEventDealTimfors();
-        $name=$CrmEventDealTimfors->getNameAsId($id);
+        $name=$CrmEventDealTimfors->getNameAsId($id,$TIMELINE);
     }
 }
 

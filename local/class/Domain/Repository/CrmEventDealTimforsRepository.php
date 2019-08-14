@@ -58,6 +58,8 @@ class CrmEventDealTimforsRepository
             $return["UF_STAGE_ID"]=$el->getStageId();
         if($el->getStageName())
             $return["UF_STAGE_NAME"]=$el->getStageName();
+        if($el->getType())
+            $return["UF_TYPE"]=$el->getType();
         return $return;
     }
 
@@ -82,6 +84,9 @@ class CrmEventDealTimforsRepository
 
         if(isset($arr['UF_STAGE_NAME']))
             $params['StageName']=$arr['UF_STAGE_NAME'];
+
+        if(isset($arr['UF_TYPE']))
+            $params['Type']=$arr['UF_TYPE'];
 
         return $params;
     }

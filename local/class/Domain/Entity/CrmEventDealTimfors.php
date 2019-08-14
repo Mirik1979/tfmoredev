@@ -25,6 +25,7 @@ class CrmEventDealTimfors implements JsonSerializable
             'DealId' => $this->DealId,
             'StageId' => $this->StageId,
             'StageName' => $this->StageName,
+            'Type' => $this->Type,
         );
         return $result;
     }
@@ -53,6 +54,11 @@ class CrmEventDealTimfors implements JsonSerializable
      * @var string $StageName
      */
     private $StageName;
+
+    /**
+     * @var string $Type
+     */
+    private $Type;
 
     /**
      * @return int
@@ -132,6 +138,22 @@ class CrmEventDealTimfors implements JsonSerializable
     public function setStageName($StageName)
     {
         $this->StageName = $StageName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+
+    /**
+     * @param string $Type
+     */
+    public function setType($Type)
+    {
+        $this->Type = $Type;
     }
 
 }

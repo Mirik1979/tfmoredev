@@ -37,6 +37,9 @@ class CrmEventDealTimforsFactory
         if($params['StageName'])
             $el->setStageName($params['StageName']);
 
+        if($params['Type'])
+            $el->setType($params['Type']);
+
         return $el;
     }
 
