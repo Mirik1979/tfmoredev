@@ -122,11 +122,11 @@ class CrmEventDealTimfors
     public static function OnAfterCrmAddEvent(Event $event){
         $id = $event->getParameter("id");
         $fields = $event->getParameter("fields");
-        \Bitrix\Main\Diag\Debug::writeToFile($id);
-        \Bitrix\Main\Diag\Debug::writeToFile($fields);
+        //\Bitrix\Main\Diag\Debug::writeToFile($id);
+        //\Bitrix\Main\Diag\Debug::writeToFile($fields);
         $CrmEventDealTimfors=new self();
         $param=$CrmEventDealTimfors->getEventInfo($id);
-        \Bitrix\Main\Diag\Debug::writeToFile($param);
+        //\Bitrix\Main\Diag\Debug::writeToFile($param);
         if($param && in_array($fields['ASSOCIATED_ENTITY_CLASS_NAME'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
             $param["Type"]='TIMELINE';
             $CrmEventDealTimforsRepository=new CrmEventDealTimforsRepository();
@@ -176,12 +176,12 @@ class CrmEventDealTimfors
             ],[],1);
             if($arr=$res->GetNext()){
                 $STAGE_ID=$arr["STAGE_ID"];
-                $STAGE_ID=explode(':',$STAGE_ID);
+                /*$STAGE_ID=explode(':',$STAGE_ID);
                 if(count($STAGE_ID)==2)
                     $STAGE_ID=$STAGE_ID[1];
                 else
-                    $STAGE_ID=$STAGE_ID[0];
-                $STAGE=CCrmStatus::GetList([],['STATUS_ID'=>$STAGE_ID,'ENTITY_ID'=>'DEAL_STAGE'])->GetNext();
+                    $STAGE_ID=$STAGE_ID[0];*/
+                $STAGE=CCrmStatus::GetList([],['STATUS_ID'=>$STAGE_ID/*,'ENTITY_ID'=>'DEAL_STAGE'*/])->GetNext();
                 $arrResult=[
                     "TimelineId"=>$EVENT_ID,
                     "DealId"=>$dealId,
