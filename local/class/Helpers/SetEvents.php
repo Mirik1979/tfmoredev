@@ -60,6 +60,15 @@ class SetEvents
         );
 
 
+        EventManager::getInstance()->addEventHandler(
+            'crm',
+            '\Bitrix\Crm\Timeline\Entity\Timeline::OnAfterAdd',
+            array(
+                "local\\Services\\CrmEventDealTimfors",
+                "OnAfterCrmAddEvent"
+            )
+        );
+
 
 
 
