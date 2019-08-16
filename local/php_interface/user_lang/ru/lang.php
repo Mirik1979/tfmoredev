@@ -1,10 +1,10 @@
 <?
-$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_CAPTION"] = "Потребности";
-$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_STUB"] = "Нет потребностей, требующих оперативной реакции";
+$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_CAPTION"] = "Заказы";
+$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_STUB"] = "Нет заказов, требующих оперативной реакции";
 
 
-$MESS["/local/components/tf/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD"] = "Добавить потребность";
-$MESS["/local/components/tf/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_TITLE"] = "Добавить потребность";
+$MESS["/local/components/tf/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD"] = "Добавить заказ";
+$MESS["/local/components/tf/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_TITLE"] = "Добавить заказ";
 
 // переименование сделок в заказы
 $MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL"] = "Заказы";
@@ -440,7 +440,7 @@ $MESS["/local/templates/bitrix24/components/bitrix/crm.deal/resrequests/lang/ru/
 $MESS["/local/templates/bitrix24/components/bitrix/crm.deal/resrequests/lang/ru/widget.php"]["CRM_DEAL_WGT_PAYMENT_CONTROL"] = "Контроль оплат выигранных заказов";
 $MESS["/local/templates/bitrix24/components/bitrix/crm.deal/resrequests/lang/ru/widget.php"]["CRM_DEAL_WGT_QTY_DEAL_IDLE"] = "Количество забытых заказов";
 $MESS["/local/templates/bitrix24/components/bitrix/crm.deal/resrequests/lang/ru/widget.php"]["CRM_DEAL_WGT_QTY_DEAL_WON"] = "Количество выигранных заказов";
-$MESS["/local/templates/bitrix24/components/bitrix/crm.deal/resrequests/lang/ru/widget.php"]["CRM_DEAL_WGT_DEMO_CONTENT"] = "Если у вас еще нет заказов, создайте <a href=\"#URL#\" class=\"#CLASS_NAME#\">первую потребность</a> прямо сейчас!";
+$MESS["/local/templates/bitrix24/components/bitrix/crm.deal/resrequests/lang/ru/widget.php"]["CRM_DEAL_WGT_DEMO_CONTENT"] = "Если у вас еще нет заказов, создайте <a href=\"#URL#\" class=\"#CLASS_NAME#\">первый заказ</a> прямо сейчас!";
 
 $MESS["/local/templates/bitrix24/components/bitrix/crm.deal/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_SUM_DEAL_OVERALL"] = "Общая сумма заказов";
 $MESS["/local/templates/bitrix24/components/bitrix/crm.deal/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_SUM_DEAL_WON"] = "Сумма выигранных заказов";
