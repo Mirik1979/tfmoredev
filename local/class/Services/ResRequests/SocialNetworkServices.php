@@ -24,7 +24,7 @@ class SocialNetworkServices
         // Ссылка закладки
         $arResult["Urls"]["resrequests"] = \CComponentEngine::MakePathFromTemplate("/workgroups/group/#group_id#/resrequests/", array("group_id" => $arResult["Group"]["ID"]));
         // Название закладки
-        $arResult["Title"]["resrequests"] = "Ресурсные потребности";
+        $arResult["Title"]["resrequests"] = "Ресурсные заказы";
     }
 
 
@@ -56,14 +56,14 @@ class SocialNetworkServices
     function __AddSocNetFeature(&$arSocNetFeaturesSettings)
     {
         $arSocNetFeaturesSettings["resrequests"] = array(
-            "FeatureName" => "Ресурсная потребность",
+            "FeatureName" => "Ресурсный заказ",
             "allowed" => array(SONET_ENTITY_USER, SONET_ENTITY_GROUP),
             "operations" => array(
                 "write" => array(SONET_ENTITY_USER => SONET_RELATIONS_TYPE_NONE, SONET_ENTITY_GROUP => SONET_ROLES_MODERATOR),
                 "view" => array(SONET_ENTITY_USER => SONET_RELATIONS_TYPE_ALL, SONET_ENTITY_GROUP => SONET_ROLES_USER),
             ),
             "minoperation" => "view",
-            "title" => "Ресурсная потребность"
+            "title" => "Ресурсный заказ"
         );
     }
 
