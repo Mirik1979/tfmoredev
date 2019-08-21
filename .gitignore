@@ -25,3 +25,12 @@ stream
 tasks
 telephony
 .idea
+/bitrix/
+/upload/
+/local/vendor/
+/*.txt
+*.log
+/logs
+/.htaccess
+/web.config
+/urlrewrite.php
