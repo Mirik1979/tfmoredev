@@ -1,13 +1,13 @@
 <?
-$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_CAPTION"] = "Заказы";
-$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_STUB"] = "Нет заказов, требующих оперативной реакции";
+$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_CAPTION"] = "Активности";
+$MESS["/bitrix/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_STUB"] = "Нет активностей, требующих оперативной реакции";
 
 
 $MESS["/local/components/tf/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD"] = "Добавить заказ";
 $MESS["/local/components/tf/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_TITLE"] = "Добавить заказ";
 
 // переименование сделок в заказы
-$MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL"] = "Заказы";
+$MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL"] = "Активности";
 $MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL_TITLE"] = "Список заказов";
 $MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_RECYCLE_BIN_TITLE"] = "Просмотр и восстановление удалённых лидов, контактов, компаний и заказов.";
 
@@ -60,28 +60,24 @@ $MESS["/bitrix/components/bitrix/crm.config.external_sale.list/lang/ru/component
 $MESS["/bitrix/components/bitrix/crm.config.external_sale.list/lang/ru/component.php"]['BPWC_WLC_IMPORT_PUBLIC'] = "Открытость заказа по умолчанию";
 $MESS["/bitrix/components/bitrix/crm.config.external_sale.list/lang/ru/component.php"]['BPWC_WLC_IMPORT_PREFIX'] = "Префикс названия заказа";
 
-$MESS["/bitrix/components/bitrix/crm.contact.show/lang/ru/component.php"]["CRM_FIELD_CONTACT_EVENT"] = "Заказы контакта";
-$MESS["/bitrix/components/bitrix/crm.contact.show/lang/ru/component.php"]["CRM_FIELD_CONTACT_DEAL"] = "Заказы контакта";
-$MESS["/bitrix/components/bitrix/crm.contact.show/lang/ru/component.php"]["CRM_SECTION_DEALS"] = "Заказы";
-
-$MESS["/bitrix/components/bitrix/crm.contact.menu/lang/ru/component.php"]["CRM_CONTACT_DEAL_ADD_TITLE"] = "Добавить заказ";
-$MESS["/bitrix/components/bitrix/crm.contact.menu/lang/ru/component.php"]["CRM_CONTACT_DEAL_ADD"] = "Добавить заказ";
-
+$MESS["/bitrix/components/bitrix/crm.contact.show/lang/ru/component.php"]["CRM_FIELD_CONTACT_EVENT"] = "Активности контакта";
+$MESS["/bitrix/components/bitrix/crm.contact.show/lang/ru/component.php"]["CRM_FIELD_CONTACT_DEAL"] = "Активности контакта";
+$MESS["/bitrix/components/bitrix/crm.contact.show/lang/ru/component.php"]["CRM_SECTION_DEALS"] = "Активности";
+$MESS["/bitrix/components/bitrix/crm.contact.menu/lang/ru/component.php"]["CRM_CONTACT_DEAL_ADD_TITLE"] = "Добавить активность";
+$MESS["/bitrix/components/bitrix/crm.contact.menu/lang/ru/component.php"]["CRM_CONTACT_DEAL_ADD"] = "Добавить активность";
 $MESS["/bitrix/components/bitrix/crm.activity.list/lang/ru/component.php"]['CRM_ACTIVITY_COLUMN_REFERENCE'] = 'Заказ/Лид';
-
 $MESS["/bitrix/components/bitrix/crm.lead.edit/lang/ru/component.php"]["CRM_FIELD_OPPORTUNITY"] = "Возможная сумма заказа";
-
-$MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL"] = "Заказы";
-
+// заголовок меню
+$MESS["/bitrix/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL"] = "Воронка";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.edit/lang/ru/component.php"]["CRM_DEAL_EDIT_NOT_FOUND"] = "Не удалось найти заказ с идентификатором '#ID#'.";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_STAGE_ID"] = "Стадия заказа";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_CLOSED"] = "Заказ закрыта";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_DEAL_EVENT"] = "События заказа";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_PRODUCT_ROWS"] = "Товары заказа";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_OPENED_TITLE"] = "Все пользователи могут просматривать заказ";
-
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD"] = "Добавить заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_TITLE"] = "Добавить заказ";
+// кнопка добавления заказа
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD"] = "Добавить активность";
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_TITLE"] = "Добавить активность";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_COPY_TITLE"] = "Копировать заказ";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DETAIL_EXPOSE"] = "Создать заказ";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DETAIL_EXPOSE_TITLE"] = "Создать заказ на основании шаблона";
@@ -110,9 +106,9 @@ $MESS["/bitrix/components/bitrix/crm.config.bp.types/lang/ru/component.php"]["CR
 
 $MESS["/bitrix/components/bitrix/crm.event.view/lang/ru/component.php"]["CRM_ENTITY_TYPE_DEAL"] = "Заказ";
 
-$MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_COLUMN_TITLE"] = "Стадия заказа";
+$MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_COLUMN_TITLE"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия заказа";
-$MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_COLUMN_COUNT"] = "Заказы";
+$MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_COLUMN_COUNT"] = "Активности";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_COLUMN_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK"] = "Мои заказы за неделю";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK_AGO"] = "Мои заказы за прошлую неделю";
@@ -130,7 +126,7 @@ $MESS["/bitrix/components/bitrix/crm.invoice.events/lang/ru/component.php"]["CRM
 $MESS["/bitrix/components/bitrix/crm.invoice.preview/lang/ru/component.php"]["CRM_FIELD_DEAL"] = "Заказ";
 
 $MESS["/bitrix/components/bitrix/crm.company.show/lang/ru/component.php"]["CRM_FIELD_COMPANY_DEAL"] = "Заказы компании";
-$MESS["/bitrix/components/bitrix/crm.company.show/lang/ru/component.php"]["CRM_SECTION_DEALS"] = "Заказы";
+$MESS["/bitrix/components/bitrix/crm.company.show/lang/ru/component.php"]["CRM_SECTION_DEALS"] = "Активности";
 
 $MESS["/bitrix/components/bitrix/crm.quote.menu/lang/ru/component.php"]["QUOTE_CREATE_ON_BASIS_TITLE"] = "Создание заказа и счёта на основании предложения";
 $MESS["/bitrix/components/bitrix/crm.quote.menu/lang/ru/component.php"]["QUOTE_CREATE_ON_BASIS_HINT_CONTENT"] = "Нажмите на кнопку чтобы создать на основании предложения заказ или счёт. Воспользуйтесь выпадающим списком для выбора нужного сценария.";
@@ -140,14 +136,19 @@ $MESS["/bitrix/components/bitrix/mobile.crm.quote.list/lang/ru/component.php"]["
 $MESS["/bitrix/components/bitrix/crm.config.sendsave/lang/ru/component.php"]["CRM_FIELD_REGEXP_DEAL"] = "Заказ";
 
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_TITLE"] = "Название заказа";
-$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия заказа";
+// заголовок списка
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_NEW"] = "Новые заказы";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои заказы";
-$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_LIST_SHORT"] = "Заказы";
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Активности в работе";
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_WON"] = "Завершенные активности";
+// надпись около меню
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_LIST_SHORT"] = "Воронка";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_RECUR"] = "Регулярные заказы";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_BP_R_P_TITLE"] = "Перейти к бизнес-процессам заказа";
-$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_DEAL"] = "Заказ";
+// активность заголовок
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_DEAL"] = "Активность";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_IS_NEW"] = "Новый заказ";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Заказы в работе";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_WON"] = "Закрытые заказы";
@@ -166,10 +167,10 @@ $MESS["/bitrix/components/bitrix/crm.lead.convert/lang/ru/component.php"]["CRM_D
 $MESS["/bitrix/components/bitrix/crm.activity.task.list/lang/ru/component.php"]["CRM_ENTITY_TYPE_DEAL"] = "Заказ";
 
 $MESS["/bitrix/components/bitrix/crm.deal.import/lang/ru/component.php"]["CRM_COLUMN_TITLE"] = "Название заказа";
-$MESS["/bitrix/components/bitrix/crm.deal.import/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия заказа";
+$MESS["/bitrix/components/bitrix/crm.deal.import/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.import/lang/ru/component.php"]["CRM_COLUMN_CLOSED"] = "Заказ закрыт";
 
-$MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_STAGE_ID"] = "Стадия заказа";
+$MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_SECTION_CONTACT_INFO"] = "Заказ";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_DEAL_CONTACTS"] = "Контакты заказа";
@@ -178,7 +179,7 @@ $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIEL
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_DEAL_EVENT"] = "История изменений заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_EDIT"] = "Заказ: #NAME#";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_ADD"] = "Добавление заказа";
-$MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_LIST_SHORT"] = "Заказы";
+$MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_LIST_SHORT"] = "Воронка";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_SECTION_PRODUCT_ROWS"] = "Товары заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_PRODUCT_ROWS"] = "Товары заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.show/lang/ru/component.php"]["CRM_FIELD_ACTIVITY_LIST"] = "Дела заказа";
@@ -204,13 +205,13 @@ $MESS["/bitrix/components/bitrix/crm.deal_category.panel/lang/ru/component.php"]
 
 $MESS["/bitrix/components/bitrix/crm.config.bp.list/lang/ru/component.php"]["CRM_BP_DEAL"] = "Заказ";
 
-$MESS["/bitrix/components/bitrix/crm.deal.preview/lang/ru/component.php"]["CRM_FIELD_STAGE"] = "Стадия заказа";
+$MESS["/bitrix/components/bitrix/crm.deal.preview/lang/ru/component.php"]["CRM_FIELD_STAGE"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.preview/lang/ru/component.php"]["CRM_TITLE_DEAL"] = "Заказ";
 
 $MESS["/bitrix/components/bitrix/crm.config.configs/lang/ru/component.php"]["CRM_FIELD_RECKON_ACTIVITYLESS_ITEMS_IN_COUNTERS"] = "Учитывать заказы/лиды без дел для расчета счетчиков в меню";
 $MESS["/bitrix/components/bitrix/crm.config.configs/lang/ru/component.php"]["CRM_FIELD_CONVERSION_ENABLE_AUTOCREATION"] = "Создавать контакты, компании, заказы, счета и предложения без участия пользователя";
 
-$MESS["/bitrix/components/bitrix/crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_STAGE_ID"] = "Стадия заказа";
+$MESS["/bitrix/components/bitrix/crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/components/bitrix/crm.deal.edit/lang/ru/component.php"]["CRM_FIELD_DEAL_EVENT"] = "События заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.edit/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_EDIT"] = "Заказ: #NAME#";
@@ -234,11 +235,11 @@ $MESS["/bitrix/components/bitrix/crm.lead.preview/lang/ru/component.php"]["CRM_F
 $MESS["/bitrix/components/bitrix/mobile.crm.invoice.edit/lang/ru/component.php"]["CRM_FIELD_UF_DEAL_ID"] = "Заказ";
 
 $MESS["/bitrix/modules/crm/lang/ru/lib/category/dealcategory.php"]["CRM_DEAL_CATEGORY_STATUS_ENTITY"] = "Стадии заказа #CATEGORY#";
-$MESS["/bitrix/modules/crm/lang/ru/lib/category/dealcategory.php"]["CRM_DEAL_CATEGORY_PERMISSION_ENTITY"] = "Заказ #CATEGORY#";
-$MESS["/bitrix/modules/crm/lang/ru/lib/category/dealcategory.php"]["CRM_DEAL_CATEGORY_STAGE_FILTER"] = "Стадия заказа";
+$MESS["/bitrix/modules/crm/lang/ru/lib/category/dealcategory.php"]["CRM_DEAL_CATEGORY_PERMISSION_ENTITY"] = "Активность #CATEGORY#";
+$MESS["/bitrix/modules/crm/lang/ru/lib/category/dealcategory.php"]["CRM_DEAL_CATEGORY_STAGE_FILTER"] = "Стадия активности";
 
 
-$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_FIELD_COMPARE_DEAL_STAGE"] = "Изменено поле \"Стадия заказа\"";
+$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_FIELD_COMPARE_DEAL_STAGE"] = "Изменено поле \"Стадия активности\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_FIELD_COMPARE_CLOSED"] = "Изменено поле \"Заказ закрыт\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_EVENT_ADD"] = "Создан заказ";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_RESPONSIBLE_IM_NOTIFY"] = "Вы назначены ответственным за заказ \"#title#\"";
@@ -246,11 +247,11 @@ $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_NOT_
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_PROGRESS_IM_NOTIFY"] = "Статус заказа \"#title#\" изменен c \"#start_status_title#\" на \"#final_status_title#\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_CREATION_CANCELED"] = "Создание заказа отменено обработчиком события: \"#NAME#\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_UPDATE_CANCELED"] = "Обновление заказа отменено обработчиком события: \"#NAME#\"";
-$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_FIELD_STAGE_ID"] = "Стадия заказа";
+$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_FIELD_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_FIELD_IS_NEW"] = "Новый заказ";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_FIELD_IS_RETURN_CUSTOMER"] = "Повторный заказ";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_FIELD_IS_RECURRING"] = "Регулярный заказ";
-$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_DEFAULT_TITLE"] = "Заказ #";
+$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_DEFAULT_TITLE"] = "Активность #";
 
 $MESS["/bitrix/modules/crm/lang/ru/mail/action.php"]["CRM_MAIL_ENTITY_DEAL"] = "Заказ";
 
@@ -268,7 +269,7 @@ $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.funnel/lang/ru/com
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK_AGO"] = "Мои заказы за прошлую неделю";
 
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_TITLE"] = "Название заказа";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия заказа";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_NEW"] = "Новые заказы";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои заказы";
@@ -335,7 +336,7 @@ $MESS["/bitrix/components/bitrix/crm.channel_tracker/templates/.default/lang/ru/
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/templates/.default/lang/ru/template.php"]["DEAL_STAGES_WON"] = "Заказы в работе";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/templates/.default/lang/ru/template.php"]["DEAL_STAGES_LOSE"] = "Незаключенные заказы";
 
-$MESS["/bitrix/modules/intranet/lang/ru/public/crm/deal/index.php"]["CRM_TITLE"] = "Заказы";
+$MESS["/bitrix/modules/intranet/lang/ru/public/crm/deal/index.php"]["CRM_TITLE"] = "Воронка";
 
 $MESS["/bitrix/modules/crm/lang/ru/lib/conversion/quoteconverter.php"]["CRM_QUOTE_CONVERTER_DEAL_PROHIBITED"] = "Создание заказа на основании предложения невозможно, так как это предложение было создано из заказа.";
 
@@ -350,10 +351,10 @@ $MESS["/bitrix/modules/crm/lang/ru/lib/conversion/entityconversionexception.php"
 $MESS["/bitrix/modules/crm/lang/ru/lib/conversion/entityconversionexception.php"]["CRM_CONV_EX_DEAL_CREATE_FAILED"] = "Не удалось создать заказ.\r\nДетальное описание:\r\n";
 $MESS["/bitrix/modules/crm/lang/ru/lib/conversion/entityconversionexception.php"]["CRM_CONV_EX_DEAL_HAS_WORKFLOWS"] = "Найдены бизнес-процессы, настроенные на запуск при создании заказа. Возможно потребуется участие пользователя.";
 
-$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL_CONTACT_COMPANY"] = "Заказ + Контакт + Компанию";
-$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL_CONTACT"] = "Заказ + Контакт";
-$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL_COMPANY"] = "Заказ + Компанию";
-$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL"] = "Заказ";
+$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL_CONTACT_COMPANY"] = "Активность + Контакт + Компанию";
+$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL_CONTACT"] = "Активность + Контакт";
+$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL_COMPANY"] = "Активность + Компанию";
+$MESS["/bitrix/modules/crm/lang/ru/lib/conversion/leadconversionscheme.php"]["CRM_LEAD_CONV_DEAL"] = "Активность";
 
 $MESS["/bitrix/modules/crm/lang/ru/lib/conversion/quoteconversionscheme.php"]["CRM_QUOTE_CONV_DEAL"] = "Заказ";
 
@@ -383,7 +384,7 @@ $MESS["/bitrix/modules/intranet/lang/ru/public/crm/configs/deal_category/index.p
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_DEAL"] = "Заказ";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_DEAL_CATEGORY"] = "Направление заказов";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_RECURRING_DEAL"] = "Шаблон заказа";
-$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_DEAL_CATEGORY"] = "Заказы";
+$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_DEAL_CATEGORY"] = "Воронка";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_DEAL_CATEGORY_CATEGORY"] = "Направления заказов";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_owner_type.php"]["CRM_OWNER_TYPE_DEAL_NOT_FOUND"] = "Заказ не найден";
 
@@ -485,10 +486,10 @@ $MESS["/bitrix/modules/crm/install/components/bitrix/crm.control_panel/lang/ru/c
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_DEAL_TITLE"] = "Список заказов";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.control_panel/lang/ru/component.php"]["CRM_CTRL_PANEL_ITEM_RECYCLE_BIN_TITLE"] = "Просмотр и восстановление удалённых лидов, контактов, компаний и заказов.";
 
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.menu/lang/ru/.description.php"]["CRM_DEAL_NAME"] = "Заказы";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.menu/lang/ru/.description.php"]["CRM_DEAL_NAME"] = "Воронка";
 
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_CAPTION"] = "Заказы";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_STUB"] = "Нет заказов, требующих оперативной реакции";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.entity.counter.panel/lang/ru/class.php"]["CRM_COUNTER_DEAL_STUB"] = "Нет активностей, требующих оперативной реакции";
 
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.quote.show/lang/ru/component.php"]["CRM_QUOTE_FIELD_DEAL_ID"] = "Заказ";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.quote.show/lang/ru/component.php"]["CRM_FIELD_QUOTE_DEAL"] = "Заказы";
@@ -496,8 +497,7 @@ $MESS["/bitrix/modules/crm/install/components/bitrix/crm.quote.show/lang/ru/comp
 
 
 $MESS["/bitrix/components/bitrix/crm.kanban/lang/ru/class.php"]['CRM_KANBAN_TITLE_DEAL'] = 'Канбан, заказы';
-$MESS["/bitrix/components/bitrix/crm.kanban/lang/ru/class.php"]['CRM_KANBAN_TITLE2_DEAL'] = 'Заказы';
-
-
-
+$MESS["/bitrix/components/bitrix/crm.kanban/lang/ru/class.php"]['CRM_KANBAN_TITLE2_DEAL'] = 'Воронка';
+$MESS["/bitrix/components/bitrix/crm.contact.details/lang/ru/class.php"]['CRM_CONTACT_TAB_DEAL'] = 'Активности';
+$MESS["/bitrix/components/bitrix/crm.company.details/lang/ru/class.php"]['CRM_COMPANY_TAB_DEAL'] = 'Активности';
 ?>
