@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d9d690c-d7cc-4c6c-b484-9a0870b8656e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.access.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.left.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.top.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.top.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/.top.menu_ext.php.old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/confirm/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/employees.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/personal.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/personal/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/personal/.left.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/index_old.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/.left.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.access.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/board/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/board/detail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/board/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/board/my/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/board/my/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/.left.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/button.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/connector/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/connector/viber/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/editrole.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/list/edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/list/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/permissions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/statistics.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/event_list.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/faq/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/absence_help.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/bp_help.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/extranet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/novice.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/outlook.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/help/xmpp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/idea/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/idea/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/certification/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/course.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/gradebook.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/mycourses.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/learning/search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/links.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lists/.left.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lists/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/lists/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/.left.menu_ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/button.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/connector/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/connector/viber/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/editrole.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/list/edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/list/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/permissions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/openlines/statistics.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/.left.menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/.section.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/form_edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/form_list.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/form_view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/requests/my.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/res_c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/salary/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/subscr_edit.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/support.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/vote_new.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/vote_result.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/votes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/wiki.php" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/local/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>arRes</find>
+      <find>rol</find>
+      <find>&gt;</find>
+      <find>cont</find>
+      <find>&gt;&gt;</find>
+      <find>edit</find>
+      <find>profile_edit</find>
+      <find>debug</find>
+      <find>application</find>
+      <find>ech</find>
+      <find>$USER-&gt;Update</find>
+      <find>log</find>
+      <find>superficha</find>
+      <find>post</find>
+      <find>AddMessage2Log</find>
+      <find>prod</find>
+      <find>files</find>
+      <find>Addm</find>
+      <find>заказы</find>
+      <find>Подборы</find>
+      <find>Подбор</find>
+      <find>стадия</find>
+      <find>стадия заказа</find>
+      <find>Заказ</find>
+      <find>Нет заказов</find>
+      <find>Заказы</find>
+      <find>Заказ #</find>
+      <find>CONTACT</find>
+      <find>contact</find>
+      <find>создать</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>resrequests</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/local/components/socialnetwork.user_profile/templates/short/template.php" />
+        <option value="$PROJECT_DIR$/local/templates/.default/components/socialnetwork.user_profile/.default/lang/ru/template.php" />
+        <option value="$PROJECT_DIR$/local/templates/.default/components/socialnetwork.user_profile/.default/template.php" />
+        <option value="$PROJECT_DIR$/bitrix/.settings.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile_edit/.default/result_modifier.php" />
+        <option value="$PROJECT_DIR$/local/components/socialnetwork.user_profile_edit/component.php" />
+        <option value="$PROJECT_DIR$/bitrix/php_interface/dbconn.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile_edit/.default/template.php" />
+        <option value="$PROJECT_DIR$/bitrix/components/bitrix/socialnetwork.user_profile_edit/component.php" />
+        <option value="$PROJECT_DIR$/local/php_interface/deals.php" />
+        <option value="$PROJECT_DIR$/local/php_interface/superficha.php" />
+        <option value="$PROJECT_DIR$/local/php_interface/init.php" />
+        <option value="$PROJECT_DIR$/local/php_interface/resrequests.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork_user/.default/user_profile_edit.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/result_modifier.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/lang/ru/template.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/lang/en/template.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/template.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/templates/.default/result_modifier.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/templates/.default/template.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/component.php" />
+        <option value="$PROJECT_DIR$/local/components/scripts/diskprocess.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/crm.deal.details/lang/ru/class.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/crm.deal.list/lang/ru/.description.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/crm.deal.list/lang/ru/component.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/crm.deal.list/templates/.default/lang/ru/template.php" />
+        <option value="$PROJECT_DIR$/local/components/tf/crm.deal.menu/lang/ru/.description.php" />
+        <option value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/search.title/.default/lang/ru/template.php" />
+        <option value="$PROJECT_DIR$/local/php_interface/user_lang/ru/lang.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="tfmoredev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tfmoredev" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel" />
+      <recent name="$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/templates" />
+      <recent name="$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork_user" />
+      <recent name="$PROJECT_DIR$/local/components/tf" />
+      <recent name="$PROJECT_DIR$/local/templates" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d9d690c-d7cc-4c6c-b484-9a0870b8656e" name="Default Changelist" comment="" />
+      <created>1562385727614</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562385727614</updated>
+      <workItem from="1562385729410" duration="5754000" />
+      <workItem from="1562398344570" duration="23430000" />
+      <workItem from="1562859661985" duration="178000" />
+      <workItem from="1563168809086" duration="3050000" />
+      <workItem from="1563179862590" duration="175000" />
+      <workItem from="1563180115193" duration="10006000" />
+      <workItem from="1565280008212" duration="964000" />
+      <workItem from="1565630684028" duration="7892000" />
+      <workItem from="1566193700845" duration="5970000" />
+      <workItem from="1566419325015" duration="9838000" />
+    </task>
+    <task id="LOCAL-00001" summary="11">
+      <created>1562394982385</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562394982385</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="67257000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28898427" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="File Transfer" order="9" weight="0.32650602" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32967034" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.06795422" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork_user/.default/lang/en/user_blog.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/lang/en/help/.tooltips.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitrix/components/bitrix/socialnetwork_user/templates/.default/user_profile_edit.php" />
+    <entry file="file://$PROJECT_DIR$/local/php_interface/resrequests.php" />
+    <entry file="file://$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/templates/.default/lang/en/template.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork_user/.default/user_profile_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/lang/en/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/templates/.default/result_modifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="79" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/templates/.default/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="54" column="87" selection-start-line="54" selection-start-column="87" selection-end-line="54" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/lang/ru/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="421" column="16" lean-forward="true" selection-start-line="421" selection-start-column="16" selection-end-line="421" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitrix/activities/bitrix/diskdetailactivity/diskdetailactivity.php" />
+    <entry file="file://$PROJECT_DIR$/bitrix/activities/bitrix/crmsetcompanyfield/crmsetcompanyfield.php" />
+    <entry file="file://$PROJECT_DIR$/bitrix/activities/bitrix/crmsetshipmentstatus/crmsetshipmentstatus.php" />
+    <entry file="file://$PROJECT_DIR$/bitrix/activities/bitrix/crmsetcontactfield/crmsetcontactfield.php" />
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile_edit/.default/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="610" column="91" selection-start-line="610" selection-start-column="91" selection-end-line="610" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile_edit/.default/result_modifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="44" lean-forward="true" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/socialnetwork.user_profile/.default/result_modifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="128" column="46" selection-start-line="128" selection-start-column="16" selection-end-line="128" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitrix/managed_cache/MYSQL/fileman_component_tree/95/959371d2053449e0bf315c04fd90bf9f.php" />
+    <entry file="file://$PROJECT_DIR$/local/components/tf/socialnetwork.user_profile_edit/component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="434" column="37" lean-forward="true" selection-start-line="434" selection-start-column="37" selection-end-line="434" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/Проекты/ВанГог/termbp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/scripts/diskprocess.php" />
+    <entry file="file://$PROJECT_DIR$/local/class/Services/attachCV.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.details/lang/ru/ajax.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.list/templates/.default/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-930" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/class/Services/ResRequests/SocialNetworkServices.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.details/lang/ru/class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.list/lang/ru/.description.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/php_interface/user_lang/ru/test.php" />
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.list/lang/ru/component.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="41" column="41" lean-forward="true" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.list/templates/.default/lang/ru/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.list/templates/.default/lang/ru/excel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.menu/templates/.default/lang/ru/template.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.menu/.description.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.menu/lang/ru/.description.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.menu/lang/ru/.parameters.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/search.title/.default/lang/ru/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/search.title/.default/lang/ru/.parameters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/components/tf/crm.deal.menu/lang/ru/component.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.access.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitrix/cache/bx/user/company/structure/82/825000bbe839b78486f668bc2793720d.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel/.default/bitrix/search.title/backend/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel/.default/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-281" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel/.default/bitrix/search.title/backend/result_modifier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2010" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel/.default/result_modifier.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.control_panel/resrequests/template.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bottom.menu.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.top.menu.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/php_interface/user_lang/ru/lang.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="346" column="18" selection-start-line="346" selection-start-column="18" selection-end-line="346" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local/templates/bitrix24/components/bitrix/crm.deal/.default/automation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
