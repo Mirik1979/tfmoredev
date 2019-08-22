@@ -7,6 +7,15 @@ $menuContainerId = $idPrefix."menu";
 $searchContainerId = $idPrefix."search";
 $searchInputId = $searchContainerId."_input";
 
+global $USER;
+//print_r($arResult["ITEMS"]);
+if(!$USER->IsAdmin()) {
+    unset($arResult["ITEMS"][4]);
+    unset($arResult["ITEMS"][5]);
+}
+
+
+
 if (!empty($arResult["ITEMS"]) && is_array($arResult["ITEMS"]))
 {
 	foreach ($arResult["ITEMS"] as $key => $item)

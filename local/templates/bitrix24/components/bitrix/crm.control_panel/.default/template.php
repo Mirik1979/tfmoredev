@@ -31,7 +31,7 @@ if ($arResult["ENABLE_SEARCH"])
 	$this->SetViewTarget("pagetitle", 10);
 	?>
 	<span id="<?=$arResult["CRM_PANEL_SEARCH_CONTAINER_ID"]?>" class="crm-search-block">
-		<form class="crm-search" action="<?=htmlspecialcharsbx($arResult["SEARCH_PAGE_URL"])?>" method="get">
+        <form class="crm-search" action="<?=htmlspecialcharsbx($arResult["SEARCH_PAGE_URL"])?>" method="get">
 			<button type="submit" class="crm-search-btn"></button>
 			<span class="crm-search-inp-wrap"><input
 					id="<?=$arResult["CRM_PANEL_SEARCH_INPUT_ID"]?>"

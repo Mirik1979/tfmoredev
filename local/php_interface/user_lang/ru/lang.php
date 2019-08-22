@@ -48,7 +48,7 @@ $MESS["/bitrix/components/bitrix/crm.quote.edit/lang/ru/component.php"]["CRM_QUO
 $MESS["/bitrix/components/bitrix/crm.quote.preview/lang/ru/component.php"]["CRM_FIELD_DEAL"] = "Заказ";
 
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_PRESET_NEW"] = "Новые заказы";
-$MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_PRESET_MY"] = "Мои заказы";
+$MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_PRESET_MY"] = "Мои активности";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_FILTER_NONE"] = "Все заказы";
 $MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_CREATE_DEAL"] = "Заказ";
 
@@ -140,7 +140,7 @@ $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLU
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_NEW"] = "Новые заказы";
-$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои заказы";
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои активности";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Активности в работе";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_WON"] = "Завершенные активности";
 // надпись около меню
@@ -150,7 +150,7 @@ $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_BP_R
 // активность заголовок
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_DEAL"] = "Активность";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_IS_NEW"] = "Новый заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Заказы в работе";
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Активности в работе";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_WON"] = "Закрытые заказы";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_MOVE_TO_CATEGORY_ERROR_TITLE"] = "Не удалось перенести заказы.";
 $MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_MOVE_TO_CATEGORY_ERROR_TEXT"] = "Некоторые заказы не были перенесены в новое направление. Перенос возможен только после завершения работающих бизнес-процессов. Вы можете остановить или завершить процесс в карточке заказа, на вкладке Бизнес-процессы. Также убедитесь, что у заказа установлена стадия и назначен ответственный.";
@@ -260,10 +260,10 @@ $MESS["/bitrix/modules/crm/lang/ru/lib/messagehelper.php"]["CRM_DEAL_COUNT_1"] =
 
 $MESS["/bitrix/modules/mobile/install/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_PRESET_MY"] = "Мои заказы";
 
-$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_MY"] = "Мои заказы";
-$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_WORK_MY"] = "Мои заказы";
-$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_WORK"] = "Заказы в работе";
-$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_WON"] = "Закрытые заказы";
+$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_MY"] = "Мои активности";
+$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_WORK_MY"] = "Мои активности";
+$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_WORK"] = "Активности в работе";
+$MESS["/bitrix/modules/crm/lang/ru/lib/kanban/helper.php"]["CRM_KANBAN_HELPER_DPR_WON"] = "Закрытые активности";
 
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK"] = "Мои заказы за неделю";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK_AGO"] = "Мои заказы за прошлую неделю";
@@ -272,28 +272,28 @@ $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/compo
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_STAGE_ID"] = "Стадия активности";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_CLOSED"] = "Заказ закрыт";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_NEW"] = "Новые заказы";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои заказы";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои активности";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_LIST_SHORT"] = "Заказы";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_DEAL_NAV_TITLE_RECUR"] = "Регулярные заказы";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_BP_R_P_TITLE"] = "Перейти к бизнес-процессам заказа";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_DEAL"] = "Заказ";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_IS_NEW"] = "Новый заказ";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Заказы в работе";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_WON"] = "Закрытые заказы";
+//$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_IS_NEW"] = "Новый заказ";
+//$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_IN_WORK"] = "Активности в работе";
+//$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_WON"] = "Закрытые заказы";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_MOVE_TO_CATEGORY_ERROR_TITLE"] = "Не удалось перенести заказы.";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_MOVE_TO_CATEGORY_ERROR_TEXT"] = "Некоторые заказы не были перенесены в новое направление. Перенос возможен только после завершения работающих бизнес-процессов. Вы можете остановить или завершить процесс в карточке заказа, на вкладке Бизнес-процессы. Также убедитесь, что у заказа установлена стадия и назначен ответственный.";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_COLUMN_IS_RETURN_CUSTOMER"] = "Повторный заказ";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_SET_STAGE_NOT_COMPLETED_TITLE"] = "Не удалось перенести заказы.";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_SET_STAGE_NOT_COMPLETED_TEXT"] = "Некоторые заказы не удалось перенести в выбранную стадию. Заполните обязательные поля и перенесите заказы снова.";
 
-$MESS["/bitrix/wizards/bitrix/portal/site/services/crm/lang/ru/index.php"]["CRM_GADGET_MY_DEAL_TITLE"] = "Мои заказы";
+$MESS["/bitrix/wizards/bitrix/portal/site/services/crm/lang/ru/index.php"]["CRM_GADGET_MY_DEAL_TITLE"] = "Мои активности";
 
-$MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_PRESET_MY"] = "Мои заказы";
+$MESS["/bitrix/components/bitrix/mobile.crm.deal.list/lang/ru/component.php"]["M_CRM_DEAL_LIST_PRESET_MY"] = "Мои активности";
 
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK"] = "Мои заказы за неделю";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/lang/ru/component.php"]["CRM_PRESET_MY_WEEK_AGO"] = "Мои заказы за прошлую неделю";
 
-$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои заказы";
+$MESS["/bitrix/components/bitrix/crm.deal.list/lang/ru/component.php"]["CRM_PRESET_MY"] = "Мои активности";
 
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_PAGE_TITLE"] = "Аналитические отчёты по заказам";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_PAGE_TITLE_SHORT"] = "Отчёты по заказам";
@@ -303,15 +303,15 @@ $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_SUM_DEAL_IN_WORK"] = "Сумма заказов в работе";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_RATING"] = "Рейтинг по сумме выигранных заказов";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_PAYMENT_CONTROL"] = "Контроль оплат выигранных заказов";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEAL_IN_WORK"] = "Заказы в работе";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEAL_IN_WORK"] = "Активности в работе";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_QTY_DEAL_IN_WORK"] = "Количество заказов в работе";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_QTY_DEAL_IDLE"] = "Количество забытых заказов";
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_EMPLOYEE_DEAL_IN_WORK"] = "Заказы в работе по сотрудникам";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_EMPLOYEE_DEAL_IN_WORK"] = "Активности в работе по сотрудникам";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_QTY_DEAL_WON"] = "Количество выигранных заказов";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEMO_TITLE"] = "Это демо-представление, вы можете скрыть его и получить аналитику по вашим заказам.";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEMO_CONTENT"] = "Если у вас еще нет заказов, создайте <a href=\"#URL#\" class=\"#CLASS_NAME#\">первый заказ</a> прямо сейчас!";
 
-$MESS["/bitrix/modules/crm/install/components/bitrix/crm.channel_tracker/templates/.default/lang/ru/template.php"]["CRM_CH_TRACKER_WGT_DEAL_PROCESS_SUM"] = "Заказы в работе";
+$MESS["/bitrix/modules/crm/install/components/bitrix/crm.channel_tracker/templates/.default/lang/ru/template.php"]["CRM_CH_TRACKER_WGT_DEAL_PROCESS_SUM"] = "Активности в работе";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.channel_tracker/templates/.default/lang/ru/template.php"]["CRM_CH_TRACKER_WGT_RATING_BY_SUCCESSFUL_DEALS"] = "Рейтинг по сумме выигранных заказов";
 $MESS["/bitrix/modules/crm/install/components/bitrix/crm.channel_tracker/templates/.default/lang/ru/template.php"]["CRM_CH_TRACKER_WGT_ANIMATION_2"] = "Запускаете CRM?<br><br>
 Возьмите под контроль каналы, через которые клиенты обращаются к вам: подключите к CRM Телефонию, Электронную почту, Открытые линии, CRM-формы.<br><br>
@@ -326,14 +326,14 @@ $MESS["/bitrix/modules/crm/install/components/bitrix/crm.channel_tracker/templat
 $MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_PAGE_TITLE"] = "Аналитические отчёты по заказам";
 $MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_PAGE_TITLE_SHORT"] = "Отчёты по заказам";
 $MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_FUNNEL"] = "Воронка продаж по заказам";
-$MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEAL_IN_WORK"] = "Заказы в работе";
+$MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEAL_IN_WORK"] = "Активности в работе";
 $MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_EMPLOYEE_DEAL_IN_WORK"] = "Заказы в работе по сотрудникам";
 $MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEMO_TITLE"] = "Это демо-представление, вы можете скрыть его и получить аналитику по вашим заказам.";
 $MESS["/bitrix/components/bitrix/crm.deal/templates/.default/lang/ru/widget.php"]["CRM_DEAL_WGT_DEMO_CONTENT"] = "Если у вас еще нет заказов, создайте <a href=\"#URL#\" class=\"#CLASS_NAME#\">первый заказ</a> прямо сейчас!";
 
 $MESS["/bitrix/components/bitrix/crm.channel_tracker/templates/.default/lang/ru/template.php"]["CRM_CH_TRACKER_WGT_DEAL_PROCESS_SUM"] = "Заказы в работе";
 
-$MESS["/bitrix/components/bitrix/crm.deal.funnel/templates/.default/lang/ru/template.php"]["DEAL_STAGES_WON"] = "Заказы в работе";
+$MESS["/bitrix/components/bitrix/crm.deal.funnel/templates/.default/lang/ru/template.php"]["DEAL_STAGES_WON"] = "Активности в работе";
 $MESS["/bitrix/components/bitrix/crm.deal.funnel/templates/.default/lang/ru/template.php"]["DEAL_STAGES_LOSE"] = "Незаключенные заказы";
 
 $MESS["/bitrix/modules/intranet/lang/ru/public/crm/deal/index.php"]["CRM_TITLE"] = "Воронка";
@@ -404,9 +404,9 @@ $MESS["/bitrix/components/bitrix/crm.configs/templates/.default/lang/ru/template
         можете настроить обмен данными, все новые заказы будут автоматически отправлены в Битрикс24 в виде заказов.";
 $MESS["/bitrix/components/bitrix/crm.configs/templates/.default/lang/ru/template.php"]["CRM_CONFIGS_DEAL_CATEGORY"] = "Направления заказов";
 
-$MESS["/bitrix/modules/crm/lang/ru/lib/phasesemantics.php"]["CRM_PHASE_SEMANTICS_DEAL_PROCESS"] = "Группа стадий \"Заказ в работе\"";
-$MESS["/bitrix/modules/crm/lang/ru/lib/phasesemantics.php"]["CRM_PHASE_SEMANTICS_DEAL_SUCCESS"] = "Стадия \"Заказ заключен\"";
-$MESS["/bitrix/modules/crm/lang/ru/lib/phasesemantics.php"]["CRM_PHASE_SEMANTICS_DEAL_FAILURE"] = "Группа стадий \"Заказ провален\"";
+$MESS["/bitrix/modules/crm/lang/ru/lib/phasesemantics.php"]["CRM_PHASE_SEMANTICS_DEAL_PROCESS"] = "Группа \"Активность в работе\"";
+$MESS["/bitrix/modules/crm/lang/ru/lib/phasesemantics.php"]["CRM_PHASE_SEMANTICS_DEAL_SUCCESS"] = "Стадия \"Активность завершена\"";
+$MESS["/bitrix/modules/crm/lang/ru/lib/phasesemantics.php"]["CRM_PHASE_SEMANTICS_DEAL_FAILURE"] = "Группа \"Активность провалена\"";
 
 $MESS["/bitrix/components/bitrix/crm.timeline/templates/.default/lang/ru/template.php"]["CRM_TIMELINE_DEAL_CREATION"] = "Создан заказ";
 $MESS["/bitrix/components/bitrix/crm.timeline/templates/.default/lang/ru/template.php"]["CRM_TIMELINE_RECURRING_DEAL_CREATION"] = "Создан шаблон заказа";
