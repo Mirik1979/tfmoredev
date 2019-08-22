@@ -1,105 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d9d690c-d7cc-4c6c-b484-9a0870b8656e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.access.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.left.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.top.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.top.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/.top.menu_ext.php.old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/confirm/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/employees.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/personal.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/personal/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/contacts/personal/.left.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/index_old.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/.left.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/private_cloud/workgroups/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/.access.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/board/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/board/detail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/board/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/board/my/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/board/my/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/.left.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/button.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/connector/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/connector/viber/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/editrole.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/list/edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/list/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/permissions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/contact_center/openlines/statistics.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/event_list.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/faq/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/absence_help.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/bp_help.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/extranet.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/novice.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/outlook.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/help/xmpp.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/idea/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/idea/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/certification/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/course.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/gradebook.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/mycourses.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/profile.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/learning/search.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/links.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/lists/.left.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/lists/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/lists/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/.left.menu_ext.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/button.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/connector/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/connector/viber/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/editrole.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/list/edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/list/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/permissions.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/openlines/statistics.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/.left.menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/.section.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/form.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/form_edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/form_list.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/form_view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/requests/my.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/res_c.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/salary/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/subscr_edit.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/support.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/vote_new.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/vote_result.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/votes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/wiki.php" beforeDir="false" />
-    </list>
+    <list default="true" id="1d9d690c-d7cc-4c6c-b484-9a0870b8656e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,17 +29,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="9" selection-start-column="9" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -238,6 +130,11 @@
               <item name="tfmoredev" type="b2602c69:ProjectViewProjectNode" />
               <item name="tfmoredev" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="tfmoredev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tfmoredev" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -307,7 +204,7 @@
       <workItem from="1565280008212" duration="964000" />
       <workItem from="1565630684028" duration="7892000" />
       <workItem from="1566193700845" duration="5970000" />
-      <workItem from="1566419325015" duration="9838000" />
+      <workItem from="1566419325015" duration="10120000" />
     </task>
     <task id="LOCAL-00001" summary="11">
       <created>1562394982385</created>
@@ -320,7 +217,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67257000" />
+    <option name="totallyTimeSpent" value="67539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -344,7 +241,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.06795422" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.36266094" />
       <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
     </layout>
   </component>
@@ -583,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        <state relative-caret-position="45">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
