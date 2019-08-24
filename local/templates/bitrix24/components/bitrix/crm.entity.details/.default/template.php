@@ -120,7 +120,7 @@ $tabContainerId = "{$guid}_tabs";
 			?></div>
 			<div class="crm-entity-stream-container"><?
 				$APPLICATION->IncludeComponent(
-					"bitrix:crm.timeline",
+					"tf:crm.timeline",
 					'',
 					array_merge(
 						array(
@@ -138,7 +138,11 @@ $tabContainerId = "{$guid}_tabs";
 
 			?></div>
 			<div style="clear: both;"></div>
-			<?$APPLICATION->IncludeComponent('bitrix:crm.tracking.entity.details', '', []);?>
+			<?$APPLICATION->IncludeComponent("bitrix:crm.tracking.entity.details", ".default", Array(
+	
+	),
+	false
+);?>
 		</div><?
 	}
 	?></div><?
