@@ -1,8 +1,8 @@
 <?
 $MESS["CRM_MODULE_NOT_INSTALLED"] = "Модуль crm не установлен.";
 $MESS["CRM_PERMISSION_DENIED"] = "Доступ запрещен";
-$MESS["DEAL_ADD"] = "Добавить заказ";
-$MESS["DEAL_ADD_TITLE"] = "Добавить заказ";
+$MESS["DEAL_ADD"] = "Добавить подбор";
+$MESS["DEAL_ADD_TITLE"] = "Добавить подбор";
 $MESS["DEAL_COPY"] = "Копировать";
 $MESS["DEAL_COPY_TITLE"] = "Копировать заказ";
 $MESS["DEAL_DETAIL_EXPOSE"] = "Создать заказ";
