@@ -92,15 +92,15 @@ class TimelineDataProviderAlt extends TimelineDataProvider
             if ($pos !== false) {
                 $id=(int)str_replace('deal_','',$filter_id);
                 if($id>0){
-                    $res = CCrmDeal::GetList([],[
+                    $res = CCrmDeal::GetListEx([],[
                         'CHECK_PERMISSIONS'=> 'N',
                         'ID'=>$id,
-                    ],[],1);
+                    ],false,['nTopCount'=>1],['ID','CATEGORY_ID']);
                     if($arr=$res->GetNext()) {
-                        switch ($arr["TYPE_ID"]) {
-                            case "SALE":
-                                $result['STAGE_SALE_ID']=$this->createField(
-                                    'STAGE_SALE_ID',
+                        switch ($arr["CATEGORY_ID"]) {
+                            case 1:
+                                $result['STAGE_ID']=$this->createField(
+                                    'STAGE_ID',
                                     array(
                                         'name' => 'Стадия сделки',
                                         'type' => 'list',
@@ -110,8 +110,8 @@ class TimelineDataProviderAlt extends TimelineDataProvider
                                 );
                                 break;
                             default:
-                                $result['STAGE_ID']=$this->createField(
-                                    'STAGE_ID',
+                                $result['STAGE_SALE_ID']=$this->createField(
+                                    'STAGE_SALE_ID',
                                     array(
                                         'name' => 'Стадия сделки',
                                         'type' => 'list',
