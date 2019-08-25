@@ -23,6 +23,8 @@ if(isset($arResult['LEGEND']))
 }
 //endregion
 
+
+
 $APPLICATION->IncludeComponent(
 	'bitrix:crm.activity.editor',
 	'',
