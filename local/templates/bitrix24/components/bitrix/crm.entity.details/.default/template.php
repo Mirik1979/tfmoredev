@@ -22,6 +22,10 @@ $entityInfo = $arResult['ENTITY_INFO'];
 $tabs = $arResult['TABS'];
 $readOnly = $arResult['READ_ONLY'];
 
+//echo "<pre>";
+//print_r($arResult);
+//echo "</pre>";
+
 array_unshift(
 	$tabs,
 	array('id'=> 'main', 'name' => GetMessage("CRM_ENT_DETAIL_MAIN_TAB"), 'active' => true)

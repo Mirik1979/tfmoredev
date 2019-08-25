@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 global $USER;
 //print_r($arResult["ITEMS"]);
-if(!$USER->IsAdmin()) {
+if(!$USER->IsAdmin() && $arResult['ENTITY_TYPE_ID']==2) {
     unset($arResult["TABS"][0]);
     unset($arResult["TABS"][1]);
     unset($arResult["TABS"][2]);
