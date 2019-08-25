@@ -86,7 +86,7 @@ class CrmEventDealTimfors
      * @throws SystemException
      */
     public static function OnAfterCrmAddEventActivity($EVENT_ID, $arFields){
-        if($arFields["OWNER_TYPE_ID"]==2 && $arFields["OWNER_ID"]>0 && in_array($arFields['PROVIDER_ID'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
+        if($arFields["OWNER_TYPE_ID"]==2 && $arFields["OWNER_ID"]>0 && in_array($arFields['PROVIDER_ID'],['TASKS','CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
             $res = CCrmDeal::GetList([],[
                 'CHECK_PERMISSIONS'=> 'N',
                 'ID'=>$arFields["OWNER_ID"],
@@ -127,7 +127,7 @@ class CrmEventDealTimfors
         $CrmEventDealTimfors=new self();
         $param=$CrmEventDealTimfors->getEventInfo($id);
         //\Bitrix\Main\Diag\Debug::writeToFile($param);
-        if($param && in_array($fields['ASSOCIATED_ENTITY_CLASS_NAME'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
+        if($param && in_array($fields['ASSOCIATED_ENTITY_CLASS_NAME'],['TASKS','CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL'])){
             $param["Type"]='TIMELINE';
             $CrmEventDealTimforsRepository=new CrmEventDealTimforsRepository();
             $CrmEventDealTimforsRepository->add(CrmEventDealTimforsFactory::createFromArray($param));
@@ -190,7 +190,7 @@ class CrmEventDealTimfors
                 ];
             }
         }
-        if(!in_array($Event['ASSOCIATED_ENTITY_CLASS_NAME'],['CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL']) && !$Event["COMMENT"])
+        if(!in_array($Event['ASSOCIATED_ENTITY_CLASS_NAME'],['TASKS','CRM_MEETING','CRM_EMAIL','VOXIMPLANT_CALL']) && !$Event["COMMENT"])
             return false;
         return $arrResult;
     }

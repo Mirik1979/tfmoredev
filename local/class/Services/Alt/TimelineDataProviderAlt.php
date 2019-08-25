@@ -102,7 +102,7 @@ class TimelineDataProviderAlt extends TimelineDataProvider
                                 $result['STAGE_ID']=$this->createField(
                                     'STAGE_ID',
                                     array(
-                                        'name' => 'Стадия сделки',
+                                        'name' => 'Стадия активности',
                                         'type' => 'list',
                                         'default' => true,
                                         'partial' => true
@@ -113,7 +113,7 @@ class TimelineDataProviderAlt extends TimelineDataProvider
                                 $result['STAGE_SALE_ID']=$this->createField(
                                     'STAGE_SALE_ID',
                                     array(
-                                        'name' => 'Стадия сделки',
+                                        'name' => 'Стадия активности',
                                         'type' => 'list',
                                         'default' => true,
                                         'partial' => true
