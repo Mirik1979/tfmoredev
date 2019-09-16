@@ -80,6 +80,7 @@ class ResrequestsProductIdRepository
         if($el->getRatePerHour())
             $return["UF_RATE_PER_HOUR"]=$el->getRatePerHour();
 
+
         return $return;
     }
 
@@ -131,6 +132,9 @@ class ResrequestsProductIdRepository
 
         if(isset($arr['UF_RATE_PER_HOUR']))
             $params['RatePerHour']=$arr['UF_RATE_PER_HOUR'];
+
+        if(isset($arr['UF_VACANCY']))
+            $params['Vacancy']=$arr['UF_VACANCY'];
 
         return $params;
     }

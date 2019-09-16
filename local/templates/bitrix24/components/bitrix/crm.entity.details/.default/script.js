@@ -723,8 +723,10 @@ if(typeof BX.Crm.DealRecurringDetailManager === "undefined")
 //region DEAL MANAGER
 if(typeof BX.Crm.DealDetailManager === "undefined")
 {
+	//alert("x");
 	BX.Crm.DealDetailManager = function()
 	{
+
 		BX.Crm.DealDetailManager.superclass.constructor.apply(this);
 	};
 	BX.extend(BX.Crm.DealDetailManager, BX.Crm.EntityDetailManager);
@@ -736,6 +738,7 @@ if(typeof BX.Crm.DealDetailManager === "undefined")
 	BX.Crm.DealDetailManager.prototype.prepareCreationUrlParams = function(urlParams)
 	{
 		urlParams["deal_id"] = this.getEntityId();
+		alert(urlParams["deal_id"]);
 	};
 	BX.Crm.DealDetailManager.create = function(id, settings)
 	{

@@ -7,7 +7,7 @@ include("util_menu.php");
 
 <?
 $APPLICATION->IncludeComponent(
-	"tf:socialnetwork.user_profile_edit",
+	"bitrix:socialnetwork.user_profile_edit",
 	"", 
 	Array(
 		"PATH_TO_USER" => $arResult["PATH_TO_USER"],

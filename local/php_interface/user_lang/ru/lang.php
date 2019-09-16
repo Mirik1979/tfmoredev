@@ -18,8 +18,8 @@ $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DET
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DETAIL_EXPOSE_TITLE"] = "Создать заказ на основании шаблона";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_EDIT_TITLE"] = "Редактировать заказ";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_SHOW_TITLE"] = "Просмотреть заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE"] = "Удалить заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_TITLE"] = "Удалить заказ";
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE"] = "Удалить активность";
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_TITLE"] = "Удалить активность";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_DLG_TITLE"] = "Удаление заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_EVENT_TITLE"] = "Добавить событие для заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["CRM_DEAL_SL_SUBSCRIBE_TITLE"] = "Следить за заказом (события этого заказа будут показываться в вашей живой ленте)";
@@ -83,9 +83,9 @@ $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DET
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DETAIL_EXPOSE_TITLE"] = "Создать заказ на основании шаблона";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_EDIT_TITLE"] = "Редактировать заказ";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_SHOW_TITLE"] = "Просмотреть заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE"] = "Удалить заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_TITLE"] = "Удалить заказ";
-$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_DLG_TITLE"] = "Удаление заказа";
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE"] = "Удалить активность";
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_TITLE"] = "Удалить активность";
+$MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_DELETE_DLG_TITLE"] = "Удаление активности";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["DEAL_ADD_EVENT_TITLE"] = "Добавить событие для заказа";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["CRM_DEAL_SL_SUBSCRIBE_TITLE"] = "Следить за заказом (события этого заказа будут показываться в вашей живой ленте)";
 $MESS["/bitrix/components/bitrix/crm.deal.menu/lang/ru/component.php"]["CRM_DEAL_SL_UNSUBSCRIBE_TITLE"] = "Не следить за заказом (события этого заказа не будут показываться в вашей живой ленте)";
@@ -242,9 +242,9 @@ $MESS["/bitrix/modules/crm/lang/ru/lib/category/dealcategory.php"]["CRM_DEAL_CAT
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_FIELD_COMPARE_DEAL_STAGE"] = "Изменено поле \"Стадия активности\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_FIELD_COMPARE_CLOSED"] = "Изменено поле \"Заказ закрыт\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_EVENT_ADD"] = "Создан заказ";
-$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_RESPONSIBLE_IM_NOTIFY"] = "Вы назначены ответственным за заказ \"#title#\"";
+$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_RESPONSIBLE_IM_NOTIFY"] = "Вы назначены ответственным за активность \"#title#\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_NOT_RESPONSIBLE_IM_NOTIFY"] = "Вы перестали быть ответственным за заказ \"#title#\"";
-$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_PROGRESS_IM_NOTIFY"] = "Статус заказа \"#title#\" изменен c \"#start_status_title#\" на \"#final_status_title#\"";
+$MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_PROGRESS_IM_NOTIFY"] = "Статус активности \"#title#\" изменен c \"#start_status_title#\" на \"#final_status_title#\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_CREATION_CANCELED"] = "Создание заказа отменено обработчиком события: \"#NAME#\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_UPDATE_CANCELED"] = "Обновление заказа отменено обработчиком события: \"#NAME#\"";
 $MESS["/bitrix/modules/crm/lang/ru/classes/general/crm_deal.php"]["CRM_DEAL_FIELD_STAGE_ID"] = "Стадия активности";

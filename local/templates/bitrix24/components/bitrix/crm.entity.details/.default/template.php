@@ -22,6 +22,8 @@ $entityInfo = $arResult['ENTITY_INFO'];
 $tabs = $arResult['TABS'];
 $readOnly = $arResult['READ_ONLY'];
 
+
+
 array_unshift(
 	$tabs,
 	array('id'=> 'main', 'name' => GetMessage("CRM_ENT_DETAIL_MAIN_TAB"), 'active' => true)
@@ -55,6 +57,7 @@ $tabContainerId = "{$guid}_tabs";
 	}
 
 	$tabContainerClassName = 'crm-entity-section crm-entity-section-tabs';
+
 	if($entityID <= 0)
 	{
 		$tabContainerClassName .= ' crm-entity-stream-section-planned-above-overlay';
@@ -120,7 +123,7 @@ $tabContainerId = "{$guid}_tabs";
 			?></div>
 			<div class="crm-entity-stream-container"><?
 				$APPLICATION->IncludeComponent(
-					"tf:crm.timeline",
+					"bitrix:crm.timeline",
 					'',
 					array_merge(
 						array(
@@ -138,11 +141,7 @@ $tabContainerId = "{$guid}_tabs";
 
 			?></div>
 			<div style="clear: both;"></div>
-			<?$APPLICATION->IncludeComponent("bitrix:crm.tracking.entity.details", ".default", Array(
-	
-	),
-	false
-);?>
+			<? $APPLICATION->IncludeComponent('bitrix:crm.tracking.entity.details', '', []);?>
 		</div><?
 	}
 	?></div><?

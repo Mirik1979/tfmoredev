@@ -64,6 +64,10 @@ class ResrequestsProductIdFactory
         if($params['RatePerHour'])
             $el->setRatePerHour($params['RatePerHour']);
 
+        if($params['Vacancy'])
+            $el->setVacancy($params['Vacancy']);
+
+
         return $el;
     }
 
