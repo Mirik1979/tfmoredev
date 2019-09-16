@@ -6,6 +6,14 @@ IncludeModuleLangFile($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/intranet/public
 
 $APPLICATION->SetTitle(GetMessage("COMPANY_TITLE"));
 ?> <?
-$APPLICATION->IncludeComponent("bitrix:timeman.report", ".default", array());
+$APPLICATION->IncludeComponent(
+	"bitrix:ui.sidepanel.wrapper",
+	"",
+	array(
+		"POPUP_COMPONENT_NAME" => "bitrix:timeman.report",
+		"POPUP_COMPONENT_TEMPLATE_NAME" => "",
+		"POPUP_COMPONENT_PARAMS" => array()
+	)
+);
 ?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

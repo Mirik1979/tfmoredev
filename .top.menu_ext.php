@@ -221,15 +221,32 @@ if (CModule::IncludeModule("crm") && \Bitrix\Crm\Tracking\Manager::isAccessible(
 		array(),
 		array(
 			"menu_item_id" => "menu_crm_tracking",
-			"is_beta" => true
 		),
 		""
 	);
 }
 
+if (\Bitrix\Main\Loader::includeModule('report') && \Bitrix\Report\VisualConstructor\Helper\Analytic::isEnable())
+{
+	$arMenuB24[] = array(
+		GetMessage("TOP_MENU_CRM_ANALYTICS"),
+		SITE_DIR."report/analytics/",
+		array(),
+		array(
+			"real_link" => getLeftMenuItemLink(
+				"top_menu_id_analytics",
+				SITE_DIR."report/analytics/"
+			),
+			"menu_item_id"=>"menu_analytics",
+			"top_menu_id" => "top_menu_id_analytics",
+			"is_beta" => true
+		)
+	);
+}
+
 if (CModule::IncludeModule("crm") && CCrmSaleHelper::isShopAccess())
 {
-	if(\Bitrix\Main\ModuleManager::isModuleInstalled('salescenter'))
+	if(\Bitrix\Main\Loader::includeModule('salescenter') && \Bitrix\SalesCenter\Driver::getInstance()->isEnabled())
 	{
 		$arMenuB24[] = array(
 			GetMessage("MENU_SALESCENTER_SECTION"),
@@ -317,24 +334,6 @@ if (CModule::IncludeModule("im"))
 			"my_tools_section" => true,
 		),
 		"CBXFeatures::IsFeatureEnabled('WebMessenger')"
-	);
-}
-
-if (\Bitrix\Main\Loader::includeModule('report') && \Bitrix\Report\VisualConstructor\Helper\Analytic::isEnable())
-{
-	$arMenuB24[] = array(
-		GetMessage("TOP_MENU_CRM_ANALYTICS"),
-		SITE_DIR."report/analytics/",
-		array(),
-		array(
-			"real_link" => getLeftMenuItemLink(
-				"top_menu_id_analytics",
-				SITE_DIR."report/analytics/"
-			),
-			"menu_item_id"=>"menu_analytics",
-			"top_menu_id" => "top_menu_id_analytics",
-			"is_beta" => true
-		)
 	);
 }
 
