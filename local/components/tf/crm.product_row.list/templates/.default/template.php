@@ -565,6 +565,9 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 		<thead>
 			<tr class="crm-items-table-header">
 				<td class="crm-item-cell crm-item-name"><span class="crm-item-cell-text"><?=htmlspecialcharsbx(GetMessage('CRM_PRODUCT_ROW_COL_TTL_NAME'))?></span></td>
+
+                <td class="crm-item-cell crm-item-closed-vacancy"><span class="crm-item-cell-text">Закрытая вакансия</span></td>
+
                 <td class="crm-item-cell crm-item-role-project"><span class="crm-item-cell-text">Роль</span></td>
 
 
@@ -877,6 +880,14 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 					</span>
 				</td>
 
+                <td class="crm-item-cell crm-item-closed-vacancy">
+					<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
+						<input disabled id="<?=$rowID.'_CLOSED_VACANCY'?>" type="text" class="crm-item-table-inp" value="<?=$ResrequestsProductArray->getNameVacancy()?>"/>
+					</span>
+                    <span class="crm-item-cell-view"<?= $bInitEditable ? ' style="display: none;"' : '' ?>>
+						<div id="<?=$rowID.'_CLOSED_VACANCY_v'?>" class="crm-item-table-txt"><?=$ResrequestsProductArray->getNameVacancy()?></div>
+					</span>
+                </td>
 
                 <td class="crm-item-cell crm-item-role-project">
 					<?/*<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
@@ -1228,6 +1239,16 @@ $jsEventsManagerId = 'PageEventsManager_'.$arResult['COMPONENT_ID'];
 						</span>
 					</span>
 			</td>
+
+
+            <td class="crm-item-cell crm-item-closed-vacancy">
+					<span class="crm-item-cell-text"<?= $bInitEditable ? '' : ' style="display: none;"' ?>>
+						<input disabled id="<?=$rowIdPrefix.'#N#_CLOSED_VACANCY'?>" type="text" class="crm-item-table-inp" value=""/>
+					</span>
+                <span class="crm-item-cell-view"<?= $bInitEditable ? ' style="display: none;"' : '' ?>>
+						<div id="<?=$rowIdPrefix.'#N#_CLOSED_VACANCY_v'?>" class="crm-item-table-txt"></div>
+					</span>
+            </td>
 
 
             <td class="crm-item-cell crm-item-role-project">

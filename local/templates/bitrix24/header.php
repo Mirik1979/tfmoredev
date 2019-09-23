@@ -256,6 +256,7 @@ if ($isBitrix24Cloud)
 						<?$APPLICATION->ShowViewContent("sitemap"); ?>
 <!--						<span class="header-logo-block-util"></span>-->
 						<?
+						//echo "logo";
 						$clientLogo = Bitrix\Intranet\Util::getClientLogo();
 						$siteTitle = trim(COption::GetOptionString("bitrix24", "site_title", ""));
 

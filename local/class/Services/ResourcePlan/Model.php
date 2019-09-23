@@ -14,7 +14,7 @@ use CIBlockElement;
 class Model
 {
 
-    private $iblockId=IBLOCK_MODULES;
+    private $iblockId=50;
 
     /**
      * SeoLinkGenerate constructor.
@@ -31,19 +31,19 @@ class Model
             "NAME",
             "IBLOCK_ID",
             "IBLOCK_TYPE",
-            "PROPERTY_product",
-            "PROPERTY_product.NAME",
+            "PROPERTY_PRODUKT",
+            "PROPERTY_PRODUKT.NAME",
         ];
         $arFilter = ["IBLOCK_ID"=>$this->iblockId, "ACTIVE"=>"Y"];
         if($productId>0)
-            $arFilter["PROPERTY_product"]=$productId;
-        $res = CIBlockElement::GetList(["SORT"=>"ASC"], $arFilter, false, false, $arSelect);
+            $arFilter["PROPERTY_PRODUKT"]=$productId;
+        $res = CIBlockElement::GetList(["SORT"=>"ASC","NAME"=>"ASC"], $arFilter, false, false, $arSelect);
         while($ob = $res->GetNext()){
             $result[]=[
                 "ID"=>$ob["ID"],
                 "NAME"=>$ob["NAME"],
-                "PRODUCT_ID"=>$ob["PROPERTY_PRODUCT_VALUE"],
-                "PRODUCT_NAME"=>$ob["PROPERTY_PRODUCT_NAME"],
+                "PRODUCT_ID"=>$ob["PROPERTY_PRODUKT_VALUE"],
+                "PRODUCT_NAME"=>$ob["PROPERTY_PRODUKT_NAME"],
             ];
         }
         return $result;
@@ -57,7 +57,7 @@ class Model
             "IBLOCK_TYPE",
         ];
         $arFilter = ["IBLOCK_ID"=>$this->iblockId, "ACTIVE"=>"Y","NAME"=>$name];
-        $res = CIBlockElement::GetList(["SORT"=>"ASC"], $arFilter, false, ['nTopCount'=>1], $arSelect);
+        $res = CIBlockElement::GetList(["SORT"=>"ASC","NAME"=>"ASC"], $arFilter, false, ['nTopCount'=>1], $arSelect);
         if($ob = $res->GetNext())
             return $ob["ID"];
         return false;

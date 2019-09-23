@@ -14,7 +14,7 @@ use CIBlockElement;
 class Product
 {
 
-    private $iblockId=IBLOCK_PRODUCT;
+    private $iblockId=47;
 
     /**
      * SeoLinkGenerate constructor.
@@ -33,7 +33,7 @@ class Product
             "IBLOCK_TYPE",
         ];
         $arFilter = ["IBLOCK_ID"=>$this->iblockId, "ACTIVE"=>"Y"];
-        $res = CIBlockElement::GetList(["SORT"=>"ASC"], $arFilter, false, false, $arSelect);
+        $res = CIBlockElement::GetList(["SORT"=>"ASC","NAME"=>"ASC"], $arFilter, false, false, $arSelect);
         while($ob = $res->GetNext())
             $result[]=[
                 "ID"=>$ob["ID"],
@@ -50,7 +50,7 @@ class Product
             "IBLOCK_TYPE",
         ];
         $arFilter = ["IBLOCK_ID"=>$this->iblockId, "ACTIVE"=>"Y","NAME"=>$name];
-        $res = CIBlockElement::GetList(["SORT"=>"ASC"], $arFilter, false, ['nTopCount'=>1], $arSelect);
+        $res = CIBlockElement::GetList(["SORT"=>"ASC","NAME"=>"ASC"], $arFilter, false, ['nTopCount'=>1], $arSelect);
         if($ob = $res->GetNext())
             return $ob["ID"];
         return false;

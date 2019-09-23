@@ -91,6 +91,15 @@ class SetEvents
             )
         );
 
+        /*EventManager::getInstance()->addEventHandler(
+            'sender',
+            'OnBeforePostingSendRecipient',
+            array(
+                "local\\Services\\Recipient",
+                "OnAfterPostingSendRecipient"
+            )
+        );*/
+
     }
 
 }

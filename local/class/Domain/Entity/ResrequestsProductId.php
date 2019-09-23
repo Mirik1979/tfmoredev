@@ -11,6 +11,7 @@ namespace local\Domain\Entity;
 use JsonSerializable;
 use Exception;
 use DateTime;
+use Bitrix\Main\Loader;
 
 class ResrequestsProductId implements JsonSerializable
 {
@@ -110,6 +111,11 @@ class ResrequestsProductId implements JsonSerializable
 
     /**
      * @var float $rate_per_hour
+     */
+    private $rate_per_hour;
+
+    /**
+     * @var int $vacancy
      */
     private $vacancy;
 
@@ -337,9 +343,35 @@ class ResrequestsProductId implements JsonSerializable
         $this->rate_per_hour = $rate_per_hour;
     }
 
+    /**
+     * @return int
+     */
     public function getVacancy()
     {
         return $this->vacancy;
+    }
+
+    /**
+     * @return string
+     * @throws \Bitrix\Main\LoaderException
+     */
+    public function getNameVacancy()
+    {
+        $vacancy="";
+        if(Loader::includeModule("iblock") && $this->vacancy){
+            $res = \CIBlockElement::GetByID($this->vacancy);
+            if($ar_res = $res->GetNext())
+                $vacancy=$ar_res['NAME'];
+        }
+        return $vacancy;
+    }
+
+    /**
+     * @param int $vacancy
+     */
+    public function setVacancy($vacancy)
+    {
+        $this->vacancy=$vacancy;
     }
 
 }

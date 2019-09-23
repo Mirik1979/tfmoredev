@@ -187,6 +187,34 @@ class ResrequestsProductIdRepository
 
     /**
      * @param int $Id
+     * @param int $vacancyId
+     * @return bool
+     * @throws ArgumentException
+     * @throws ObjectPropertyException
+     * @throws SystemException
+     * @throws Exception
+     */
+    public function updateVacancy($Id, $vacancyId){
+        $arParams=["UF_VACANCY"=>$vacancyId];
+        $entity_data_class=$this->getEntity();
+        $rsData = $entity_data_class::getList(array(
+            "select" => ["*"],
+            "order" => ["ID" => "ASC"],
+            "limit" => 1,
+            "filter" => ["ID"=>$Id],
+        ));
+        if($arData = $rsData->Fetch()){
+            $result = $entity_data_class::update($arData["ID"],$arParams);
+            if (!$result->isSuccess())
+                throw new Exception("Item update error");
+        }else{
+            throw new Exception("Item not found");
+        }
+        return true;
+    }
+
+    /**
+     * @param int $Id
      * @throws ArgumentException
      * @throws ObjectPropertyException
      * @throws SystemException
