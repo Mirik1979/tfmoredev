@@ -115,12 +115,12 @@ $aMenuLinks = Array(
 		Array(),
 		'CModule::IncludeModule("voximplant") && SITE_TEMPLATE_ID !== "bitrix24" && Bitrix\Voximplant\Security\Helper::isMainMenuEnabled()'
 	),
-	Array(
+	/*Array(
 		GetMessage("SERVICES_MENU_OPENLINES"),
 		"/services/openlines/",
 		Array(),
 		Array(),
 		'CModule::IncludeModule("imopenlines") && SITE_TEMPLATE_ID !== "bitrix24" && Bitrix\ImOpenlines\Security\Helper::isMainMenuEnabled()'
-	),
+	),*/
 );
 ?>

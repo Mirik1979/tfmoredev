@@ -1,1 +1,0 @@
-<?php $filesInfo = array("/bitrix/js/im/css/common.css" => "156220555846871","/bitrix/js/im/css/window.css" => "156220555817795","/bitrix/js/im/css/im.css" => "1562205558165561","/bitrix/js/im/css/call/view.css" => "156220555839603",); ?>

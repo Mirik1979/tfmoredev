@@ -1,1 +1,0 @@
-<?php $filesInfo = array("/bitrix/js/main/kanban/css/kanban.css" => "156220549546174",); ?>

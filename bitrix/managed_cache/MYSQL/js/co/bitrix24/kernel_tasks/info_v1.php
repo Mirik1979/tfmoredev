@@ -1,1 +1,0 @@
-<?php $filesInfo = array("/bitrix/js/tasks/tasks.js" => "15622056323973","/bitrix/js/tasks/util.js" => "15622056328555",); ?>
