@@ -243,8 +243,7 @@ else
 	if($arResult['bEdit'] == 'Y' && $_SERVER["REQUEST_METHOD"]=="POST" && strlen($_POST["submit"])>0 && check_bitrix_sessid())
 	{
         //AddMessage2Log('inside', "postdebug4");
-        // AddMessage2Log($_POST, "postdebug5");
-        // AddMessage2Log($_FILES, "postdebug6");
+
 
 	    if(CModule::IncludeModule("socialservices"))
 		{
